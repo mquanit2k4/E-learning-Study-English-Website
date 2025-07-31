@@ -1,0 +1,11 @@
+vi:
+  demo_partials:
+    new:
+      zone_new: "Khu vực hành động Tạo mới"
+      title_new: "Khu vực mới"
+    edit:
+      zone_edit: "Khu vực hành động Chỉnh sửa"
+      editing: "Chỉnh sửa khu vực"
+    report:
+      zone: "Khu vực: %{zone}"
+      date: "Ngày: %{date}"

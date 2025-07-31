@@ -1,0 +1,8 @@
+<% provide(:title, t("help.title")) %>
+<h1><%= t("help.title") %></h1>
+<p>
+  <%= t("help.content_html",
+    help_link: link_to(t("help.links.help_page"), Settings.help_page_url),
+    book_link: link_to(t("help.links.book"), Settings.book_url.html_safe)
+  ).html_safe %>
+</p>

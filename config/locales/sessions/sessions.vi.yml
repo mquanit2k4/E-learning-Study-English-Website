@@ -1,0 +1,10 @@
+vi:
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      new_user?: "Người dùng mới?"
+      sign_up_now!: "Đăng ký ngay!"
+      remember_me: "Ghi nhớ tôi trên máy tính này"
+    create:
+      login_success: "Đăng nhập thành công"
+      invalid_email_or_password: "Email hoặc mật khẩu không hợp lệ"

@@ -1,0 +1,10 @@
+<p class="notice-message"><%= notice %></p>
+
+<%= render @product %>
+
+<div>
+  <%= link_to t(".edit"), edit_product_path(@product) %> |
+  <%= link_to t(".back"), products_path %>
+
+  <%= button_to t(".destroy"), @product, method: :delete, data: {confirm: t(".confirm_destroy")} %>
+</div>

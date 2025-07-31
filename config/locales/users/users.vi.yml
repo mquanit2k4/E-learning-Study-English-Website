@@ -1,0 +1,13 @@
+vi:
+  users:
+    create:
+      created: "Người dùng đã được tạo thành công."
+    load_user:
+      not_found: "Không tìm thấy người dùng"
+    new:
+      title: "Đăng ký"
+      confirmation: "Xác nhận mật khẩu"
+      create_my_account: "Tạo tài khoản"
+    show:
+      created_at: "Được tạo lúc"
+      updated_at: "Được cập nhật lúc"

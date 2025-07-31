@@ -1,0 +1,24 @@
+vi:
+  activerecord:
+    models:
+      product: "Sản phẩm"
+      user: "Người dùng"
+
+    attributes:
+      product:
+        name: "Tên sản phẩm"
+      user:
+        name: "Tên"
+        email: "Email"
+        birthday: "Ngày sinh"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        gender: "Giới tính"
+
+    errors:
+      models:
+        user:
+          attributes:
+            birthday:
+              too_old: "phải nằm trong vòng 100 năm trở lại"
+              in_future: "không được nằm trong tương lai"

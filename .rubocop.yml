@@ -2,7 +2,9 @@
 # in separate files. This file adds all other parameters apart from Enabled.
 
 # Add this to load Rails extension for rubocop
-require: rubocop-rails
+require:
+  - rubocop-erb
+  - rubocop-rails
 
 # Put the following files into the same directory as this file.
 inherit_from:
@@ -11,6 +13,7 @@ inherit_from:
 
 # Common configuration.
 AllCops:
+  NewCops: enable
   # Include gemspec and Rakefile
   SuggestExtensions: false
   Include:
@@ -282,7 +285,7 @@ Style/LambdaCall:
     - call
     - braces
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 80
   AllowURI: true
   Exclude:

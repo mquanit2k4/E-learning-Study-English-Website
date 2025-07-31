@@ -1,0 +1,22 @@
+<p class="notice-message"><%= notice %></p>
+
+<% content_for :title, t(".title") %>
+
+<h1><%= t(".title") %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t(".name") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <%= render (@products) || t(".empty") %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(".new"), new_product_path %>
