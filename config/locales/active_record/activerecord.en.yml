@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      product: "Product"
+      user: "User"
+
+    attributes:
+      product:
+        name: "Name"
+      user:
+        name: "Name"
+        email: "Email"
+        birthday: "Birthday"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        gender: "Gender"
+
+    errors:
+      models:
+        user:
+          attributes:
+            birthday:
+              too_old: "must be within the last 100 years"
+              in_future: "cannot be in the future"

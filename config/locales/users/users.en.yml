@@ -1,0 +1,13 @@
+en:
+  users:
+    create:
+      created: "User was successfully created."
+    load_user:
+      not_found: "User not found"
+    new:
+      title: "Sign up"
+      confirmation: "Password confirmation"
+      create_my_account: "Create my account"
+    show:
+      created_at: "Created at"
+      updated_at: "Updated at"

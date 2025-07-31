@@ -1,0 +1,44 @@
+en:
+  products:
+    index:
+      title: "Products"
+      name: "Name"
+      empty: "No Products"
+      new: "New product"
+
+    create:
+      created: "Product was successfully created."
+    update:
+      updated: "Product was successfully updated."
+    destroy:
+      destroyed: "Product was successfully destroyed."
+      not_destroyed: "Product could not be destroyed."
+    set_product:
+      not_found: "Product not found."
+
+    edit:
+      edit_title: "Editing product"
+      show_this: "Show this product"
+      back_to_list: "Back to products"
+
+    new:
+      new_title: "New product"
+      back_to_list: "Back to products"
+
+    show:
+      edit: "Edit this product"
+      back: "Back to products"
+      destroy: "Destroy this product"
+      confirm_destroy: "Are you sure you want to delete this product?"
+
+    actions:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm_destroy: "Are you sure?"
+
+    models:
+      product: "Product"
+    attributes:
+      product:
+        name: "Name"

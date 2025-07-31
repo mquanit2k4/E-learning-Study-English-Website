@@ -1,0 +1,12 @@
+en:
+  demo_partials:
+    new:
+      zone_new: "Zone New action"
+      title:
+        new: "New zone"
+    edit:
+      zone_edit: "Zone Edit action"
+      editing: "Editing zone"
+    report:
+      zone: "Zone: %{zone}"
+      date: "Date: %{date}"

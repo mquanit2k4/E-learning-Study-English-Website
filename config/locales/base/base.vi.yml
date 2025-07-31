@@ -1,0 +1,67 @@
+vi:
+  layouts:
+    application:
+      title: "Ứng dụng mẫu Ruby on Rails"
+
+  navbar:
+    home: "Trang chủ"
+    help: "Trợ giúp"
+    contact: "Liên hệ"
+    microposts: "Bài viết"
+    sign_up: "Đăng ký"
+    log_in: "Đăng nhập"
+    account: "Tài khoản"
+    profile: "Hồ sơ"
+    settings: "Cài đặt"
+    log_out: "Đăng xuất"
+    language: "Ngôn ngữ"
+  languages:
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+
+  home:
+    welcome: "Chào mừng đến với Sample App"
+    description_html: >
+      Đây là trang chủ của ứng dụng mẫu %{link}.
+    sign_up: "Đăng ký ngay!"
+
+  help:
+    title: "Trợ giúp"
+    content_html: >
+      Nhận trợ giúp về Ruby on Rails Tutorial tại %{help_link}.
+      Để được trợ giúp về ứng dụng mẫu này, hãy xem %{book_link}.
+    links:
+      help_page: "trang trợ giúp Rails Tutorial"
+      book: "cuốn sách Ruby on Rails Tutorial"
+
+  contact:
+    title: "Liên hệ"
+    greeting_html: "Xin chào %{name}"
+
+  errors:
+    template:
+      header:
+        one: "Có 1 lỗi khiến %{model} không thể được lưu"
+        other: "Có %{count} lỗi khiến %{model} không thể được lưu"
+
+  errors:
+    messages:
+      blank: "không được để trống"
+      invalid: "không hợp lệ"
+      taken: "đã được sử dụng"
+      too_long:
+        one: "quá dài (tối đa là 1 ký tự)"
+        other: "quá dài (tối đa là %{count} ký tự)"
+      too_short:
+        one: "quá ngắn (tối thiểu là 1 ký tự)"
+        other: "quá ngắn (tối thiểu là %{count} ký tự)"
+      confirmation: "không khớp với %{attribute}"
+
+    template:
+      header:
+        one: "Biểu mẫu chứa 1 lỗi"
+        other: "Biểu mẫu chứa %{count} lỗi"
+
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"

@@ -1,0 +1,44 @@
+vi:
+  products:
+    index:
+      title: "Sản phẩm"
+      name: "Tên"
+      empty: "Không có sản phẩm nào"
+      new: "Thêm sản phẩm mới"
+
+    create:
+      created: "Sản phẩm đã được tạo thành công."
+    update:
+      updated: "Sản phẩm đã được cập nhật thành công."
+    destroy:
+      destroyed: "Sản phẩm đã được xóa thành công."
+      not_destroyed: "Không thể xóa sản phẩm."
+    set_product:
+      not_found: "Không tìm thấy sản phẩm."
+
+    edit:
+      edit_title: "Chỉnh sửa sản phẩm"
+      show_this: "Xem sản phẩm này"
+      back_to_list: "Quay lại danh sách sản phẩm"
+
+    new:
+      new_title: "Thêm sản phẩm mới"
+      back_to_list: "Quay lại danh sách sản phẩm"
+
+    show:
+      edit: "Chỉnh sửa sản phẩm này"
+      back: "Quay lại danh sách sản phẩm"
+      destroy: "Xóa sản phẩm này"
+      confirm_destroy: "Bạn có chắc chắn muốn xóa sản phẩm này không?"
+
+    actions:
+      show: "Xem"
+      edit: "Chỉnh sửa"
+      destroy: "Xóa"
+      confirm_destroy: "Bạn có chắc chắn không?"
+
+    models:
+      product: "Sản phẩm"
+    attributes:
+      product:
+        name: "Tên"

@@ -1,0 +1,5 @@
+<% provide(:title, t("contact.title")) %>
+<h1><%= t("contact.title") %></h1>
+<p>
+  <%= t("contact.greeting_html", name: content_tag(:span, "Nguyễn Thu Trang!", class: "contact")).html_safe %>
+</p>
