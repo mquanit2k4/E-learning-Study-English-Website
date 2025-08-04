@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :check_auth, only: %i(omniauth)
+  before_action :check_user, only: %i(omniauth)
+
   REMEMBER_ME_SELECTED = "1".freeze
 
   # GET /login
@@ -20,6 +23,14 @@ class SessionsController < ApplicationController
     redirect_to root_url, status: :see_other
   end
 
+  def omniauth
+    reset_session
+    log_in user
+    remember user
+    flash[:success] = t(".login_success")
+    redirect_to user, status: :see_other
+  end
+
   private
 
   def handle_successful_login user
@@ -36,6 +47,22 @@ class SessionsController < ApplicationController
 
   def handle_failed_login
     flash.now[:danger] = t(".invalid_email_or_password")
+    render :new, status: :unprocessable_entity
+  end
+
+  def check_auth
+    auth = request.env["omniauth.auth"]
+    return if auth
+
+    flash[:danger] = t(".auth_failed")
+    render :new, status: :unprocessable_entity
+  end
+
+  def check_user
+    user = User.find_or_create_from_auth_hash auth
+    return if user
+
+    flash[:danger] = t(".created_failed")
     render :new, status: :unprocessable_entity
   end
 end
