@@ -41,6 +41,7 @@ en:
     language: "Language"
     courses: "Courses"
     words: "Words"
+    manage_word: "Manage Words"
   languages:
     en: "English"
     vi: "Vietnamese"
@@ -95,7 +96,6 @@ en:
         one: "is too short (minimum is 1 character)"
         other: "is too short (minimum is %{count} characters)"
       confirmation: "doesn't match %{attribute}"
-
     template:
       header:
         one: "The form contains 1 error."
@@ -104,3 +104,9 @@ en:
   time:
     formats:
       long: "%m/%d/%Y %H:%M"
+
+  flash:
+    please_log_in: "Please log in to continue."
+    not_authorized: "You are not authorized to perform this action."
+    already_logged_in: "You are already logged in."
+    cannot_edit_another_user: "You cannot edit another user's profile."

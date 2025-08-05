@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
+  include Pagy::Backend
 
   include Pagy::Backend
 
@@ -28,7 +29,7 @@ class ApplicationController < ActionController::Base
     return if logged_in?
 
     store_location
-    flash[:danger] = t(".please_log_in")
+    flash[:danger] = t("flash.please_log_in")
     redirect_to login_url
   end
 end

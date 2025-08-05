@@ -1,0 +1,61 @@
+vi:
+  helpers:
+    label:
+      word:
+        content: "Nội dung"
+        word_type: "Loại từ"
+        meaning: "Ý nghĩa"
+    submit:
+      create: "Tạo từ"
+      update: "Cập nhật từ"
+  admin:
+    words:
+      create:
+        success: "Từ đã được tạo thành công."
+      update:
+        success: "Từ đã được cập nhật thành công."
+      destroy:
+        success: "Từ '%{word_content}' đã được xóa thành công."
+        failure: "Không thể xóa từ '%{word_content}'. Vui lòng thử lại sau."
+      form:
+        placeholder:
+          content: "Nhập từ..."
+          meaning: "Nhập ý nghĩa..."
+          word_type: "Chọn loại từ"
+        cancel: "Hủy"
+      errors:
+        title:
+          one: "1 lỗi đã ngăn không cho từ này được lưu:"
+          other: "%{count} lỗi đã ngăn không cho từ này được lưu:"
+      edit:
+        title: "Chỉnh sửa từ"
+        submit:
+          update: "Cập nhật từ"
+        cancel: "Hủy"
+      new:
+        title: "Tạo từ mới"
+        submit:
+          create: "Tạo từ"
+        cancel: "Hủy"
+      index:
+        title: "Danh sách từ vựng"
+        search_placeholder: "Tìm kiếm..."
+        new_word_button: "Tạo từ mới +"
+        actions:
+          confirm: "Bạn có chắc chắn muốn xóa từ này?"
+        empty_message: "Chưa có từ nào được tạo. Hãy bắt đầu tạo từ đầu tiên của bạn!"
+        filters:
+          all: "Tất cả"
+          today: "Hôm nay"
+          last_7_days: "7 ngày qua"
+          last_30_days: "30 ngày qua"
+      word:
+        table_headers:
+          word: "Từ vựng"
+          meaning: "Mô tả ngắn"
+          created_at: "Ngày tạo"
+          actions: "Hành động"
+        actions:
+          show: "Xem"
+          edit: "Sửa"
+          delete: "Xóa"
