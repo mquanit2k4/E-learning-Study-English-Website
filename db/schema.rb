@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_08_04_100004) do
+ActiveRecord::Schema[7.0].define(version: 2025_08_05_035912) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -77,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_04_100004) do
     t.bigint "created_by_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "duration", default: 0, null: false
     t.index ["created_by_id"], name: "index_courses_on_created_by_id"
   end
 
@@ -130,6 +131,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_04_100004) do
     t.integer "progress", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "reason"
+    t.date "start_date"
+    t.date "end_date"
     t.index ["course_id"], name: "index_user_courses_on_course_id"
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
