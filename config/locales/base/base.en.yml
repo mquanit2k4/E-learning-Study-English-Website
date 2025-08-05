@@ -15,6 +15,8 @@ en:
     settings: "Settings"
     log_out: "Log out"
     language: "Language"
+    courses: "Courses"
+    words: "Words"
   languages:
     en: "English"
     vi: "Vietnamese"

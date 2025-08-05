@@ -15,6 +15,8 @@ vi:
     settings: "Cài đặt"
     log_out: "Đăng xuất"
     language: "Ngôn ngữ"
+    courses: "Khóa học"
+    words: "Từ vựng"
   languages:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"

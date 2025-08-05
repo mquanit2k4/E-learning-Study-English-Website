@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def logged_in_user
+    return if logged_in?
+
+    redirect_to login_path, alert: t(".error.not_authenticated")
+  end
 end

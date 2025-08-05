@@ -2,6 +2,7 @@ defaults: &defaults
 help_page_url: "http://www.railstutorial.org/help"
 book_url: "http://www.railstutorial.org/book"
 google_logo_url: "https://img.icons8.com/color/48/000000/google-logo.png"
+lucide_js_path: "https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"
 
 user:
   max_name_length: 50

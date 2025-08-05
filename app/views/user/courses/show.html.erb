@@ -1,0 +1,72 @@
+<div class="container mt-20">
+  <!-- Course Summary -->
+  <div class="row course-card">
+    <div class="col-md-8">
+      <h2><%= t(".course", course: @course.title) %></h2>
+      <p><%= t(".start_date", date: @user_course.start_date) %></p>
+      <p><%= t(".end_date", date: @user_course.end_date) %></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="progress-circle" style="background: conic-gradient(#337ab7 <%= @progress %>%, #e9ecef 0)">
+        <span><%= @progress %>%</span>
+      </div>
+      <p><%= t(".completed_count", count: @completed_count) %></p>
+      <p><%= t(".total_count", count: @total_lessons) %></p>
+    </div>
+  </div>
+
+  <!-- Course Stats -->
+  <div class="row text-center mt-20">
+    <div class="col-sm-4">
+      <div class="stats-box">
+        <i data-lucide="book-a"></i>
+        <p><strong><%= t(".lessons_count", count: @total_lessons) %></strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="stats-box">
+        <i data-lucide="users"></i>
+        <p><strong><%= t(".learners_count", count: @learners_count) %></strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="stats-box">
+        <i data-lucide="clock"></i>
+        <p><strong><%= t(".duration", count: @duration) %></strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="mt-20">
+    <div class="panel panel-default description-panel">
+      <div class="panel-body">
+        <%= @course.description %>
+      </div>
+    </div>
+  </div>
+  <!-- Lessons -->
+  <div class="course-card">
+    <h1><strong><%= t(".lessons_in_course") %></strong></h1>
+    <% @lessons.each_with_index do |lesson, index| %>
+      <% user_lesson = @user_lessons.find { |ul| ul.lesson_id == lesson.id } %>
+      <% completed = user_lesson&.completed? %>
+      <%= link_to user_course_lesson_path(@course.id, lesson.id), class: "lesson-box-link" do %>
+        <div class="lesson-box clearfix">
+          <span class="pull-left"><%= t(".lessons.lesson", number: index + 1, title: lesson.title) %></span>
+          <span class="pull-right lesson-status">
+            <% if completed %>
+              <span class="badge badge-status bg-success">
+                <i data-lucide="check-circle" class="status-icon"></i> <%= t(".lessons.completed") %>
+              </span>
+            <% else %>
+              <span class="badge badge-status bg-secondary">
+                <i data-lucide="x-circle" class="status-icon"></i> <%= t(".lessons.incomplete") %>
+              </span>
+            <% end %>
+          </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
