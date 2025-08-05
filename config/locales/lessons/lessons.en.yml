@@ -1,0 +1,63 @@
+en:
+  admin:
+    lessons:
+      create:
+        success: "Lesson was successfully created."
+        failure: "Failed to create lesson."
+      update:
+        success: "Lesson was successfully updated."
+        failure: "Failed to update lesson."
+      destroy:
+        success: "Lesson was successfully deleted."
+        failure: "Failed to delete lesson."
+      lesson_not_found: "Lesson not found."
+      course_not_found: "Course not found."
+      show:
+        description: "Description"
+        created_date: "Created Date"
+        word_list: "Word list"
+        test_list: "Test list"
+        paragraph_list: "Paragraph list"
+        back_to_list: "Back to list"
+        edit: "Edit"
+      new:
+        title: "Create lesson"
+        form:
+          create_button: "Create Lesson"
+      edit:
+        title: "Edit lesson"
+        form:
+          update_button: "Update Lesson"
+      form:
+        lesson_name: "Lesson Name"
+        enter_lesson_name: "Enter lesson name"
+        description: "Description"
+        enter_description: "Enter description"
+        word_list: "Word list"
+        search_word: "Search word"
+        test_list: "Test list"
+        search_test: "Search test"
+        paragraph_list: "Paragraph list"
+        add_paragraph: "Add Paragraph"
+        create_button: "Create Lesson"
+        update_button: "Update Lesson"
+      index:
+        title: "Lesson list for %{course_title}"
+        search_lesson: "Search lesson"
+        create_lesson_button: "Create lesson +"
+        table_headers:
+          lesson_name: "Lesson name"
+          short_description: "Short Description"
+          created_at: "Created Date"
+          actions: "Actions"
+        empty_message: "No lessons found."
+        filters:
+          all: "All Time"
+          today: "Today"
+          last_7_days: "Last 7 Days"
+          last_30_days: "Last 30 Days"
+      lesson:
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure you want to delete this lesson?"

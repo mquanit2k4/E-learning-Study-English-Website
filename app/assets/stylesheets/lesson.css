@@ -1,0 +1,245 @@
+/* app/assets/stylesheets/lessons.scss */
+.word-list-section, .test-list-section, .paragraph-list-section {
+  margin-top: 20px;
+}
+.search-container {
+  margin-bottom: 15px;
+  position: relative;
+}
+.search-container .search-icon {
+  color: #aaa;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#selected-words-list .word-item {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.word-item .order-number {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  width: 30px;
+}
+.word-item .form-control {
+  flex-grow: 1;
+}
+.word-item .remove-word-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0;
+}
+#search-results-container {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.search-result-item {
+  cursor: pointer;
+  padding: 10px;
+}
+.search-result-item:hover {
+  background-color: #f0f0f0;
+}
+
+#selected-tests-list .test-item {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.test-item .order-number {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  width: 30px;
+}
+.test-item .form-control {
+  flex-grow: 1;
+}
+.test-item .remove-test-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0;
+}
+
+#selected-paragraphs-list .paragraph-item {
+  margin-bottom: 5px;
+}
+
+#selected-paragraphs-list .d-flex {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+#selected-paragraphs-list .paragraph-item {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+#selected-paragraphs-list .paragraph-item .order-number {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  flex-shrink: 0;
+  padding: 5px;
+  text-align: center;
+  width: 30px;
+}
+
+#selected-paragraphs-list .paragraph-item .form-control {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 1000px;
+  padding-top: 20px;
+}
+
+#selected-paragraphs-list .paragraph-item .remove-paragraph-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+#add-paragraph-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.action-links-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.action-link {
+  color: #0d6efd;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+
+.action-links-container .action-link {
+  font-size: 1.5rem;
+}
+
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+.action-delete-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+}
+
+.action-links-container > span {
+  color: #6c757d;
+}
+
+.lesson-info-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.form-field-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-text-plain {
+  display: block;
+  margin-bottom: 0;
+  padding: 0.375rem 0;
+}
+
+.lesson-components-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.lesson-components-col {
+  flex: 0 0 auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 50%;
+}
+
+.component-flex-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.component-order-margin-right {
+  margin-right: 0.5rem;
+}
+
+.component-flex-grow {
+  flex-grow: 1;
+}
+
+.component-top-margin-4 {
+  margin-top: 1.5rem;
+}
+
+.custom-button {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.custom-button-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+.custom-button-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.paragraph-item .form-text-plain {
+  flex-grow: 1;
+  margin-left: 0px;
+  word-wrap: break-word;
+}

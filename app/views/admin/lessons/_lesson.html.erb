@@ -1,0 +1,15 @@
+<tr>
+  <td><%= lesson.title %></td>
+  <td><%= lesson.description %></td>
+  <td><%= lesson.created_at.strftime(Settings.lesson.date_format) %></td>
+  <td>
+    <div class="action-links-container">
+      <%= link_to t(".view"), admin_course_lesson_path(@course, lesson), data: { turbo: false }, class: "action-link" %> |
+      <%= link_to t(".edit"), edit_admin_course_lesson_path(@course, lesson), data: { turbo: false }, class: "action-link" %> |
+      <%= button_to t(".delete"), admin_course_lesson_path(@course, lesson),
+              method: :delete,
+              data: { turbo_confirm: t(".confirm_delete") },
+              class: "action-delete-btn" %>
+    </div>
+  </td>
+</tr>

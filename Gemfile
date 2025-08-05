@@ -54,10 +54,10 @@ gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
 
 gem "faker"
+gem "jquery-rails"
 gem "pagy"
 gem "sidekiq"
 
-gem "jquery-rails"
 gem "responders", "~> 3.1"
 
 # Use Sass to process CSS

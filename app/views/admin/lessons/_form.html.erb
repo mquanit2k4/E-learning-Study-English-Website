@@ -1,0 +1,77 @@
+<%= form_with(model: [:admin, @course, lesson], local: true, method: method, data: { controller: "lessons-form", selected_word_ids: selected_word_ids.to_json, selected_test_ids: selected_test_ids.to_json, selected_paragraphs: selected_paragraphs.to_json }) do |form| %>
+  <div class="form-group">
+    <%= form.label :title, t(".lesson_name") %>
+    <%= form.text_field :title, class: "form-control", placeholder: t(".enter_lesson_name") %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, t(".description") %>
+    <%= form.text_area :description, class: "form-control", placeholder: t(".enter_description") %>
+  </div>
+
+  <div class="word-list-section">
+    <h3><%= t(".word_list") %></h3>
+    <div class="search-container">
+      <%= text_field_tag :word_search, nil, class: "form-control", placeholder: t(".search_word"), data: { action: "input->lessons-form#searchWord", "lessons-form-target": "wordSearchInput" } %>
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div id="selected-words-list" data-lessons-form-target="selectedWordsList">
+      <% word_components.each_with_index do |comp, index| %>
+        <div class="word-item" data-word-id="<%= comp.word_id %>">
+          <div class="order-number"><%= index + 1 %></div>
+          <%= hidden_field_tag "lesson[word_ids][]", comp.word_id, id: nil %>
+          <%= text_field_tag "word_display_#{comp.word_id}", comp.word.content, disabled: true, class: "form-control" %>
+          <button type="button" class="remove-word-btn" data-action="click->lessons-form#removeWord">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="search-results-container" data-lessons-form-target="wordSearchResultsContainer"></div>
+  </div>
+
+  <div class="test-list-section">
+    <h3><%= t(".test_list") %></h3>
+    <div class="search-container">
+      <%= text_field_tag :test_search, nil, class: "form-control", placeholder: t(".search_test"), data: { action: "input->lessons-form#searchTest", "lessons-form-target": "testSearchInput" } %>
+      <span class="search-icon">🔍</span>
+    </div>
+    <div id="selected-tests-list" data-lessons-form-target="selectedTestsList">
+      <% test_components.each_with_index do |comp, index| %>
+        <div class="test-item" data-test-id="<%= comp.test_id %>">
+          <div class="order-number"><%= index + 1 %></div>
+          <%= hidden_field_tag "lesson[test_ids][]", comp.test_id, id: nil %>
+          <%= text_field_tag "test_display_#{comp.test_id}", comp.test.name, disabled: true, class: "form-control" %>
+          <button type="button" class="remove-test-btn" data-action="click->lessons-form#removeTest">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    <div id="test-search-results-container" data-lessons-form-target="testSearchResultsContainer"></div>
+  </div>
+
+  <div class="paragraph-list-section">
+    <h3><%= t(".paragraph_list") %></h3>
+    <button type="button" id="add-paragraph-btn" class="btn btn-secondary" data-action="click->lessons-form#addParagraph">
+      <%= t(".add_paragraph") %>
+    </button>
+    <div id="selected-paragraphs-list" data-lessons-form-target="selectedParagraphsList">
+      <% paragraph_components.each_with_index do |comp, index| %>
+        <div class="paragraph-item">
+          <div class="d-flex align-items-center">
+            <div class="order-number"><%= index + 1 %></div>
+            <textarea class="form-control" name="lesson[paragraphs][][content]"><%= comp.content %></textarea>
+            <button type="button" class="btn-close remove-paragraph-btn" data-action="click->lessons-form#removeParagraph">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form.submit submit_text, class: "btn btn-primary" %>
+<% end %>

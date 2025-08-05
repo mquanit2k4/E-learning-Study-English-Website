@@ -37,7 +37,7 @@ en:
         update_course: "Update Course"
         save_change: "Save Changes"
       show:
-        add_lesson: "Add Lesson +"
+        manage_lesson: "Manage Lessons"
         edit_course: "Edit Course"
         back_to_list: "Back to Course List"
         course_details: "Course Details"

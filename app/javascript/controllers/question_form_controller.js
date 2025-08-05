@@ -1,4 +1,3 @@
-// app/javascript/controllers/question_form_controller.js
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
@@ -45,27 +44,23 @@ export default class extends Controller {
           input.style.display = "inline-block"
         } else if (input.dataset.behavior === "checkbox-input") {
           input.style.display = "none"
-          input.checked = false; // Bỏ chọn nếu chuyển từ checkbox sang radio
+          input.checked = false;
         }
       } else { // Multiple choice
         if (input.dataset.behavior === "checkbox-input") {
           input.style.display = "inline-block"
         } else if (input.dataset.behavior === "radio-input") {
           input.style.display = "none"
-          input.checked = false; // Bỏ chọn nếu chuyển từ radio sang checkbox
+          input.checked = false;
         }
       }
     })
   }
 
-  // Xử lý click trên checkbox (cho multiple choice)
   toggleCheckbox(event) {
-    // Không cần logic đặc biệt ở đây, vì nhiều checkbox có thể được chọn
   }
 
-  // Xử lý click trên radio button (cho single choice)
   toggleRadio(event) {
-    // Đảm bảo chỉ một radio button được chọn trong các câu trả lời của câu hỏi hiện tại
     this.correctInputTargets.forEach(input => {
       if (input.dataset.behavior === "radio-input" && input !== event.target) {
         input.checked = false;

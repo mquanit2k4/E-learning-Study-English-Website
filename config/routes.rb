@@ -38,8 +38,11 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :words
-      resources :courses
-      resources :lessons
+
+      resources :courses do
+        resources :lessons
+      end
+
       resources :tests do
         resources :questions, except: %i(show index) do
           resources :answers, only: %i(new create destroy)
@@ -58,5 +61,22 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    namespace :api do
+      namespace :v1 do
+        resources :words, only: [] do
+          collection do
+            get :search
+          end
+        end
+
+        resources :tests, only: [] do
+          collection do
+            get :search
+          end
+        end
+      end
+    end
+
   end
 end

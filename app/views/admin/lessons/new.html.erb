@@ -1,0 +1,24 @@
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.show.course_details"), admin_course_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.show.course_details"), admin_course_lessons_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span><%= t(".title") %></span>
+<% end %>
+<%= render "shared/error_messages", object: @error_object %>
+<h1><%= t(".title") %></h1>
+
+<%= render "form",
+    lesson: @lesson,
+    method: :post,
+    submit_text: t(".form.create_button"),
+    selected_word_ids: @selected_word_ids,
+    selected_test_ids: @selected_test_ids,
+    selected_paragraphs: @selected_paragraphs,
+    word_components: @selected_word_ids.map { |id| Component.new(word_id: id) },
+    test_components: @selected_test_ids.map { |id| Component.new(test_id: id) },
+    paragraph_components: @selected_paragraphs.map { |content| Component.new(content: content) } %>

@@ -81,7 +81,7 @@
     </div>
 
     <div class="action-buttons">
-      <%= link_to t(".add_lesson"), edit_admin_course_path(@course), class: "btn btn-primary" %>
+      <%= link_to t(".manage_lesson"), admin_course_lessons_path(@course), class: "btn btn-primary" %>
       <%= link_to t(".edit_course"), edit_admin_course_path(@course), class: "btn btn-outline-primary" %>
       <%= link_to t(".back_to_list"), admin_courses_path, class: "btn btn-outline-secondary" %>
     </div>

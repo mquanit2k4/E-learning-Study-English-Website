@@ -1,6 +1,7 @@
 en:
   admin:
     questions:
+      at_least_one_correct_answer_required: "At least one correct answer is required for the question."
       question_not_found: "Question not found."
       test_not_found: "Test not found."
       create:

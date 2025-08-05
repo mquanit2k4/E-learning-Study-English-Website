@@ -19,11 +19,9 @@ class Admin::QuestionsController < AdminController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      flash[:success] = t(".success")
-      redirect_to admin_test_path(@test)
+      handle_success(t(".success"))
     else
-      flash[:error] = t(".failure")
-      render :new, status: :unprocessable_entity
+      handle_failure(:new)
     end
   end
 
@@ -36,11 +34,9 @@ class Admin::QuestionsController < AdminController
   # PATCH/PUT /admin/tests/:test_id/questions/:id
   def update
     if @question.update(question_params)
-      flash[:success] = t(".success")
-      redirect_to admin_test_path(@test)
+      handle_success(t(".success"))
     else
-      flash[:error] = t(".failure")
-      render :edit, status: :unprocessable_entity
+      handle_failure(:edit)
     end
   end
 
@@ -55,6 +51,19 @@ class Admin::QuestionsController < AdminController
   end
 
   private
+
+  def handle_success message
+    flash[:success] = message
+    redirect_to admin_test_path(@test)
+  end
+
+  def handle_failure action
+    flash.now[:error] = t(".failure")
+    if @question.errors.any?
+      flash.now[:error] += " #{@question.errors.full_messages.join('. ')}"
+    end
+    render action, status: :unprocessable_entity
+  end
 
   def set_test
     @test = Test.find_by(id: params[:test_id])
