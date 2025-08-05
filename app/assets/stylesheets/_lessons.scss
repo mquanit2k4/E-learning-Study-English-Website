@@ -1,0 +1,143 @@
+.btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #138496;
+  color: white;
+  text-decoration: none;
+}
+
+.content-heading {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.generic-content {
+  color: #555;
+  line-height: 1.6;
+}
+
+.image-caption,
+.video-caption {
+  color: #6c757d;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.image-content {
+  text-align: center;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.lesson-details-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.lesson-header {
+  align-items: flex-start;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.lesson-image {
+  border-radius: 5px;
+  height: auto;
+  max-width: 100%;
+}
+
+.lesson-info {
+  flex: 1;
+}
+
+.lesson-section {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.lesson-status {
+  text-align: right;
+}
+
+.lesson-title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.lesson-video {
+  border-radius: 5px;
+  height: auto;
+  max-width: 100%;
+}
+
+.no-content-message {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+}
+
+.paragraph-content {
+  color: #555;
+  line-height: 1.6;
+}
+
+.status-completed {
+  color: #28a745;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.status-pending {
+  color: #6c757d;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.test-history-link {
+  color: #17a2b8;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.test-history-link:hover {
+  text-decoration: underline;
+}
+
+.video-content {
+  text-align: center;
+}

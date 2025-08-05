@@ -1,0 +1,17 @@
+en:
+  user:
+    lessons:
+      show:
+        error:
+          course_not_found: "Course not found."
+          lesson_not_found: "Lesson not found."
+        lesson: "Lesson: %{number}: %{title}"
+        description: "Description:"
+        actions:
+          study: "Study"
+          test: "Test"
+          test_history: "See test history"
+        status:
+          completed: "Completed"
+          incomplete: "Incomplete"
+        no_content: "No content available for this lesson yet."

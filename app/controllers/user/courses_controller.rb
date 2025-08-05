@@ -20,23 +20,24 @@ class User::CoursesController < ApplicationController
   def ensure_user_role
     return if current_user&.user?
 
-    redirect_to root_path, flash: {alert: t(".error.not_authenticated")}
+    flash[:danger] = t(".error.not_authenticated")
+    redirect_to root_path
   end
 
   def set_course
     @course = Course.find_by(id: params[:id])
     return if @course
 
-    redirect_to root_path, status: :see_other,
-      flash: {alert: t(".error.course_not_found")}
+    flash[:danger] = t(".error.course_not_found")
+    redirect_to root_path
   end
 
   def set_user_course
     @user_course = current_user.user_courses.find_by(course_id: @course.id)
     return unless @user_course.nil?
 
-    redirect_to root_path, status: :see_other,
-flash: {alert: t(".error.not_enrolled")}
+    flash[:danger] = t(".error.not_enrolled")
+    redirect_to root_path
   end
 
   def set_lessons
