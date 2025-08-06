@@ -2,6 +2,7 @@ vi:
   users:
     create:
       created: "Người dùng đã được tạo thành công."
+    please_log_in: "Vui lòng đăng nhập để truy cập trang này."
     load_user:
       not_found: "Không tìm thấy người dùng"
     new:

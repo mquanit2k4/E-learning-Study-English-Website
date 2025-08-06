@@ -1,0 +1,26 @@
+<div class="course-card-grid">
+  <div class="course-thumbnail">
+  <% if course.thumbnail.attached? %>
+    <%= image_tag course.thumbnail.variant(resize_to_limit: Course::IMAGE_DISPLAY_SIZE), class: "course-img", alt: course.title %>
+  <% else %>
+    <%= image_tag "https://picsum.photos/seed/#{course.id}/300/200", class: "course-img", alt: t("user.courses.index.thumbnail") %>
+  <% end %>
+  </div>
+
+  <div class="course-body">
+    <h5 class="course-title"><%= course.title %></h5>
+    <p class="course-description"><%= course.description %></p>
+    <p class="text-muted">
+      <%= t("user.courses.index.learner_count", count: course.users.size) %>
+    </p>
+
+  <div class="course-footer-buttons text-center">
+    <% if current_user&.enrolled_courses&.include?(course) %>
+      <%= button_tag t("user.courses.index.enrolled"), class: "btn btn-secondary btn-sm enroll-button", disabled: true %>
+    <% else %>
+      <%= button_to t("user.courses.index.enroll"), user_courses_path(course_id: course.id), method: :post, class: "btn btn-primary btn-sm enroll-button" %>
+    <% end %>
+    <%= link_to t("user.courses.index.view_details"), user_course_path(course), class: "btn btn-outline-secondary ms-2 view-details-button" %>
+  </div>
+  </div>
+</div>

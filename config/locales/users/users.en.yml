@@ -2,6 +2,7 @@ en:
   users:
     create:
       created: "User was successfully created."
+    please_log_in: "Please log in to access this page."
     load_user:
       not_found: "User not found"
     new:

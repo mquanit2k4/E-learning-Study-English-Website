@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     log_in user
     remember user
     flash[:success] = t(".login_success")
-    redirect_to user, status: :see_other
+    redirect_back_or root_path
   end
 
   private
@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
       remember_session user
     end
     flash[:success] = t(".login_success")
-    redirect_to root_url, status: :see_other
+    redirect_back_or root_path
   end
 
   def handle_failed_login

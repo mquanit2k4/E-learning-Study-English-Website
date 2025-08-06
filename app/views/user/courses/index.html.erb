@@ -1,0 +1,28 @@
+<% provide :title, t(".title") %>
+<h1><%= t(".title") %></h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <aside class="col-md-4">
+      <!-- Sidebar content here -->
+    </aside>
+
+    <div class="col-md-8">
+      <div class="row">
+        <% @courses.each do |course| %>
+          <div class="col-lg-4 col-md-6 col-sm-12 course-column">
+            <div class="course-wrapper">
+              <%= render "user/courses/course_card", course: course %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <%== pagy_bootstrap_nav(@pagy) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
