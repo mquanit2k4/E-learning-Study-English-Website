@@ -1,0 +1,21 @@
+en:
+  user:
+    courses:
+      show:
+        error:
+          not_authenticated: "You need to log in with user account to view this course."
+          not_enrolled: "You are not enrolled in this course."
+          course_not_found: "Course not found."
+        course: "Course: %{course}"
+        start_date: "Start Date: %{date}"
+        end_date: "End Date: %{date}"
+        completed_count: "Completed: %{count}"
+        total_count: "Total: %{count}"
+        lessons_count: "%{count} Lessons"
+        learners_count: "%{count} Learners"
+        duration: "%{count} Days"
+        lessons_in_course: "Lessons in Course"
+        lessons:
+          lesson: "Lesson %{number}: %{title}"
+          completed: "Completed"
+          incomplete: "Incomplete"

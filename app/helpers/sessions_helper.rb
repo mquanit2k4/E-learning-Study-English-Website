@@ -34,6 +34,10 @@ module SessionsHelper
     session[:session_token] = user.remember_token
   end
 
+  def is_user?
+    current_user&.user?
+  end
+
   private
 
   def find_user_from_session

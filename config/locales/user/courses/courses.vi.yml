@@ -1,0 +1,21 @@
+vi:
+  user:
+    courses:
+      show:
+        error:
+          not_authenticated: "Bạn cần đăng nhập với tài khoản người dùng để xem khóa học này."
+          not_enrolled: "Bạn chưa đăng ký khóa học này."
+          course_not_found: "Không tìm thấy khóa học."
+        course: "Khóa học: %{course}"
+        start_date: "Ngày bắt đầu: %{date}"
+        end_date: "Ngày kết thúc: %{date}"
+        completed_count: "Đã hoàn thành: %{count}"
+        total_count: "Tổng số: %{count}"
+        lessons_count: "%{count} Bài học"
+        learners_count: "%{count} Người học"
+        duration: "%{count} Ngày"
+        lessons_in_course: "Bài học trong khóa học"
+        lessons:
+          lesson: "Bài học %{number}: %{title}"
+          completed: "Đã hoàn thành"
+          incomplete: "Chưa hoàn thành"

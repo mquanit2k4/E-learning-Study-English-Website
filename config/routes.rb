@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "static_pages#home"
-
-    get "static_pages/home"
-    get "static_pages/help"
-    get "static_pages/contact"
-
-    get "demo_partials/new"
-    get "demo_partials/edit"
-
+    get "guest/homepage"
     get "signup", to: "users#new"
     post "signup", to: "users#create"
 
@@ -18,10 +10,12 @@ Rails.application.routes.draw do
 
     get "/auth/:provider/callback", to: "sessions#omniauth"
     get "/auth/failure", to: redirect("/")
-
-    resources :users, only: %i(show)
-    resources :microposts, only: %i(index)
-    resources :products
+    namespace :user do
+      resources :courses, only: %i(index show) do
+        resources :lessons, only: %i(show)
+      end
+    end
+    root to: "guest#homepage"
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
