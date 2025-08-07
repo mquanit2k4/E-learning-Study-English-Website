@@ -3,7 +3,31 @@ en:
     application:
       title: "Ruby on Rails Tutorial Sample App"
 
+    footer:
+      brand_name: "SJP E-learning"
+      brand_description: "A high-quality online learning platform for everyone."
+
+      courses_title: "Courses"
+      course_toeic: "Toeic"
+      course_ielts: "IELTS"
+      course_business_english: "Business English"
+      course_toefl: "TOEFL"
+
+      support_title: "Support"
+      support_help_center: "Help Center"
+      support_contact: "Contact"
+      support_faq: "FAQ"
+      support_terms: "Terms"
+
+      contact_title: "Contact"
+      contact_address: "E6 Pham Hung, Cau Giay, Ha Noi"
+      contact_phone: "(028) 1234 5678"
+      contact_email: "info@sjp.edu.vn"
+
+      copyright: "2025 SJP E-learning System. All rights reserved."
+
   navbar:
+    brand_name: "SJP E-learning"
     home: "Home"
     help: "Help"
     contact: "Contact"
@@ -21,11 +45,30 @@ en:
     en: "English"
     vi: "Vietnamese"
 
-  home:
-    welcome: "Welcome to the Sample App"
-    description_html: >
-      This is the home page for the %{link} sample application.
-    sign_up: "Sign up now!"
+  guest:
+    homepage:
+      welcome: "Welcome to the SJP E-learning System"
+      hero_title: "SJP E-learning System"
+      hero_subtitle: "An online learning platform for everyone"
+      hero_cta: "Join us now"
+
+      features_title: "Key Features"
+      feature_lecture_title: "Lectures"
+      feature_lecture_desc: "Learn with content curated by top experts"
+      feature_freedom_title: "Freedom to Learn"
+      feature_freedom_desc: "Learn at your own pace and choose the content that suits you"
+      feature_resources_title: "Resource Materials"
+      feature_resources_desc: "Access a rich and diverse library of materials"
+
+      stat_students: "Students"
+      stat_courses: "Courses"
+      stat_lectures: "Lectures"
+      stat_satisfaction: "Satisfaction"
+      students_amount: "1000+"
+      courses_amount: "200+"
+      lectures_amount: "3000+"
+      satisfaction_rate: "95%"
+      join_cta: "Join us today!"
 
   help:
     title: "Help"

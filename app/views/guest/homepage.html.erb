@@ -1,3 +1,79 @@
-<div class="container">
-  <h1><%= t("home.welcome") %></h1>
-</div>
+<% provide :title, t(".welcome") %>
+
+<section id="home" class="hero-section">
+  <div class="overlay"></div>
+  <div class="container hero-content">
+    <h1><%= t(".hero_title") %></h1>
+    <p><%= t(".hero_subtitle") %></p>
+    <% if logged_in? %>
+      <%= link_to t(".hero_cta"), user_courses_path, class: "btn btn-primary btn-lg" %>
+    <% else %>
+      <%= link_to t(".hero_cta"), signup_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
+  </div>
+</section>
+
+<section id="features" class="features-section">
+  <div class="container">
+    <h2 class="section-title"><%= t(".features_title") %></h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fa fa-play-circle-o"></i>
+          <h3><%= t(".feature_lecture_title") %></h3>
+          <p><%= t(".feature_lecture_desc") %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fa fa-users"></i>
+          <h3><%= t(".feature_freedom_title") %></h3>
+          <p><%= t(".feature_freedom_desc") %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fa fa-certificate"></i>
+          <h3><%= t(".feature_resources_title") %></h3>
+          <p><%= t(".feature_resources_desc") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-box">
+          <i class="fa fa-users"></i>
+          <h3><%= t(".students_amount") %></h3>
+          <p><%= t(".stat_students") %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-box">
+          <i class="fa fa-book"></i>
+          <h3><%= t(".courses_amount") %></h3>
+          <p><%= t(".stat_courses") %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-box">
+          <i class="fa fa-graduation-cap"></i>
+          <h3><%= t(".lectures_amount") %></h3>
+          <p><%= t(".stat_lectures") %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-box">
+           <i class="fa fa-star"></i>
+          <h3><%= t(".satisfaction_rate") %></h3>
+          <p><%= t(".stat_satisfaction") %></p>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center"><%= t(".join_cta") %></h1>
+  </div>
+</section>
