@@ -12,7 +12,7 @@ vi:
       show:
         error:
           not_authenticated: "Bạn cần đăng nhập với tài khoản người dùng để xem khóa học này."
-          not_enrolled: "Bạn chưa đăng ký khóa học này."
+          not_enrolled: "Bạn chưa tham gia khóa học này."
           course_not_found: "Không tìm thấy khóa học."
         course: "Khóa học: %{course}"
         start_date: "Ngày bắt đầu: %{date}"

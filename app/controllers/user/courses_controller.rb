@@ -1,6 +1,7 @@
-class User::CoursesController < ApplicationController
-  before_action :logged_in_user, only: %i(show create)
-  before_action :ensure_user_role, :set_course,
+class User::CoursesController < User::ApplicationController
+  skip_before_action :logged_in_user, only: %i(index)
+  skip_before_action :ensure_user_role, only: %i(index)
+  before_action :set_course,
                 :set_user_course, :set_lessons,
                 :set_progress_data, only: %i(show)
 
@@ -17,13 +18,6 @@ class User::CoursesController < ApplicationController
 
   private
 
-  def ensure_user_role
-    return if current_user&.user?
-
-    flash[:danger] = t(".error.not_authenticated")
-    redirect_to root_path
-  end
-
   def set_course
     @course = Course.find_by(id: params[:id])
     return if @course
@@ -34,7 +28,8 @@ class User::CoursesController < ApplicationController
 
   def set_user_course
     @user_course = current_user.user_courses.find_by(course_id: @course.id)
-    return unless @user_course.nil?
+
+    return if @user_course.present? && !@user_course.pending?
 
     flash[:danger] = t(".error.not_enrolled")
     redirect_to root_path
