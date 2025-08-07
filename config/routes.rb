@@ -11,11 +11,13 @@ Rails.application.routes.draw do
     get "/auth/:provider/callback", to: "sessions#omniauth"
     get "/auth/failure", to: redirect("/")
     namespace :user do
-      resources :courses, only: %i(index show) do
+      resources :courses, only: %i(index show create) do
         resources :lessons, only: %i(show)
       end
     end
     root to: "guest#homepage"
+
+    resources :users, only: %i(show)
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

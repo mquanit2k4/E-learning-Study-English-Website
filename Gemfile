@@ -52,6 +52,7 @@ gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
 
 gem "faker"
+gem "pagy"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -78,6 +79,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "byebug"
 end
 
 group :test do

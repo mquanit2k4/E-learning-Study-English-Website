@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+  include Pagy::Backend
+
   before_action :set_locale
 
   def set_locale
@@ -20,9 +22,13 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
+  private
+
   def logged_in_user
     return if logged_in?
 
-    redirect_to login_path, alert: t(".error.not_authenticated")
+    store_location
+    flash[:danger] = t(".please_log_in")
+    redirect_to login_url
   end
 end

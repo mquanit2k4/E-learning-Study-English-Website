@@ -1,6 +1,15 @@
 en:
   user:
     courses:
+      index:
+        title: "Courses list"
+        thumbnail: "Course Thumbnail"
+        enroll: "Enroll"
+        enrolled: "Enrolled"
+        learner_count: "%{count} enrolled"
+        view_details: "View Details"
+      create:
+        please_log_in: "Please log in to access this page."
       show:
         error:
           not_authenticated: "You need to log in with user account to view this course."

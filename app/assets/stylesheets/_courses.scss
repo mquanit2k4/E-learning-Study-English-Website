@@ -6,7 +6,7 @@
 }
 
 .badge-status {
-  
+
   background-color: #6c757d;
   border-radius: 15px;
   color: #fff;
@@ -120,4 +120,74 @@
 
 .text-white {
   color: #fff !important;
+}
+
+.course-wrapper {
+  display: flex;
+  height: 400px;
+}
+
+.course-column {
+  margin-bottom: 20px;
+}
+
+.course-card-grid {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.course-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.course-thumbnail {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.course-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 15px;
+
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-description {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.course-footer {
+  margin-top: auto;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.course-footer-buttons {
+  text-align: center;
+
+  .btn {
+    display: inline-block;
+    margin: 0 5px;
+  }
 }

@@ -1,10 +1,19 @@
 class User::CoursesController < ApplicationController
-  before_action :logged_in_user, :ensure_user_role, :set_course,
+  before_action :logged_in_user, only: %i(show create)
+  before_action :ensure_user_role, :set_course,
                 :set_user_course, :set_lessons,
                 :set_progress_data, only: %i(show)
 
-  # GET /courses/:id
+  # GET user/courses
+  def index
+    @pagy, @courses = pagy Course.recent.with_users, limit: Settings.page_6
+  end
+
+  # GET user/courses/:id
   def show; end
+
+  # POST user/courses
+  def create; end
 
   private
 
