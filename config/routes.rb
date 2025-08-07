@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     get "/auth/failure", to: redirect("/")
     namespace :user do
       resources :courses, only: %i(index show create) do
-        resources :lessons, only: %i(show)
+        resources :lessons, only: %i(show) do
+          member do
+            get :study
+            get :test
+            get :test_history
+          end
+        end
       end
     end
     root to: "guest#homepage"

@@ -8,8 +8,7 @@ vi:
         enrolled: "Đã đăng ký"
         learner_count: "%{count} người học đã đăng ký"
         view_details: "Xem chi tiết"
-      create:
-        please_log_in: "Vui lòng đăng nhập để truy cập trang này."
+      please_log_in: "Vui lòng đăng nhập để truy cập trang này."
       show:
         error:
           not_authenticated: "Bạn cần đăng nhập với tài khoản người dùng để xem khóa học này."

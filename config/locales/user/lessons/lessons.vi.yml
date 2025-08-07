@@ -1,0 +1,17 @@
+vi:
+  user:
+    lessons:
+      show:
+        error:
+          course_not_found: "Không tìm thấy khóa học."
+          lesson_not_found: "Không tìm thấy bài học."
+        lesson: "Bài học %{number}: %{title}"
+        description: "Mô tả:"
+        actions:
+          study: "Học"
+          test: "Làm bài kiểm tra"
+          test_history: "Xem lịch sử kiểm tra"
+        status:
+          completed: "Đã hoàn thành"
+          incomplete: "Chưa hoàn thành"
+        no_content: "Chưa có nội dung cho bài học này."

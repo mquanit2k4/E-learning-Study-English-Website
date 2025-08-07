@@ -1,0 +1,48 @@
+<div class="lesson-details-container">
+  <!-- Lesson Header Section -->
+  <div class="lesson-header">
+    <div class="lesson-info">
+      <h1 class="lesson-title"><%= t(".lesson", number: @lesson.position, title: @lesson.title) %></h1>
+      <div class="lesson-actions">
+        <%= link_to t(".actions.study"), study_user_course_lesson_path(@course, @lesson), 
+            class: "btn btn-primary study-btn" %>
+        <%= link_to t(".actions.test"), test_user_course_lesson_path(@course, @lesson), 
+            class: "btn btn-primary test-btn" %>
+      </div>
+    </div>
+    <div class="lesson-status">
+      <% if @user_lesson&.completed? %>
+        <span class="status-completed"><%= t(".status.completed") %></span>
+      <% else %>
+        <span class="status-pending"><%= t(".status.incomplete") %></span>
+      <% end %>
+      <% if @number_of_attempts.positive? %>
+        <%= link_to t(".actions.test_history"), test_history_user_course_lesson_path(@course, @lesson), 
+            class: "test-history-link" %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Lesson Description -->
+  <% if @lesson.description.present? %>
+    <div class="lesson-section description-section">
+      <h3><%= t(".description") %></h3>
+      <p><%= simple_format(@lesson.description) %></p>
+    </div>
+  <% end %>
+
+  <!-- Lesson Components/Content -->
+  <% if @paragraphs.any? %>
+    <% @paragraphs.each do |paragraph| %>
+      <div class="lesson-section content-section">
+        <div class="paragraph-content">
+          <%= simple_format(paragraph.content) %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="lesson-section content-section">
+      <p class="no-content-message"><%= t(".no_content") %></p>
+    </div>
+  <% end %>
+</div>
