@@ -7,4 +7,6 @@ class Component < ApplicationRecord
   has_many :test_results, dependent: :destroy
 
   enum component_type: {word: 0, test: 1, paragraph: 2}
+
+  scope :sorted_by_index, ->{order(:index_in_lesson)}
 end

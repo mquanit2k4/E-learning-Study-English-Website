@@ -1,6 +1,7 @@
-class User::LessonsController < ApplicationController
-  before_action :set_course
-  before_action :set_lesson
+class User::LessonsController < User::ApplicationController
+  before_action :set_course, only: %i(show)
+  before_action :set_lesson, only: %i(show study)
+  before_action :check_word_empty, only: %i(study)
 
   # GET user/courses/:course_id/lessons/:id
   def show
@@ -11,6 +12,13 @@ class User::LessonsController < ApplicationController
     @lesson_test = Component.find_by(lesson: @lesson, component_type: "test")
     @number_of_attempts = TestResult.where(user: current_user,
                                            component: @lesson_test).count
+  end
+
+  # GET user/courses/:course_id/lessons/:id/study
+  def study
+    @course = @lesson.course
+    set_word_components
+    set_current_word_data
   end
 
   private
@@ -24,10 +32,39 @@ class User::LessonsController < ApplicationController
   end
 
   def set_lesson
-    @lesson = @course.lessons.find_by(id: params[:id])
+    @lesson = Lesson.find_by(id: params[:id])
     return if @lesson
 
     flash[:danger] = t(".error.lesson_not_found")
     redirect_to user_course_path(@course)
+  end
+
+  def check_word_empty
+    return if @lesson.components.word.exists?
+
+    flash[:danger] = t(".error.no_words_found")
+    redirect_to user_course_lesson_path(@lesson.course, @lesson)
+  end
+
+  def set_word_components
+    @word_components = @lesson.components.includes(:word)
+                              .word
+                              .sorted_by_index
+  end
+
+  def set_current_word_data
+    @total_words = @word_components.length
+    @current_index = word_index_param.clamp(0, @total_words - 1)
+    @current_component = @word_components[@current_index]
+    @current_word = @current_component&.word
+    @current_position = @current_index + 1
+    @has_previous = @current_index.positive?
+    @has_next = @current_index < (@total_words - 1)
+    @previous_index = @has_previous ? @current_index : nil
+    @next_index = @has_next ? @current_index + 2 : nil
+  end
+
+  def word_index_param
+    params[:word_index].to_i - 1
   end
 end

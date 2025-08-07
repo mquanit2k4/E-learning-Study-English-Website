@@ -1,6 +1,7 @@
 en:
   user:
     lessons:
+      please_log_in: "Please log in with your user account to access this page."
       show:
         error:
           course_not_found: "Course not found."
@@ -15,3 +16,10 @@ en:
           completed: "Completed"
           incomplete: "Incomplete"
         no_content: "No content available for this lesson yet."
+      study:
+        error:
+          no_words_found: "No vocabulary found for this lesson."
+          no_meaning_found: "No meaning available for this word."
+        heading: "Word list for Lesson %{number}: %{title}"
+        actions:
+          back_to_lesson: "Back to Lesson"

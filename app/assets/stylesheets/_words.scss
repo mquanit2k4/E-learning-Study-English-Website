@@ -1,0 +1,182 @@
+.action-buttons {
+  text-align: center;
+}
+
+.arrow-button {
+  align-items: center;
+  background-color: rgb(204, 235, 255);
+  border-radius: 50%;
+  color: #666;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 80px;
+}
+
+.arrow-button.active:hover {
+  background-color: rgb(94, 176, 230);
+  color: #333;
+  transform: scale(1.1);
+}
+
+.arrow-button.disabled {
+  background-color: #f5f5f5;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn {
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.divider {
+  background-color: #888;
+  height: 2px;
+  margin: 0 25px;
+}
+
+.flashcard {
+  background-color: rgb(163, 204, 232);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: hidden;
+  width: 500px;
+}
+
+.flashcard-content {
+  background-color: rgb(163, 204, 232);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.flashcard-header {
+  align-items: center;
+  background-color: rgb(163, 204, 232);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 25px 15px;
+}
+
+.flashcard-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.navigation-hint {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.navigation-hint p {
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.nav-arrow {
+  flex-shrink: 0;
+}
+
+.progress-counter {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.study-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.study-header h1 {
+  color: #666;
+}
+
+.word-content {
+  color: #000;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.word-meaning {
+  color: #000;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.word-section,
+.meaning-section {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 30px;
+}
+
+.word-study-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.word-type {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .arrow-button {
+    height: 60px;
+    width: 60px;
+  }
+
+  .flashcard {
+    max-width: 400px;
+    order: 1;
+    width: 90%;
+  }
+
+  .flashcard-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-arrow {
+    order: 2;
+  }
+
+  .word-content {
+    font-size: 36px;
+  }
+
+  .word-meaning {
+    font-size: 28px;
+  }
+}

@@ -1,6 +1,7 @@
 vi:
   user:
     lessons:
+      please_log_in: "Vui lòng đăng nhập với tư cách người dùng để truy cập trang này."
       show:
         error:
           course_not_found: "Không tìm thấy khóa học."
@@ -15,3 +16,10 @@ vi:
           completed: "Đã hoàn thành"
           incomplete: "Chưa hoàn thành"
         no_content: "Chưa có nội dung cho bài học này."
+      study:
+        error:
+          no_words_found: "Không tìm thấy từ vựng cho bài học này."
+          no_meaning_found: "Không có nghĩa cho từ này."
+        heading: "Danh sách từ vựng cho Bài học %{number}: %{title}"
+        actions:
+          back_to_lesson: "Quay lại Bài học"
