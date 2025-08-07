@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h4><%= t(".brand_name") %></h4>
+        <p><%= t(".brand_description") %></p>
+      </div>
+      <div class="col-md-3">
+        <h4><%= t(".courses_title") %></h4>
+        <ul>
+          <li><%= link_to t(".course_toeic"), "#" %></li>
+          <li><%= link_to t(".course_ielts"), "#" %></li>
+          <li><%= link_to t(".course_business_english"), "#" %></li>
+          <li><%= link_to t(".course_toefl"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4><%= t(".support_title") %></h4>
+        <ul>
+          <li><%= link_to t(".support_help_center"), "#" %></li>
+          <li><%= link_to t(".support_contact"), "#" %></li>
+          <li><%= link_to t(".support_faq"), "#" %></li>
+          <li><%= link_to t(".support_terms"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4><%= t(".contact_title") %></h4>
+        <p><i class="fa fa-map-marker"></i> <%= t(".contact_address") %></p>
+        <p><i class="fa fa-phone"></i> <%= t(".contact_phone") %></p>
+        <p><i class="fa fa-envelope"></i> <%= t(".contact_email") %></p>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>&copy; <%= t(".copyright") %></p>
+    </div>
+  </div>
+</footer>

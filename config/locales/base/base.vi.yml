@@ -3,7 +3,31 @@ vi:
     application:
       title: "Ứng dụng mẫu Ruby on Rails"
 
+    footer:
+      brand_name: "SJP E-learning"
+      brand_description: "Nền tảng học trực tuyến chất lượng cao dành cho mọi người."
+
+      courses_title: "Khóa học"
+      course_toeic: "Toeic"
+      course_ielts: "IELTS"
+      course_business_english: "Business English"
+      course_toefl: "TOEFL"
+
+      support_title: "Hỗ trợ"
+      support_help_center: "Trung tâm trợ giúp"
+      support_contact: "Liên hệ"
+      support_faq: "FAQ"
+      support_terms: "Điều khoản"
+
+      contact_title: "Liên hệ"
+      contact_address: "E6 Phạm Hùng, Cầu Giấy, Hà Nội"
+      contact_phone: "(028) 1234 5678"
+      contact_email: "info@sjp.edu.vn"
+
+      copyright: "2025 SJP E-learning System. All rights reserved."
+
   navbar:
+    brand_name: "SJP E-learning"
     home: "Trang chủ"
     help: "Trợ giúp"
     contact: "Liên hệ"
@@ -21,11 +45,30 @@ vi:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"
 
-  home:
-    welcome: "Chào mừng đến với Sample App"
-    description_html: >
-      Đây là trang chủ của ứng dụng mẫu %{link}.
-    sign_up: "Đăng ký ngay!"
+  guest:
+    homepage:
+      welcome: "Chào mừng đến với Hệ thống E-learning SJP"
+      hero_title: "SJP E-learning System"
+      hero_subtitle: "Nền tảng học trực tuyến dành cho mọi người"
+      hero_cta: "Tham gia ngay"
+
+      features_title: "Tính năng chính"
+      feature_lecture_title: "Bài giảng"
+      feature_lecture_desc: "Học với nội dung được biên soạn bởi các chuyên gia hàng đầu"
+      feature_freedom_title: "Học tự do"
+      feature_freedom_desc: "Học theo tiến độ của riêng bạn và lựa chọn nội dung phù hợp"
+      feature_resources_title: "Nguồn tài liệu"
+      feature_resources_desc: "Truy cập vào kho tài liệu phong phú và đa dạng"
+
+      stat_students: "Học viên"
+      stat_courses: "Khóa học"
+      stat_lectures: "Bài giảng"
+      stat_satisfaction: "Hài lòng"
+      students_amount: "1000+"
+      courses_amount: "200+"
+      lectures_amount: "3000+"
+      satisfaction_rate: "95%"
+      join_cta: "Tham gia cùng chúng tôi ngay hôm nay!"
 
   help:
     title: "Trợ giúp"

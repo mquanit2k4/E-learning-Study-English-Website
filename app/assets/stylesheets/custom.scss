@@ -1,15 +1,12 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'courses';
+@import 'homepage';
 @import 'lessons';
 
 /* universal */
 body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
+  padding-top: 100px;
 }
 
 textarea {
@@ -22,6 +19,10 @@ h1 {
   letter-spacing: -1px;
   margin-bottom: 3px;
   margin-top: 0px;
+}
+
+hr {
+  border-color: #34495e;
 }
 
 /* common */
@@ -83,6 +84,36 @@ h1 {
 #session_remember_me {
   margin-left: 0;
   width: auto;
+}
+
+/* footer */
+ .footer {
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 30px;
+  padding: 40px 0 20px 0;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  color: white;
 }
 
 /* sidebar */

@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", "#", id: "logo" %>
+    <%= link_to t("navbar.brand_name"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("navbar.home"), "#" %></li>
+        <li><%= link_to t("navbar.home"), root_path %></li>
         <li><%= link_to t("navbar.courses"), user_courses_path %></li>
         <% if logged_in? %>
           <% if is_user? %>
