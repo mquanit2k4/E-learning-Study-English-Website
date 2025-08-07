@@ -6,9 +6,24 @@ en:
         thumbnail: "Course Thumbnail"
         enroll: "Enroll"
         enrolled: "Enrolled"
+        pending: "Pending"
+        start: "Start"
+        continue: "Continue"
+        completed: "Completed"
+        rejected: "Rejected"
         learner_count: "%{count} enrolled"
         view_details: "View Details"
       please_log_in: "Please log in to access this page."
+      enroll:
+        please_log_in: "Please log in to access this page."
+        course_not_found: "Course not found."
+        already_enrolled: "You are already enrolled in this course."
+        success_enrolled: "Successfully enrolled in the course. Pending approval."
+        failed_enroll: "Failed to enroll in the course."
+      start:
+        success: "Course started successfully."
+        failed: "Failed to start the course."
+        invalid_status: "Invalid course status for starting."
       show:
         error:
           not_authenticated: "You need to log in with user account to view this course."

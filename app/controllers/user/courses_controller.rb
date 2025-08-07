@@ -1,22 +1,57 @@
 class User::CoursesController < User::ApplicationController
   skip_before_action :logged_in_user, only: %i(index)
   skip_before_action :ensure_user_role, only: %i(index)
-  before_action :set_course,
-                :set_user_course, :set_lessons,
-                :set_progress_data, only: %i(show)
+  before_action :set_course, only: %i(show enroll start)
+  before_action :check_enrolled, only: %i(enroll)
+  before_action :set_user_course, only: %i(show start)
+  before_action :set_lessons, :set_progress_data, only: %i(show)
+  before_action :ensure_enrolment_approved, only: %i(start)
 
   # GET user/courses
   def index
-    @pagy, @courses = pagy Course.recent.with_users, limit: Settings.page_6
+    @pagy, @courses = pagy Course.recent.with_users.with_attached_thumbnail,
+                           limit: Settings.page_6
+    @user_courses_map = current_user&.user_courses&.index_by(&:course_id)
   end
 
   # GET user/courses/:id
   def show; end
 
-  # POST user/courses
-  def create; end
+  # POST user/courses/:id/enroll
+  def enroll
+    @user_course = UserCourse.new(
+      user_id: current_user.id,
+      course_id: @course.id,
+      enrolment_status: 0
+    )
+
+    if @user_course.save
+      flash[:success] = t(".success_enrolled")
+    else
+      flash[:danger] = t(".failed_enroll")
+    end
+    redirect_to user_courses_path, status: :see_other
+  end
+
+  # PATCH user/courses/:id/start
+  def start
+    if update_course_progress
+      flash[:success] = t(".success")
+      redirect_to user_course_path(@course)
+    else
+      flash[:danger] = t(".failed")
+      redirect_to user_courses_path, status: :see_other
+    end
+  end
 
   private
+
+  def check_enrolled
+    return unless current_user.user_courses.exists?(course_id: @course.id)
+
+    flash[:warning] = t(".already_enrolled")
+    redirect_to user_courses_path, status: :see_other
+  end
 
   def set_course
     @course = Course.find_by(id: params[:id])
@@ -61,5 +96,23 @@ class User::CoursesController < User::ApplicationController
     return 0 if @total_lessons.zero?
 
     ((@completed_count.to_f / @total_lessons) * 100).round
+  end
+
+  def ensure_enrolment_approved
+    return if @user_course&.approved?
+
+    flash[:danger] = t(".invalid_status")
+    redirect_to user_courses_path, status: :see_other
+  end
+
+  def update_course_progress
+    start_date = Date.current
+    end_date   = start_date + @course.duration.days
+
+    @user_course.update(
+      enrolment_status: :in_progress,
+      start_date:,
+      end_date:
+    )
   end
 end

@@ -6,9 +6,24 @@ vi:
         thumbnail: "Hình thu nhỏ khóa học"
         enroll: "Đăng ký"
         enrolled: "Đã đăng ký"
+        pending: "Chờ duyệt"
+        start: "Bắt đầu"
+        continue: "Tiếp tục"
+        completed: "Đã hoàn thành"
+        rejected: "Bị từ chối"
         learner_count: "%{count} người học đã đăng ký"
         view_details: "Xem chi tiết"
       please_log_in: "Vui lòng đăng nhập để truy cập trang này."
+      enroll:
+        please_log_in: "Vui lòng đăng nhập để truy cập trang này."
+        course_not_found: "Không tìm thấy khóa học."
+        already_enrolled: "Bạn đã đăng ký khóa học này."
+        success_enrolled: "Đăng ký khóa học thành công. Đang chờ duyệt."
+        failed_enroll: "Đăng ký khóa học không thành công."
+      start:
+        success: "Khóa học đã bắt đầu thành công."
+        failed: "Khóa học không thể bắt đầu."
+        invalid_status: "Trạng thái khóa học không hợp lệ để bắt đầu."
       show:
         error:
           not_authenticated: "Bạn cần đăng nhập với tài khoản người dùng để xem khóa học này."
