@@ -1,0 +1,12 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <div class="form-card">
+      <div class="form-card-body">
+        <h1 class="form-title"><%= t(".title") %></h1>
+        <% submit_text = t(".submit.create") %>
+        <% show_cancel = true %>
+        <%= render "form", submit_text: submit_text, show_cancel: show_cancel %>
+      </div>
+    </div>
+  </div>
+</div>

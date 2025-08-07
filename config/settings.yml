@@ -11,6 +11,13 @@ user:
   max_email_length: 255
   hundred_years: 100
 
+word:
+  pagy_items: 10
+  filter_days:
+    last_7_days: 7
+    last_30_days: 30
+  date_format: "%d/%m/%Y"
+
 development:
   <<: *defaults
 

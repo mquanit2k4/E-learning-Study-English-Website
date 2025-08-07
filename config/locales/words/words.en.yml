@@ -1,0 +1,61 @@
+en:
+  helpers:
+    label:
+      word:
+        content: "Content"
+        word_type: "Word type"
+        meaning: "Meaning"
+    submit:
+      create: "Create word"
+      update: "Update word"
+  admin:
+    words:
+      create:
+        success: "Word was successfully created."
+      update:
+        success: "Word was successfully updated."
+      destroy:
+        success: "Word '%{word_content}' was successfully deleted."
+        failure: "Word '%{word_content}' could not be deleted."
+      form:
+        placeholder:
+          content: "Enter word..."
+          meaning: "Enter meaning..."
+          word_type: "Select word type"
+        cancel: "Cancel"
+      errors:
+        title:
+          one: "1 error prevented this word from being saved:"
+          other: "%{count} errors prevented this word from being saved:"
+      edit:
+        title: "Edit word"
+        submit:
+          update: "Update word"
+        cancel: "Cancel"
+      new:
+        title: "Create new word"
+        submit:
+          create: "Create word"
+        cancel: "Cancel"
+      index:
+        title: "Vocabulary List"
+        search_placeholder: "Search..."
+        new_word_button: "Create new word +"
+        actions:
+          confirm: "Are you sure you want to delete this word?"
+        empty_message: "No words have been created yet. Start by creating your first word!"
+        filters:
+          all: "All Time"
+          today: "Today"
+          last_7_days: "Last 7 Days"
+          last_30_days: "Last 30 Days"
+      word:
+        table_headers:
+          word: "Word"
+          meaning: "Short Description"
+          created_at: "Created At"
+          actions: "Actions"
+        actions:
+          show: "View"
+          edit: "Edit"
+          delete: "Delete"

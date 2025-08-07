@@ -41,6 +41,7 @@ vi:
     language: "Ngôn ngữ"
     courses: "Khóa học"
     words: "Từ vựng"
+    manage_word: "Quản lý từ vựng"
   languages:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"
@@ -84,12 +85,6 @@ vi:
     greeting_html: "Xin chào %{name}"
 
   errors:
-    template:
-      header:
-        one: "Có 1 lỗi khiến %{model} không thể được lưu"
-        other: "Có %{count} lỗi khiến %{model} không thể được lưu"
-
-  errors:
     messages:
       blank: "không được để trống"
       invalid: "không hợp lệ"
@@ -101,7 +96,6 @@ vi:
         one: "quá ngắn (tối thiểu là 1 ký tự)"
         other: "quá ngắn (tối thiểu là %{count} ký tự)"
       confirmation: "không khớp với %{attribute}"
-
     template:
       header:
         one: "Biểu mẫu chứa 1 lỗi"
@@ -110,3 +104,9 @@ vi:
   time:
     formats:
       long: "%d/%m/%Y %H:%M"
+
+  flash:
+    please_log_in: "Vui lòng đăng nhập để tiếp tục."
+    not_authorized: "Bạn không có quyền thực hiện hành động này."
+    already_logged_in: "Bạn đã đăng nhập rồi."
+    cannot_edit_another_user: "Bạn không thể chỉnh sửa hồ sơ của người dùng khác."

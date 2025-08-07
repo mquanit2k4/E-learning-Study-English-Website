@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: %i(show)
+  before_action :logged_out_user, only: %i(new create)
+  before_action :logged_in_user, except: %i(new create)
+  before_action :load_user, except: %i(new create)
 
   # GET /users/:id
   def show; end

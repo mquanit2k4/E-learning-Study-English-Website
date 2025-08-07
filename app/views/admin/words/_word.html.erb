@@ -1,0 +1,15 @@
+<tr>
+  <td data-label="<%= t(".table_headers.word") %>"><%= word.content %></td>
+  <td data-label="<%= t(".table_headers.meaning") %>"><%= word.meaning %></td>
+  <td data-label="<%= t(".table_headers.created_at") %>">
+    <%= word.created_at.strftime(Settings.word.date_format) %>
+  </td>
+  <td data-label="<%= t(".table_headers.actions") %>" class="cell-actions">
+    <%= link_to t(".actions.edit"), edit_admin_word_path(word), class: "action-link" %>
+    <%= button_to t(".actions.delete"), admin_word_path(word),
+                  method: :delete,
+                  class: "action-button-delete",
+                  form_class: "action-form",
+                  data: { turbo_confirm: t(".actions.confirm") } %>
+  </td>
+</tr>

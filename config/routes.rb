@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     get "/auth/:provider/callback", to: "sessions#omniauth"
     get "/auth/failure", to: redirect("/")
+
     namespace :user do
       resources :courses, only: %i(index show create) do
         resources :lessons, only: %i(show) do
@@ -23,10 +24,8 @@ Rails.application.routes.draw do
     end
     root to: "guest#homepage"
 
-    resources :users, only: %i(show)
+    namespace :admin do
+      resources :words
+    end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

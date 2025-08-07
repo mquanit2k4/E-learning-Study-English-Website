@@ -47,6 +47,35 @@ module SessionsHelper
     session.delete(:forwarding_url)
   end
 
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t("flash.please_log_in")
+    redirect_to login_url
+  end
+
+  def admin_user
+    return if current_user.admin?
+
+    flash[:danger] = t("flash.not_authorized")
+    redirect_to root_path
+  end
+
+  def logged_out_user
+    return unless logged_in?
+
+    flash[:info] = t("flash.already_logged_in")
+    redirect_to root_url
+  end
+
+  def correct_user
+    return if current_user?(@user)
+
+    flash[:danger] = t("flash.cannot_edit_another_user")
+    redirect_to root_url
+  end
+
   private
 
   def find_user_from_session

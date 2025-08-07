@@ -1,0 +1,45 @@
+<%= form_with(model: [:admin, @word], local: true, class: "word-form") do |form| %>
+  <% if @word.errors.any? %>
+    <div class="form-errors">
+      <h4 class="form-errors-title">
+        <%= t("words.errors.title", count: @word.errors.count) %>
+      </h4>
+      <ul class="form-errors-list">
+        <% @word.errors.full_messages.each do |message| %>
+          <li class="form-errors-item"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :content, t("helpers.label.word.content"), class: "form-label" %>
+    <%= form.text_area :content,
+          placeholder: t(".placeholder.content"),
+          class: "form-input",
+          rows: Admin::WordsHelper::WORD_FORM_ROW %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :word_type, t("helpers.label.word.word_type"), class: "form-label" %>
+    <%= form.select :word_type,
+          Word.word_types.map { |key, value| [key.humanize, key] },
+          { prompt: t(".placeholder.word_type") },
+          { class: "form-input" } %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :meaning, t("helpers.label.word.meaning"), class: "form-label" %>
+    <%= form.text_area :meaning,
+          placeholder: t(".placeholder.meaning"),
+          class: "form-input",
+          rows: Admin::WordsHelper::WORD_FORM_ROW %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit submit_text, class: "button button-primary" %>
+    <% if show_cancel %>
+      <%= link_to t(".cancel"), admin_words_path, class: "button button-danger" %>
+    <% end %>
+  </div>
+<% end %>
