@@ -1,0 +1,198 @@
+.test-result-container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.test-result-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.test-header {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  .lesson-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+.status-section {
+  margin-bottom: 10px;
+
+  .status-badge {
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+
+    &.status-passed {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+
+    &.status-failed {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+    }
+  }
+
+  .result-score {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.questions-section {
+  .question-block {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 35px;
+    padding: 20px;
+
+    .question-title {
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.answers-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.answer-option {
+  align-items: center;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  padding: 12px 15px;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &.selected {
+    background-color: #f8f9ff;
+    border-color: #007bff;
+  }
+
+  &.correct {
+    background-color: #f8fff9;
+    border-color: #28a745;
+  }
+
+  &.selected.correct {
+    background-color: #f8fff9;
+    border-color: #28a745;
+  }
+
+  .answer-text {
+    color: #333;
+    flex: 1;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+
+  .result-icon {
+    font-size: 18px;
+    margin-left: auto;
+
+    .glyphicon-ok {
+      color: #28a745 !important;
+    }
+
+    .glyphicon-remove {
+      color: #dc3545 !important;
+    }
+  }
+}
+
+// Radio button styling
+.radio-indicator {
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 20px;
+  position: relative;
+  width: 20px;
+
+  &.filled::after {
+    background-color: #007bff;
+    border-radius: 50%;
+    content: '';
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+  }
+}
+
+// Checkbox styling
+.checkbox-indicator {
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 20px;
+  position: relative;
+  width: 20px;
+
+  &.checked {
+    background-color: #007bff;
+    border-color: #007bff;
+
+    &::after {
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      content: '';
+      height: 10px;
+      left: 6px;
+      position: absolute;
+      top: 2px;
+      transform: rotate(45deg);
+      width: 6px;
+    }
+  }
+}
+
+// Update indicators when answer is correct
+.answer-option.correct {
+  .radio-indicator,
+  .checkbox-indicator {
+    border-color: #28a745;
+  }
+
+  .radio-indicator.filled::after {
+    background-color: #28a745;
+  }
+
+  .checkbox-indicator.checked {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+}

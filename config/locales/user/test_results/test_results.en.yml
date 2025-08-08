@@ -1,0 +1,14 @@
+en:
+  user:
+    test_results:
+      show:
+        lesson_title: "Lesson: %{lesson}"
+        question_title: "Question %{index}"
+        status:
+          passed: "Passed"
+          failed: "Failed"
+        score: "Result: %{score}/%{total}"
+      error:
+        unauthorized_access: "You do not have permission to access this test result."
+        course_or_lesson_not_found: "Course or lesson not found."
+        test_result_not_found: "Test result not found."

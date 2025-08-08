@@ -1,0 +1,14 @@
+vi:
+  user:
+    test_results:
+      show:
+        lesson_title: "Bài học: %{lesson}"
+        question_title: "Câu hỏi %{index}"
+        status:
+          passed: "Đã vượt qua"
+          failed: "Không vượt qua"
+        score: "Kết quả: %{score}/%{total}"
+      error:
+        unauthorized_access: "Bạn không có quyền truy cập vào kết quả kiểm tra này."
+        course_or_lesson_not_found: "Không tìm thấy khóa học hoặc bài học."
+        test_result_not_found: "Không tìm thấy kết quả kiểm tra."
