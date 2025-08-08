@@ -1,0 +1,16 @@
+<tr>
+  <td><strong><%= word.content %></strong></td>
+  <td><%= word.meaning %></td>
+  <td>
+    <span class="label <%= badge_class(word.word_type.to_sym) %> word-badge">
+      <%= t("user.words.table.word_types.#{word.word_type}", default: t("user.words.table.word_types.other")) %>
+    </span>
+  </td>
+  <td>
+    <% if learned_ids.include?(word.id) %>
+      <span class="label label-success"><%= t("user.words.table.status_learned") %></span>
+    <% else %>
+      <span class="label label-default"><%= t("user.words.table.status_not_learned") %></span>
+    <% end %>
+  </td>
+</tr>

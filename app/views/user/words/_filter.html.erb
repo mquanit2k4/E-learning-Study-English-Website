@@ -1,0 +1,55 @@
+<h4 class="filter-header">
+  <i class="fa fa-filter"></i> <%= t(".filter_header") %>
+</h4>
+
+<%= form_tag request.path, method: :get, class: "filter-form", id: "filterForm" do %>
+  <!-- Search Filter -->
+  <div class="filter-section">
+    <%= label_tag :search, t(".search_label"), class: "control-label" %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search],
+          placeholder: t(".search_placeholder"),
+          class: "form-control",
+          id: "searchInput" %>
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
+
+    <%= select_tag :search_field,
+      options_for_select(search_field_options, params[:search_field]&.to_sym),
+      class: "form-control mt-2" %>
+  </div>
+
+  <!-- Status Filter -->
+  <div class="filter-section">
+    <%= label_tag :status, t(".status"), class: "control-label" %>
+    <%= select_tag :status,
+      options_for_select(status_options, params[:status]&.to_sym),
+      class: "form-control" %>
+  </div>
+
+  <!-- Word Type Filter -->
+  <div class="filter-section">
+    <%= label_tag :word_type, t(".word_type_label"), class: "control-label" %>
+    <%= select_tag :word_type,
+      options_for_select(word_type_options, params[:word_type]&.to_sym),
+      class: "form-control" %>
+  </div>
+
+  <!-- Sort Options -->
+  <div class="filter-section">
+    <%= label_tag :sort, t(".sort_label"), class: "control-label" %>
+    <%= select_tag :sort,
+      options_for_select(sort_options, params[:sort]&.to_sym),
+      class: "form-control" %>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="form-group">
+    <%= submit_tag t(".apply"), class: "btn btn-primary btn-block" %>
+    <%= link_to t(".reset"), request.path, class: "btn btn-default btn-block" %>
+  </div>
+<% end %>
