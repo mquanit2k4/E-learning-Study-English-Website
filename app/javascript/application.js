@@ -6,6 +6,7 @@ import "custom/dropdown";
 import "custom/modal";
 import "custom/admin_user_courses";
 import { createIcons, icons } from "lucide";
+import "./custom/take_test";
 document.addEventListener("DOMContentLoaded", () => {
   createIcons({ icons });
 });

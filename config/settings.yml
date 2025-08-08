@@ -34,6 +34,7 @@ question:
   
 test_pass_percentage: 80.0
 
+max_percentage: 100
 test:
   page_number: 10
 
@@ -41,6 +42,11 @@ user_courses:
   timestamp_format: "%d/%m/%Y %H:%M"
   date_format: "%d/%m/%Y"
 
+commit:
+  save_draft: "save_draft"
+  true_value: "true"
+
+test_expired_threshold: 1 # minutes
 development:
   <<: *defaults
 

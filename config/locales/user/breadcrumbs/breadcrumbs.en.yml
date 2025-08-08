@@ -1,0 +1,8 @@
+en:
+  user:
+    breadcrumbs:
+      home: "Home"
+      courses: "Course List"
+      course: "%{course}"
+      lesson: "%{lesson}"
+      test: "%{lesson} - Test"
