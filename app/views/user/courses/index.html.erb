@@ -12,7 +12,7 @@
         <% @courses.each do |course| %>
           <div class="col-lg-4 col-md-6 col-sm-12 course-column">
             <div class="course-wrapper">
-              <%= render "user/courses/course_card", course: course %>
+              <%= render "user/courses/course_card", course: course, user_courses_map: @user_courses_map %>
             </div>
           </div>
         <% end %>

@@ -1,26 +1,63 @@
 <div class="course-card-grid">
   <div class="course-thumbnail">
-  <% if course.thumbnail.attached? %>
-    <%= image_tag course.thumbnail.variant(resize_to_limit: Course::IMAGE_DISPLAY_SIZE), class: "course-img", alt: course.title %>
-  <% else %>
-    <%= image_tag "https://picsum.photos/seed/#{course.id}/300/200", class: "course-img", alt: t("user.courses.index.thumbnail") %>
-  <% end %>
+    <% if course.thumbnail.attached? %>
+      <%= image_tag course.thumbnail.variant(resize_to_limit: Course::IMAGE_DISPLAY_SIZE), class: "course-img", alt: course.title %>
+    <% else %>
+      <%= image_tag "https://picsum.photos/seed/#{course.id}/300/200", class: "course-img", alt: t("user.courses.index.thumbnail") %>
+    <% end %>
   </div>
 
   <div class="course-body">
     <h5 class="course-title"><%= course.title %></h5>
     <p class="course-description"><%= course.description %></p>
     <p class="text-muted">
-      <%= t("user.courses.index.learner_count", count: course.users.size) %>
+      <%= t("user.courses.index.learner_count", count: course.approved_user_courses.size) %>
     </p>
 
   <div class="course-footer-buttons text-center">
-    <% if current_user&.enrolled_courses&.include?(course) %>
-      <%= button_tag t("user.courses.index.enrolled"), class: "btn btn-secondary btn-sm enroll-button", disabled: true %>
-    <% else %>
-      <%= button_to t("user.courses.index.enroll"), user_courses_path(course_id: course.id), method: :post, class: "btn btn-primary btn-sm enroll-button" %>
+  <% user_course = user_courses_map&.fetch(course.id, nil) %>
+
+  <% if user_course.present? %>
+    <% status = user_course.enrolment_status.to_sym %>
+
+    <% case status
+       when :pending %>
+      <%= button_tag t("user.courses.index.pending"),
+                     class: "btn btn-warning btn-sm enroll-button",
+                     disabled: true %>
+
+    <% when :approved %>
+      <%= button_to t("user.courses.index.start"),
+              start_user_course_path(course),
+              method: :patch,
+              class: "btn btn-success btn-sm" %>
+
+    <% when :in_progress %>
+      <%= link_to t("user.courses.index.continue"),
+                  user_course_path(course),
+                  class: "btn btn-info btn-sm enroll-button" %>
+
+    <% when :completed %>
+      <%= button_tag t("user.courses.index.completed"),
+                     class: "btn btn-success btn-sm enroll-button",
+                     disabled: true %>
+      <%= link_to t("user.courses.index.view_details"),
+                  user_course_path(course),
+                  class: "btn btn-outline-secondary ms-2 view-details-button" %>
+
+    <% when :rejected %>
+      <%= button_tag t("user.courses.index.rejected"),
+                     class: "btn btn-danger btn-sm enroll-button",
+                     disabled: true %>
     <% end %>
-    <%= link_to t("user.courses.index.view_details"), user_course_path(course), class: "btn btn-outline-secondary ms-2 view-details-button" %>
-  </div>
+
+  <% else %>
+    <%= button_to t("user.courses.index.enroll"),
+                  enroll_user_course_path(course),
+                  method: :post,
+                  class: "btn btn-primary btn-sm enroll-button" %>
+  <% end %>
+</div>
+
   </div>
 </div>
