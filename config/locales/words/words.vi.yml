@@ -41,6 +41,11 @@ vi:
         title: "Danh sách từ vựng"
         search_placeholder: "Tìm kiếm..."
         new_word_button: "Tạo từ mới +"
+        table_headers:
+          word: "Từ vựng"
+          meaning: "Mô tả ngắn"
+          created_at: "Ngày tạo"
+          actions: "Hành động"
         actions:
           confirm: "Bạn có chắc chắn muốn xóa từ này?"
         empty_message: "Chưa có từ nào được tạo. Hãy bắt đầu tạo từ đầu tiên của bạn!"
