@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 import "custom/menu";
+import "custom/dropdown";
 import { createIcons, icons } from "lucide";
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,0 +1,72 @@
+vi:
+  admin:
+    courses:
+      create_success: "Khóa học đã được tạo thành công!"
+      update_success: "Khóa học đã được cập nhật thành công!"
+      new:
+        create_course: "Tạo Khóa Học Mới"
+      index:
+        course_list: "Danh Sách Khóa Học"
+        create_course: "Tạo Khóa Học Mới"
+        search_placeholder: "Tìm kiếm theo tên khóa học"
+        clear_search: "Xóa Tìm Kiếm"
+        course_name: "Tên Khóa Học"
+        short_description: "Mô Tả Ngắn"
+        created_date: "Ngày Tạo"
+        actions: "Hành Động"
+      course_row:
+        action_view: "Xem"
+        action_edit: "Sửa"
+        action_delete: "Xóa"
+        confirm_delete: "Bạn có chắc chắn muốn xóa khóa học này không?"
+      form:
+        enter_course_name: "Nhập tên khóa học"
+        enter_course_description: "Nhập mô tả khóa học"
+        course_name: "Tên Khóa Học"
+        course_description: "Mô Tả"
+        lesson: "Bài Học"
+        admin: "Quản Trị Viên"
+        add_lesson: "Thêm Bài Học +"
+        select_admin: "Chọn Quản Trị Viên"
+        course_duration: "Thời Gian Khóa Học"
+        enter_duration_days: "Nhập thời gian bằng ngày"
+        30_days: "30 ngày"
+        60_days: "60 ngày"
+        90_days: "90 ngày"
+      edit:
+        update_course: "Cập Nhật Khóa Học"
+        save_change: "Lưu Thay Đổi"
+      show:
+        add_lesson: "Thêm Bài Học +"
+        edit_course: "Sửa Khóa Học"
+        back_to_list: "Quay Lại Danh Sách Khóa Học"
+        course_details: "Chi Tiết Khóa Học"
+        course_name: "Tên Khóa Học"
+        course_description: "Mô Tả"
+        course_duration: "Thời Gian Khóa Học"
+        day: " ngày"
+        created_at: "Ngày Tạo"
+        updated_at: "Ngày Cập Nhật Cuối"
+        created_by: "Được Tạo Bởi"
+        lessons: "Bài Học"
+        no_lessons: "Không có bài học nào cho khóa học này."
+        back_to_list: "Quay Lại Danh Sách Khóa Học"
+        course_admin: "Quản Trị Viên Khóa Học"
+        enrolled_students: "Học Viên Đã Đăng Ký"
+        course_lessons: "Bài Học Của Khóa Học"
+        no_lessons_available: "Không có bài học nào cho khóa học này."
+        students:
+          one: "%{count} học viên"
+          other: "%{count} học viên"
+        lessons:
+          one: "%{count} bài học"
+          other: "%{count} bài học"
+      destroy:
+        delete_success: "Khóa học đã được xóa thành công!"
+        delete_failed: "Xóa khóa học không thành công!"
+      authenticate_admin:
+        not_authorized: "Bạn không có quyền truy cập vào trang này!"
+      set_course:
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
+      assign_admin_managers:
+        assign_admin_failed: "Không thể gán quản trị viên với ID %{admin_id} cho khóa học %{course_id}."

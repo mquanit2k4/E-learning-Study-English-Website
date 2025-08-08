@@ -31,6 +31,9 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :words
+      resources :courses
+      resources :lessons
+      resources :tests
     end
   end
 end

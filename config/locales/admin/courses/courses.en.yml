@@ -1,0 +1,72 @@
+en:
+  admin:
+    courses:
+      create_success: "Course created successfully!"
+      update_success: "Course updated successfully!"
+      new:
+        create_course: "Create Course"
+      index:
+        course_list: "Course List"
+        create_course: "Create Course"
+        search_placeholder: "Search by course name"
+        clear_search: "Clear Search"
+        course_name: "Course Name"
+        short_description: "Short Description"
+        created_date: "Created Date"
+        actions: "Actions"
+      course_row:
+        action_view: "View"
+        action_edit: "Edit"
+        action_delete: "Delete"
+        confirm_delete: "Are you sure you want to delete this course?"
+      form:
+        enter_course_name: "Enter course name"
+        enter_course_description: "Enter course description"
+        course_name: "Course Name"
+        course_description: "Description"
+        lesson: "Lessons"
+        admin: "Admins"
+        add_lesson: "Add Lesson +"
+        select_admin: "Select admins"
+        course_duration: "Course Duration"
+        enter_duration_days: "Enter duration in days"
+        30_days: "30 days"
+        60_days: "60 days"
+        90_days: "90 days"
+      edit:
+        update_course: "Update Course"
+        save_change: "Save Changes"
+      show:
+        add_lesson: "Add Lesson +"
+        edit_course: "Edit Course"
+        back_to_list: "Back to Course List"
+        course_details: "Course Details"
+        course_name: "Course Name"
+        course_description: "Description"
+        course_duration: "Course Duration"
+        day: " days"
+        created_at: "Created At"
+        updated_at: "Last Updated"
+        created_by: "Created By"
+        lessons: "Lessons"
+        no_lessons: "No lessons available for this course."
+        back_to_list: "Back to Course List"
+        course_admin: "Course Admins"
+        enrolled_students: "Enrolled Students"
+        course_lessons: "Course Lessons"
+        no_lessons_available: "No lessons available for this course."
+        students:
+          one: "%{count} student"
+          other: "%{count} students"
+        lessons:
+          one: "%{count} lesson"
+          other: "%{count} lessons"
+      destroy:
+        delete_success: "Course deleted successfully!"
+        delete_failed: "Failed to delete course. Please try again."
+      authenticate_admin:
+        not_authorized: "You are not authorized to access this page!"
+      set_course:
+        course_not_found: "Course not found. Please check the ID and try again."
+      assign_admin_managers:
+        assign_admin_failed: "Failed to assign admin with ID %{admin_id} to course %{course_id}."
