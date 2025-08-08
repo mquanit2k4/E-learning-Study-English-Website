@@ -1,6 +1,9 @@
 class User::LessonsController < User::ApplicationController
-  before_action :set_course, only: %i(show)
-  before_action :set_lesson, only: %i(show study)
+  before_action :set_course, only: %i(show test_history)
+  before_action :set_lesson,
+                only: %i(show study test_history)
+  before_action :set_user_lesson, only: %i(test_history)
+  before_action :set_test_component, only: %i(test_history)
   before_action :check_word_empty, only: %i(study)
 
   # GET user/courses/:course_id/lessons/:id
@@ -19,6 +22,26 @@ class User::LessonsController < User::ApplicationController
     @course = @lesson.course
     set_word_components
     set_current_word_data
+  end
+
+  # GET user/courses/:course_id/lessons/:id/test_history
+  def test_history
+    # Get all test attempts for this user and test component
+    @test_results = TestResult.where(
+      user: current_user,
+      component: @test_component
+    ).order(:attempt_number)
+
+    # Get total questions count
+    @total_questions = @test_component.test.questions.count
+
+    # Get the status from user_lesson (pass/fail)
+    @lesson_status = @user_lesson&.status
+
+    # Get the best grade from user_lesson
+    @best_grade = @user_lesson&.grade || 0
+
+    @number_of_attempts = @test_results.count
   end
 
   private
@@ -52,6 +75,15 @@ class User::LessonsController < User::ApplicationController
                               .sorted_by_index
   end
 
+  def set_test_component
+    @test_component = @lesson.components.test.first
+    return if @test_component
+
+    flash[:danger] = t(".error.test_not_found")
+    redirect_to user_course_lesson_path(@course, @lesson)
+    nil
+  end
+
   def set_current_word_data
     @total_words = @word_components.length
     @current_index = word_index_param.clamp(0, @total_words - 1)
@@ -66,5 +98,9 @@ class User::LessonsController < User::ApplicationController
 
   def word_index_param
     params[:word_index].to_i - 1
+  end
+
+  def set_user_lesson
+    @user_lesson = UserLesson.find_by(user: current_user, lesson: @lesson)
   end
 end

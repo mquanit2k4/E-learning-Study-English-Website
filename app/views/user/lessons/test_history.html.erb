@@ -1,0 +1,75 @@
+<% content_for :title, t(".title", number: @lesson.position, title: @lesson.title) %>
+<div class="container">
+  <!-- Header section -->
+  <div class="row test-history-header">
+    <!-- Left side: Lesson title -->
+    <div class="col-md-8">
+      <h1 class="test-history-lesson-title">
+        <%= t(".test", lesson_title: @lesson.title, number: @lesson.position) %>
+      </h1>
+    </div>
+
+    <!-- Right side: Status and best result -->
+    <div class="col-md-4 text-right">
+      <div class="test-history-status-container">
+        <% if @number_of_attempts.zero? %>
+          <span class="test-status-not-completed"><%= t(".not_started") %></span>
+        <% elsif @lesson_status == "completed" %>
+          <span class="test-status-passed"><%= t(".passed") %></span>
+        <% else %>
+          <span class="test-status-failed"><%= t(".failed") %></span>
+        <% end %>
+      </div>
+      <div class="test-history-best-result">
+        <span class="h3">
+          <strong><%= t(".best_result", score: @best_grade, total: @total_questions) %></strong>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Test attempts list -->
+  <div class="attempts-list">
+    <% if @test_results.any? %>
+      <% @test_results.each do |test_result| %>
+        <div class="panel attempt-card <%= test_result.passed? ? "attempt-passed" : "attempt-failed" %>">
+          <div class="panel-body">
+            <div class="row">
+              <!-- Left: Attempt number -->
+              <div class="col-md-3">
+                <h4 class="attempt-number"><strong><%= t(".attempt_number", attempt: test_result.attempt_number) %></strong></h4>
+              </div>
+              
+              <!-- Center: Result and Date -->
+              <div class="col-md-6 text-center">
+                <h4 class="attempt-result"><strong><%= t(".result", score: test_result.mark, total: @total_questions) %></strong></h4>
+                <p class="text-muted attempt-date">
+                  <%= t(".date", date: test_result.created_at.strftime(Settings.course.date_format)) %>
+                </p>
+              </div>
+              
+              <!-- Right: See Details button -->
+              <div class="col-md-3 text-right">
+                <%= link_to t(".see_details"), "#", class: "btn btn-link btn-lg see-details-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="panel panel-default">
+        <div class="panel-body text-center no-attempts-panel">
+          <h4 class="text-muted"><%= t(".no_attempts") %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Back button -->
+  <div class="test-history-back-container">
+    <%= link_to t(".back_to_lesson"), user_course_lesson_path(@course, @lesson), 
+        class: "btn btn-primary btn-lg" %>
+  </div>
+</div>

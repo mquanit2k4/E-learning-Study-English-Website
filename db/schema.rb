@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_08_13_010726) do
+ActiveRecord::Schema[7.0].define(version: 2025_08_13_071737) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -108,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_13_010726) do
     t.bigint "user_id", null: false
     t.bigint "component_id", null: false
     t.integer "attempt_number", null: false
-    t.json "user_answers", null: false
+    t.json "user_answers"
     t.integer "mark", null: false
     t.integer "status", null: false
     t.datetime "created_at", null: false
