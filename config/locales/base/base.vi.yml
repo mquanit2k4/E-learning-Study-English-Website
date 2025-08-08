@@ -42,6 +42,9 @@ vi:
     courses: "Khóa học"
     words: "Từ vựng"
     manage_word: "Quản lý từ vựng"
+    manage_course: "Quản lý khóa học"
+    manage_test: "Quản lý bài kiểm tra"
+    manage_user: "Quản lý người dùng"
   languages:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"

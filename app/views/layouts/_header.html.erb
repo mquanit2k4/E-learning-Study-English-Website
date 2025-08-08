@@ -3,14 +3,17 @@
     <%= link_to t("navbar.brand_name"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("navbar.home"), root_path %></li>
-        <li><%= link_to t("navbar.courses"), user_courses_path %></li>
         <% if logged_in? %>
           <% if current_user.admin? %>
             <!-- Admin Navigation -->
+            <li><%= link_to t("navbar.manage_course"), admin_courses_path %></li>
+            <li><%= link_to t("navbar.manage_test"), "#" %></li>
             <li><%= link_to t("navbar.manage_word"), admin_words_path %></li>
+            <li><%= link_to t("navbar.manage_user"), "#" %></li>
           <% else %>
             <!-- Normal User Navigation -->
+            <li><%= link_to t("navbar.home"), "#" %></li>
+            <li><%= link_to t("navbar.courses"), "#" %></li>
             <li><%= link_to t("navbar.words"), "#" %></li>
             <li><%= link_to t("navbar.profile"), "#" %></li>
           <% end %>

@@ -1,0 +1,4 @@
+<% provide :title, t(".update_course") %>
+<% provide :button_text, t(".save_change") %>
+<h1><%= t(".update_course") %></h1>
+<%= render "form", course: @course, admin_users: @admin_users %>

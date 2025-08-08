@@ -42,6 +42,9 @@ en:
     courses: "Courses"
     words: "Words"
     manage_word: "Manage Words"
+    manage_course: "Manage Courses"
+    manage_test: "Manage Tests"
+    manage_user: "Manage Users"
   languages:
     en: "English"
     vi: "Vietnamese"

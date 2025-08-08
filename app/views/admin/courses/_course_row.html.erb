@@ -1,0 +1,15 @@
+<tr>
+  <td class="course-name"><%= course.title %></td>
+  <td class="course-description"><%= course.description.truncate(50) %></td>
+  <td class="course-date"><%= course.created_at.strftime(Settings.course.date_format) %></td>
+  <td class="course-actions">
+    <%= link_to t(".action_view"), admin_course_path(course), class: "btn btn-sm btn-outline-primary" %>
+    <%= link_to t(".action_edit"), edit_admin_course_path(course), class: "btn btn-sm btn-outline-secondary" %>
+    <%= link_to t(".action_delete"), admin_course_path(course),
+                class: "btn btn-sm btn-outline-danger",
+                data: {
+                  "turbo-method": :delete,
+                  "turbo-confirm": t(".confirm_delete")
+                } %>
+  </td>
+</tr>

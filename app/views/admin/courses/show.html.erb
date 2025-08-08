@@ -1,0 +1,81 @@
+<% provide :title, t(".course_details") %>
+<div class="admin-course-show">
+  <div class="form-container">
+    <div class="page-header">
+      <h1><%= t(".course_details") %></h1>
+    </div>
+
+    <div class="course-details-table">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="detail-label"><%= t(".course_name") %></td>
+            <td class="detail-value"><%= @course.title %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".course_description") %></td>
+            <td class="detail-value"><%= @course.description %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".course_duration") %></td>
+            <td class="detail-value"><%= @course.duration %><%= t(".day") %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".created_at") %></td>
+            <td class="detail-value"><%= @course.created_at.strftime(Settings.course.date_format) %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".updated_at") %></td>
+            <td class="detail-value"><%= @course.updated_at.strftime(Settings.course.date_format) %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".created_by") %></td>
+            <td class="detail-value"><%= @course.creator.name %></td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".course_admin") %></td>
+            <td class="detail-value">
+              <span class="count-badge"><%= @course.admins.count %> admin<%= @course.admins.count == 1 ? '' : 's' %></span>
+              <div class="admin-list">
+                <% @course.admins.each do |admin| %>
+                  <span class="admin-item"><%= admin.name %> (ID: <%= admin.id %>)</span>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".enrolled_students") %></td>
+            <td class="detail-value">
+              <span class="count-badge">
+                <%= t(".students", count: @course.users.count) %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-label"><%= t(".course_lessons") %></td>
+            <td class="detail-value">
+              <span class="count-badge">
+                <%= t(".lessons", count: @course.lessons.count) %>
+              </span>
+              <% if @course.lessons.any? %>
+                <div>
+                  <% @course.lessons.each_with_index do |lesson, index| %>
+                    <span class="lesson-item"><%= index + 1 %>. <%= lesson.title %></span>
+                  <% end %>
+                </div>
+              <% else %>
+                <p><%= t(".no_lessons_available") %></p>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="action-buttons">
+      <%= link_to t(".add_lesson"), edit_admin_course_path(@course), class: "btn btn-primary" %>
+      <%= link_to t(".edit_course"), edit_admin_course_path(@course), class: "btn btn-outline-primary" %>
+      <%= link_to t(".back_to_list"), admin_courses_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+</div>
