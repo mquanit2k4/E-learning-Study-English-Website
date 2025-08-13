@@ -28,6 +28,7 @@ Rails.application.routes.draw do
           end
         end
       end
+      resources :words, only: %i(index)
     end
 
     namespace :admin do

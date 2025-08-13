@@ -27,7 +27,7 @@ class Word < ApplicationRecord
     where("content LIKE ?", "%#{query}%")
   end)
 
-  scope :by_time, lambda {|filter_time|
+  scope :by_time, (lambda do |filter_time|
     case filter_time
     when "today"
       where("created_at >= ?", Time.zone.now.beginning_of_day)
@@ -37,5 +37,66 @@ class Word < ApplicationRecord
     else
       all
     end
-  }
+  end)
+
+  scope :search, (lambda do |q, field = nil|
+    return all if q.blank?
+
+    case field&.to_sym
+    when :content
+      where("content LIKE ?", "#{q}%")
+    when :meaning
+      where("meaning LIKE ?", "#{q}%")
+    else
+      where("content LIKE ? OR meaning LIKE ?", "#{q}%", "#{q}%")
+    end
+  end)
+
+  scope :filter_by_type, (lambda do |type|
+                            if type.present? && type.to_s != "all"
+                              where(word_type: type)
+                            end
+                          end)
+
+  scope :sorted, (lambda do |sort|
+    case sort
+    when :alphabetical_desc
+      order(content: :desc)
+    when :newest
+      order(created_at: :desc)
+    when :oldest
+      order(created_at: :asc)
+    when :word_type
+      order(:word_type, :content)
+    else
+      order(content: :asc)
+    end
+  end)
+
+  def self.learned_word_ids_for user
+    UserWord.joins(:component)
+            .where(user_id: user.id)
+            .pluck("components.word_id")
+            .uniq
+  end
+
+  scope :filter_by_status, (lambda do |status, user|
+    return all if status.blank?
+
+    learned_ids = learned_word_ids_for(user)
+
+    case status
+    when :learned
+      where(id: learned_ids)
+    when :not_learned
+      where.not(id: learned_ids)
+    else
+      all
+    end
+  end)
+
+  def learned_by? user
+    UserWord.joins(:component)
+            .exists?(user_id: user.id, components: {word_id: id})
+  end
 end
