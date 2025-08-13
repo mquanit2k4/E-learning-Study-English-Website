@@ -42,6 +42,17 @@ Rails.application.routes.draw do
           resources :answers, only: %i(new create destroy)
         end
       end
+      resources :user_courses, only: [:index] do
+        member do
+          patch :approve
+          patch :reject
+          get :reject_detail
+        end
+        collection do
+          post :approve_selected
+          post :reject_selected
+        end
+      end
     end
   end
 end

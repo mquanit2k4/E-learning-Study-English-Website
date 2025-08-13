@@ -1,0 +1,81 @@
+en:
+  admin:
+    user_courses:
+      index:
+        title: "Registration management"
+        filters:
+          course: "Course"
+          status: "Status"
+          registered_from: "Registered from"
+          expiration_date: "Expiration date"
+          filter_button: "Filter"
+          clear_button: "Clear"
+          placeholders:
+            date_format: "dd/mm/yyyy"
+            registered_from: "Select start date"
+            expiration_date: "Select end date"
+        status_options:
+          all: "All"
+          pending: "Pending"
+          approved: "Approved"
+          rejected: "Rejected"
+          in_progress: "In Progress"
+          completed: "Completed"
+        table:
+          headers:
+            name: "Name"
+            course: "Course"
+            status: "Status"
+            register_on: "Register on"
+            action: "Action"
+          actions:
+            approve: "Approve"
+            reject: "Reject"
+            view_reason: "View reason"
+            view_profile: "View profile"
+          confirmations:
+            approve: "Are you sure you want to approve this registration?"
+            reject: "Are you sure you want to reject this registration?"
+        bulk_actions:
+          approve_all: "Approve All"
+          reject_all: "Reject All"
+          confirmations:
+            approve_all: "Are you sure you want to approve all selected registrations?"
+            reject_all: "Are you sure you want to reject all selected registrations?"
+            no_selection: "Please select at least one registration to perform this action."
+      approve:
+        approve_success: "Registration approved successfully!"
+        approve_failed: "Failed to approve registration."
+        log_error: "Failed to approve user_course: %{error}"
+      reject:
+        reject_success: "Registration rejected successfully!"
+        reject_failed: "Failed to reject registration."
+        log_error: "Reject failed: %{error}"
+      approve_selected:
+        approve_selected_success: "Successfully approved %{count} registration(s)!"
+        no_selection: "Please select at least one registration to approve."
+        invalid_status_error: "Cannot approve registrations that are already approved or in progress."
+        no_approvable_courses: "No valid registrations found to approve (only pending or rejected registrations can be approved)."
+      reject_selected:
+        reject_selected_success: "Successfully rejected %{count} registration(s)!"
+        no_selection: "Please select at least one registration to reject."
+        invalid_status_for_reject_error: "Cannot reject registrations that are already rejected or in progress."
+        no_rejectable_courses: "No valid registrations found to reject (only pending or approved registrations can be rejected)."
+      reject_detail:
+        title: "Reject Detail"
+        labels:
+          student: "Student:"
+          course: "Course:"
+          reason: "Reason:"
+          rejected_at: "Rejected at:"
+        no_reason: "No reason provided"
+        close_button: "Close"
+  helpers:
+    admin:
+      user_courses:
+        status:
+          pending: "Pending"
+          approved: "Approved"
+          rejected: "Rejected"
+          in_progress: "In Progress"
+          completed: "Completed"

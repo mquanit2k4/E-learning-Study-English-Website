@@ -18,10 +18,10 @@ gem "puma", "~> 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwire"s SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire"s modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -42,6 +42,8 @@ gem "omniauth-rails_csrf_protection"
 
 gem "dotenv-rails"
 
+gem "ransack"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 
@@ -53,6 +55,9 @@ gem "bootstrap-sass", "3.4.1"
 
 gem "faker"
 gem "pagy"
+
+gem "jquery-rails"
+gem "responders", "~> 3.1"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

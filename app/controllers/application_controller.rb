@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include Pagy::Backend
 
-  include Pagy::Backend
-
   before_action :set_locale
 
   def set_locale
@@ -21,6 +19,12 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def respond_modal_with(*args, &)
+    options = args.extract_options!
+    options[:responder] = ModalResponder
+    respond_with(*args, options, &)
   end
 
   private

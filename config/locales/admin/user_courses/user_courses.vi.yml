@@ -1,0 +1,81 @@
+vi:
+  admin:
+    user_courses:
+      index:
+        title: "Quản lý đăng ký"
+        filters:
+          course: "Khóa học"
+          status: "Trạng thái"
+          registered_from: "Đăng ký từ"
+          expiration_date: "Ngày hết hạn"
+          filter_button: "Lọc"
+          clear_button: "Xóa"
+          placeholders:
+            date_format: "dd/mm/yyyy"
+            registered_from: "Chọn ngày bắt đầu"
+            expiration_date: "Chọn ngày kết thúc"
+        status_options:
+          all: "Tất cả"
+          pending: "Đang chờ"
+          approved: "Đã phê duyệt"
+          rejected: "Đã từ chối"
+          in_progress: "Đang tiến hành"
+          completed: "Đã hoàn thành"
+        table:
+          headers:
+            name: "Tên"
+            course: "Khóa học"
+            status: "Trạng thái"
+            register_on: "Ngày đăng ký"
+            action: "Hành động"
+          actions:
+            approve: "Phê duyệt"
+            reject: "Từ chối"
+            view_reason: "Xem lý do"
+            view_profile: "Xem hồ sơ"
+          confirmations:
+            approve: "Bạn có chắc chắn muốn phê duyệt đăng ký này không?"
+            reject: "Bạn có chắc chắn muốn từ chối đăng ký này không?"
+        bulk_actions:
+          approve_all: "Phê duyệt tất cả"
+          reject_all: "Từ chối tất cả"
+          confirmations:
+            approve_all: "Bạn có chắc chắn muốn phê duyệt tất cả đăng ký đã chọn không?"
+            reject_all: "Bạn có chắc chắn muốn từ chối tất cả đăng ký đã chọn không?"
+            no_selection: "Vui lòng chọn ít nhất một đăng ký để thực hiện hành động này."
+      approve:
+        approve_success: "Phê duyệt đăng ký thành công!"
+        approve_failed: "Phê duyệt đăng ký không thành công."
+        log_error: "Phê duyệt user_course thất bại: %{error}"
+      reject:
+        reject_success: "Từ chối đăng ký thành công!"
+        reject_failed: "Từ chối đăng ký không thành công."
+        log_error: "Từ chối thất bại: %{error}"
+      approve_selected:
+        approve_selected_success: "Đã phê duyệt thành công %{count} đăng ký!"
+        no_selection: "Vui lòng chọn ít nhất một đăng ký để phê duyệt."
+        invalid_status_error: "Không thể phê duyệt các đăng ký đã được phê duyệt hoặc đang trong tiến trình."
+        no_approvable_courses: "Không tìm thấy đăng ký hợp lệ để phê duyệt (chỉ có thể phê duyệt đăng ký đang chờ hoặc đã bị từ chối)."
+      reject_selected:
+        reject_selected_success: "Đã từ chối thành công %{count} đăng ký!"
+        no_selection: "Vui lòng chọn ít nhất một đăng ký để từ chối."
+        invalid_status_for_reject_error: "Không thể từ chối các đăng ký đã bị từ chối hoặc đang trong tiến trình."
+        no_rejectable_courses: "Không tìm thấy đăng ký hợp lệ để từ chối (chỉ có thể từ chối đăng ký đang chờ hoặc đã được phê duyệt)."
+      reject_detail:
+        title: "Chi tiết từ chối"
+        labels:
+          student: "Học viên:"
+          course: "Khóa học:"
+          reason: "Lý do:"
+          rejected_at: "Thời gian từ chối:"
+        no_reason: "Không có lý do được cung cấp"
+        close_button: "Đóng"
+  helpers:
+    admin:
+      user_courses:
+        status:
+          pending: "Đang chờ"
+          approved: "Đã phê duyệt"
+          rejected: "Đã từ chối"
+          in_progress: "Đang tiến hành"
+          completed: "Đã hoàn thành"
