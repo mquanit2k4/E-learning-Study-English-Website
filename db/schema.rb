@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_08_07_080633) do
+ActiveRecord::Schema[7.0].define(version: 2025_08_13_010726) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -45,7 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_07_080633) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_admin_course_managers_on_course_id"
-    t.index ["user_id", "course_id"], name: "index_admin_course_managers_on_user_id_and_course_id", unique: true
     t.index ["user_id"], name: "index_admin_course_managers_on_user_id"
   end
 
@@ -78,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_07_080633) do
     t.bigint "created_by_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "duration"
+    t.integer "duration", default: 0, null: false
     t.index ["created_by_id"], name: "index_courses_on_created_by_id"
     t.index ["title"], name: "index_courses_on_title", unique: true
   end
@@ -144,7 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_07_080633) do
     t.bigint "user_id", null: false
     t.bigint "lesson_id", null: false
     t.integer "status", default: 0, null: false
-    t.integer "grade", null: false
+    t.integer "grade", default: 0, null: false
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -169,10 +168,10 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_07_080633) do
     t.integer "gender"
     t.integer "role", default: 0, null: false
     t.string "remember_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
   end
