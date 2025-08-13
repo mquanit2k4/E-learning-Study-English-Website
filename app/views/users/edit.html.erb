@@ -1,5 +1,12 @@
 <% provide(:title, t(".title")) %>
 <% provide(:button_text, t(".save_changes")) %>
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @user.name, user_path(current_user) %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t(".title"), edit_user_path(current_user) %>
+<% end %>
 <h1><%= t(".title") %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">

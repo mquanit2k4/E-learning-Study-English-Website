@@ -1,4 +1,9 @@
 <% provide :title, @user.name %>
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @user.name, user_path(current_user) %>
+<% end %>
 
 <%= render "user_info", user: @user %>
 

@@ -1,6 +1,16 @@
 <!-- app/views/lessons/view_words.html.erb -->
 <% content_for :title, t(".heading", number: @lesson.position, title: @lesson.title) %>
-
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("user.courses.index.title"), user_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @course.title, user_course_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @lesson.title, user_course_lesson_path(@course, @lesson) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span class="current-page"><%= t(".heading", number: @lesson.position, title: @lesson.title) %></span>
+<% end %>
 <div class="word-study-container">
   <div class="study-header">
     <h1><%= t(".heading", number: @lesson.position, title: @lesson.title) %></h1>
@@ -10,10 +20,10 @@
     <!-- Navigation Arrow Left -->
     <div class="nav-arrow nav-left">
       <% if @has_previous %>
-        <%= link_to study_user_course_lesson_path(@lesson, word_index: @current_position - 1), 
+        <%= link_to study_user_course_lesson_path(@lesson, word_index: @current_position - 1),
                     class: "arrow-button active" do %>
           <i data-lucide="step-back"></i>
-        <% end %> 
+        <% end %>
       <% else %>
         <div class="arrow-button disabled">
           <i data-lucide="step-back"></i>
@@ -31,16 +41,16 @@
           <%= @current_position %>/<%= @total_words %>
         </div>
       </div>
-      
+
       <div class="flashcard-content">
         <div class="word-section">
           <div class="word-content">
             <%= @current_word&.content || t(".error.no_words_found") %>
           </div>
         </div>
-        
+
         <div class="divider"></div>
-        
+
         <div class="meaning-section">
           <div class="word-meaning">
             <%= @current_word&.meaning || t(".error.no_meaning_found") %>
@@ -52,7 +62,7 @@
     <!-- Navigation Arrow Right -->
     <div class="nav-arrow nav-right">
       <% if @has_next %>
-        <%= link_to study_user_course_lesson_path(@lesson, word_index: @current_position + 1), 
+        <%= link_to study_user_course_lesson_path(@lesson, word_index: @current_position + 1),
                     class: "arrow-button active" do %>
           <i data-lucide="step-forward"></i>
         <% end %>
@@ -65,7 +75,7 @@
   </div>
 
   <!-- Back to Lesson Button -->
-  <div class="action-buttons">  
+  <div class="action-buttons">
     <%= link_to t(".actions.back_to_lesson"), user_course_lesson_path(@course.id, @lesson.id), class: "btn btn-secondary" %>
   </div>
 </div>

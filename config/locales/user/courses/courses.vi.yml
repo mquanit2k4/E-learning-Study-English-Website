@@ -1,6 +1,19 @@
 vi:
   user:
     courses:
+      filter:
+        search_label: "Tìm kiếm khóa học"
+        search_placeholder: "Nhập khóa học để tìm kiếm..."
+        status: "Trạng thái"
+        status_all: "Tất cả trạng thái"
+        pending: "Chờ duyệt"
+        approved: "Đã phê duyệt"
+        in_progress: "Đang tiến hành"
+        completed: "Đã hoàn thành"
+        rejected: "Bị từ chối"
+        not_enrolled: "Chưa đăng ký"
+        apply: "Áp dụng"
+        reset: "Đặt lại"
       index:
         title: "Danh sách khóa học"
         thumbnail: "Hình thu nhỏ khóa học"
@@ -13,6 +26,7 @@ vi:
         rejected: "Bị từ chối"
         learner_count: "%{count} người học đã đăng ký"
         view_details: "Xem chi tiết"
+        filter_header: "Bộ lọc"
       please_log_in: "Vui lòng đăng nhập để truy cập trang này."
       enroll:
         please_log_in: "Vui lòng đăng nhập để truy cập trang này."

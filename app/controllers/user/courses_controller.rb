@@ -1,6 +1,7 @@
 class User::CoursesController < User::ApplicationController
   skip_before_action :logged_in_user, only: %i(index)
   skip_before_action :ensure_user_role, only: %i(index)
+  before_action :redirect_guest_status_param, only: %i(index)
   before_action :set_course, only: %i(show enroll start)
   before_action :check_enrolled, only: %i(enroll)
   before_action :set_user_course, only: %i(show start)
@@ -9,9 +10,8 @@ class User::CoursesController < User::ApplicationController
 
   # GET user/courses
   def index
-    @pagy, @courses = pagy Course.recent.with_users.with_attached_thumbnail,
-                           limit: Settings.page_6
-    @user_courses_map = current_user&.user_courses&.index_by(&:course_id)
+    @pagy, @courses = pagy(filtered_courses, limit: Settings.page_6)
+    @user_courses_map = build_user_courses_map
   end
 
   # GET user/courses/:id
@@ -45,6 +45,13 @@ class User::CoursesController < User::ApplicationController
   end
 
   private
+
+  def redirect_guest_status_param
+    return unless params[:status].present? && current_user.nil?
+
+    flash[:alert] = t("flash.please_log_in")
+    redirect_to user_courses_path
+  end
 
   def check_enrolled
     return unless current_user.user_courses.exists?(course_id: @course.id)
@@ -114,5 +121,23 @@ class User::CoursesController < User::ApplicationController
       start_date:,
       end_date:
     )
+  end
+
+  def filtered_courses
+    status = current_user ? params[:status]&.to_sym : nil
+
+    Course.recent
+          .with_users
+          .with_attached_thumbnail
+          .search_name(params[:search])
+          .with_status_for_user(status, current_user)
+          .includes(user_courses: :user)
+  end
+
+  def build_user_courses_map
+    return {} unless current_user
+
+    UserCourse.where(user_id: current_user.id, course_id: @courses.map(&:id))
+              .index_by(&:course_id)
   end
 end

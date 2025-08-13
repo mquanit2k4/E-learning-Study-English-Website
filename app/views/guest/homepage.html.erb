@@ -1,5 +1,7 @@
 <% provide :title, t(".welcome") %>
-
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+<% end %>
 <section id="home" class="hero-section">
   <div class="overlay"></div>
   <div class="container hero-content">
