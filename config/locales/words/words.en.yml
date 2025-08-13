@@ -41,6 +41,11 @@ en:
         title: "Vocabulary List"
         search_placeholder: "Search..."
         new_word_button: "Create new word +"
+        table_headers:
+          word: "Word"
+          meaning: "Short Description"
+          created_at: "Created At"
+          actions: "Actions"
         actions:
           confirm: "Are you sure you want to delete this word?"
         empty_message: "No words have been created yet. Start by creating your first word!"
