@@ -46,9 +46,15 @@
                   class: "btn btn-outline-secondary ms-2 view-details-button" %>
 
     <% when :rejected %>
-      <%= button_tag t("user.courses.index.rejected"),
-                     class: "btn btn-danger btn-sm enroll-button",
-                     disabled: true %>
+      <div class="text-center">
+        <%= button_tag t("user.courses.index.rejected"),
+                      class: "btn btn-danger btn-sm enroll-button",
+                      disabled: true %>
+        <% if user_course.reason.present? %>
+          <div class="mt-2 text-danger small">
+            <%= user_course.reason %>
+        </div>
+      <% end %>
     <% end %>
 
   <% else %>

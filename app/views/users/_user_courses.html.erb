@@ -1,0 +1,50 @@
+<section class="user_courses">
+  <h2 class="mb-3"><%= t("users.show.my_courses") %></h2>
+
+  <!-- Filter buttons -->
+  <div class="filter-buttons mb-4">
+    <%= link_to t("users.show.all_status"), user_path(user),
+        class: "btn btn-outline-primary #{"active" if params[:status].blank?}" %>
+    <% UserCourse.enrolment_statuses.keys.each do |status| %>
+      <%= link_to t("users.show.status.#{status}"),
+                  user_path(user, status: status),
+                  class: "btn btn-outline-secondary #{"active" if params[:status] == status}" %>
+    <% end %>
+  </div>
+
+  <!-- Course grid -->
+  <div class="courses-container">
+    <% if user_courses.any? %>
+      <div class="row">
+        <% user_courses.each do |user_course| %>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4">
+            <%= render partial: "user/courses/course_card",
+                       locals: {
+                         course: user_course.course,
+                         user_courses_map: {user_course.course_id => user_course}
+                       } %>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Pagination -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <%== pagy_bootstrap_nav(pagy) %>
+        </div>
+      </div>
+    <% else %>
+      <!-- Empty state -->
+      <div class="empty-state text-center py-5">
+        <i class="fas fa-book-open fa-3x text-muted mb-3"></i>
+        <p class="text-muted">
+          <% if params[:status].present? %>
+            <%= t("users.show.no_courses_in_status", status: t("users.show.status.#{params[:status]}").downcase) %>
+          <% else %>
+            <%= t("users.show.no_courses") %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</section>

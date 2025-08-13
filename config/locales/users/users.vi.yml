@@ -1,5 +1,8 @@
 vi:
   users:
+    not_found: "Không tìm thấy người dùng"
+    please_log_in: "Vui lòng đăng nhập để truy cập trang này."
+    cannot_edit: "Bạn không thể chỉnh sửa hồ sơ người dùng này."
     create:
       created: "Người dùng đã được tạo thành công."
     please_log_in: "Vui lòng đăng nhập để truy cập trang này."
@@ -7,8 +10,37 @@ vi:
       not_found: "Không tìm thấy người dùng"
     new:
       title: "Đăng ký"
+      select_gender: "Chọn giới tính"
       confirmation: "Xác nhận mật khẩu"
       create_my_account: "Tạo tài khoản"
     show:
+      edit: "Chỉnh sửa hồ sơ"
+      email: "Email"
+      birthday: "Ngày sinh"
+      gender: "Giới tính"
+      genders:
+        male: "Nam"
+        female: "Nữ"
+        other: "Khác"
       created_at: "Được tạo lúc"
       updated_at: "Được cập nhật lúc"
+      filter_by_status: "Lọc theo trạng thái"
+      all_status: "Tất cả"
+      filter: "Lọc"
+      course_name: "Tên khóa học"
+      status: "Trạng thái"
+      my_courses: "Khóa học của tôi"
+      no_courses_in_status: "Không có khóa học nào ở trạng thái %{status}"
+      no_courses: "Không có khóa học nào"
+      status:
+        pending: "Đang chờ"
+        approved: "Đã duyệt"
+        rejected: "Bị từ chối"
+        in_progress: "Đang học"
+        completed: "Đã hoàn thành"
+    edit:
+      title: "Chỉnh sửa người dùng"
+      save_changes: "Lưu thay đổi"
+      change_gravatar: "thay đổi"
+    update:
+      updated: "Hồ sơ đã được cập nhật thành công."

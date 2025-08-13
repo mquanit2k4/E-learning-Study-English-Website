@@ -1,0 +1,40 @@
+<section class="user_info mb-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-start">
+        <div class="me-4 flex-shrink-0">
+          <%= gravatar_for user %>
+        </div>
+        <div class="flex-grow-1">
+          <h1 class="mb-3"><%= user.name %></h1>
+          <div class="user-details">
+            <div class="detail-row">
+              <span class="detail-label"><%= t("users.show.email") %>:</span>
+              <span class="detail-value"><%= user.email %></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><%= t("users.show.birthday") %>:</span>
+              <span class="detail-value"><%= l(user.birthday, format: :default) %></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><%= t("users.show.gender") %>:</span>
+              <span class="detail-value"><%= t("users.show.genders.#{user.gender}") %></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><%= t("users.show.created_at") %>:</span>
+              <span class="detail-value"><%= l(user.created_at, format: :long) %></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label"><%= t("users.show.updated_at") %>:</span>
+              <span class="detail-value"><%= l(user.updated_at, format: :long) %></span>
+            </div>
+            <div class="detail-row">
+              <%= link_to edit_user_path(user) do %>
+                <i class="bi bi-pencil-square"></i> <%= t("users.show.edit") %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

@@ -3,6 +3,7 @@ en:
     models:
       product: "Product"
       user: "User"
+
     attributes:
       product:
         name: "Name"
@@ -13,14 +14,6 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
         gender: "Gender"
-    errors:
-      models:
-        user:
-          attributes:
-            birthday:
-              too_old: "must be within the last 100 years"
-              in_future: "cannot be in the future"
-    attributes:
       question:
         content: "Question"
         question_type: "Question Type"
@@ -29,8 +22,31 @@ en:
         duration: "Duration"
         max_attempts: "Max attempts"
         description: "Description"
+
     enums:
+      user:
+        gender:
+          male: "Male"
+          female: "Female"
+          other: "Other"
+      user_course:
+        enrolment_status:
+          pending: "Pending"
+          approved: "Approved"
+          rejected: "Rejected"
+          in_progress: "In Progress"
+          completed: "Completed"
       question:
         question_type:
           single_choice: "Single choice"
           multiple_choice: "Multiple choice"
+
+    errors:
+      models:
+        user:
+          attributes:
+            birthday:
+              too_old: "must be within the last 100 years"
+              in_future: "cannot be in the future"
+            password:
+              password_blank: "can't be blank if confirmation is provided"
