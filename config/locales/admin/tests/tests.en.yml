@@ -1,0 +1,69 @@
+en:
+  admin:
+    tests:
+      create_success: "Test created successfully!"
+      update_success: "Test updated successfully!"
+      new:
+        create_test: "Create Test"
+      edit:
+        update_test: "Update Test"
+        save_change: "Save Changes"
+      create:
+        create_success: "Test created successfully!"
+        create_failed: "Failed to create test. Please check the form."
+      index:
+        test_list: "Test List"
+        create_test: "Create Test"
+        search_placeholder: "Search by test name"
+        clear_search: "Clear Search"
+        test_name: "Test Name"
+        description: "Description"
+        duration_minutes: "Duration (minutes)"
+        max_attempts: "Max Attempts"
+        created_date: "Created Date"
+        actions: "Actions"
+      test_row:
+        action_view: "View"
+        action_edit: "Edit"
+        action_delete: "Delete"
+        confirm_delete: "Are you sure you want to delete this test?"
+      form:
+        enter_test_name: "Enter test name"
+        enter_test_description: "Enter test description"
+        test_name: "Test Name"
+        test_description: "Description"
+        test_duration: "Test Duration"
+        test_max_attempt: "Test Max Attempts"
+      set_test:
+        not_found: "Test not found."
+      show:
+        test_details: "Test Details"
+        test_name: "Test Name"
+        description: "Description"
+        duration_label: "Duration"
+        minutes: "minutes"
+        max_attempts_label: "Max attempts"
+        created_date: "Created Date"
+        questions_count: "Questions Count"
+        edit_test: "Edit Test"
+        delete_test: "Delete Test"
+        back_to_list: "Back to List"
+        confirm_delete: "Are you sure you want to delete this test?"
+        questions_title: "Questions"
+        add_question: "Add New Question"
+        add_first_question: "Add First Question"
+        question_content: "Question Content"
+        answers_count: "Answers"
+        actions: "Actions"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete_question: "Are you sure you want to delete this question?"
+        no_questions: "No questions in this test yet."
+      question:
+        edit_question: "Edit"
+        delete_question: "Delete"
+        delete_question_confirm: "Are you sure you want to delete this question?"
+        no_questions: "There are no questions in this test."
+      authenticate_admin:
+        not_authorized: "You are not authorized to access this page!"

@@ -1,30 +1,74 @@
-<div class="test-show-container">
-  <div class="test-info-card">
-    <h1 class="test-title"><%= @test.name %></h1>
-    <p class="test-description"><%= @test.description %></p>
-    <div class="test-meta">
-      <span class="test-duration"><%= t(".duration", duration: @test.duration) %></span>
-      <span class="test-attempts"><%= t(".max_attempts", attempts: @test.max_attempts) %></span>
-    </div>
-    <div class="test-actions">
-      <%= link_to t(".edit_test"), edit_admin_test_path(@test), class: "button button-secondary" %>
-      <%= button_to t(".delete_test"), admin_test_path(@test), method: :delete, data: { turbo_confirm: t(".delete_test_confirm") }, class: "button button-danger" %>
-    </div>
-  </div>
+<% content_for :title, t(".test_details") %>
 
-  <div class="questions-section">
-    <div class="questions-header">
-      <h2 class="questions-title"><%= t(".questions_title") %></h2>
-      <%= link_to t(".add_new_question"), new_admin_test_question_path(@test), class: "button button-primary" %>
+<div class="admin-tests">
+  <div class="form-container">
+    <div class="page-header">
+      <h1><%= t(".test_details") %></h1>
+      <div class="header-actions">
+        <%= link_to t(".edit_test"), edit_admin_test_path(@test), class: "btn btn-outline-secondary" %>
+        <%= link_to t(".back_to_list"), admin_tests_path, class: "btn btn-outline-primary" %>
+      </div>
     </div>
 
-    <% if @questions.any? %>
-      <div class="questions-list">
-        <%= render partial: "question", collection: @questions %>
+    <div class="test-details-table">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td class="detail-label"><%= t(".test_name") %></td>
+              <td class="detail-value"><%= @test.name %></td>
+            </tr>
+            <tr>
+              <td class="detail-label"><%= t(".description") %></td>
+              <td class="detail-value"><%= @test.description %></td>
+            </tr>
+            <tr>
+              <td class="detail-label"><%= t(".duration_label") %></td>
+              <td class="detail-value"><%= @test.duration %> <%= t(".minutes") %></td>
+            </tr>
+            <tr>
+              <td class="detail-label"><%= t(".max_attempts_label") %></td>
+              <td class="detail-value"><%= @test.max_attempts %></td>
+            </tr>
+            <tr>
+              <td class="detail-label"><%= t(".created_date") %></td>
+              <td class="detail-value"><%= @test.created_at.strftime(Settings.course.date_format) %></td>
+            </tr>
+            <tr>
+              <td class="detail-label"><%= t(".questions_count") %></td>
+              <td class="detail-value">
+                <span class="count-badge"><%= @test.questions.count %></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="questions-section">
+      <div class="page-header">
+        <h2><%= t(".questions_title") %></h2>
+        <%= link_to t(".add_question"), new_admin_test_question_path(@test), class: "btn btn-primary" %>
       </div>
 
-    <% else %>
-      <p class="no-questions-message"><%= t(".no_questions") %></p>
-    <% end %>
+      <% if @questions.any? %>
+        <div class="questions-list">
+          <%= render partial: "question", collection: @questions %>
+        </div>
+
+      <% else %>
+        <div class="empty-state">
+          <p><%= t(".no_questions") %></p>
+          <%= link_to t(".add_first_question"), new_admin_test_question_path(@test), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="action-buttons">
+      <%= button_to t(".delete_test"), admin_test_path(@test),
+                    method: :delete,
+                    data: { turbo_confirm: t(".confirm_delete") },
+                    class: "btn btn-outline-danger" %>
+    </div>
   </div>
 </div>

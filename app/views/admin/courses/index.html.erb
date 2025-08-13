@@ -34,9 +34,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @courses.each do |course| %>
-              <%= render partial: "course_row", collection: @courses, as: :course %>
-            <% end %>
+            <%= render partial: "course_row", collection: @courses, as: :course %>
           </tbody>
         </table>
       </div>
