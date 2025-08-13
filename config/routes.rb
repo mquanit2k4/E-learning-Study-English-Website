@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get "/auth/:provider/callback", to: "sessions#omniauth"
     get "/auth/failure", to: redirect("/")
 
+    resources :users, only: %i(show edit update)
+
     namespace :user do
       resources :courses, only: %i(index show) do
         member do

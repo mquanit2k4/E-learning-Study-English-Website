@@ -41,6 +41,7 @@ foreign_key: "created_by_id", dependent: :nullify
   validates :uid, uniqueness: {scope: :provider}, allow_nil: true
 
   validate :birthday_within_100_years
+  validate :password_presence_if_confirmation_provided
 
   class << self
     def new_token
@@ -106,5 +107,11 @@ foreign_key: "created_by_id", dependent: :nullify
     elsif birthday > current_date
       errors.add(:birthday, :in_future)
     end
+  end
+
+  def password_presence_if_confirmation_provided
+    return unless password.blank? && password_confirmation.present?
+
+    errors.add(:password, :password_blank)
   end
 end

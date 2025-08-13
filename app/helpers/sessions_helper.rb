@@ -7,6 +7,10 @@ module SessionsHelper
     @current_user ||= find_user_from_session || find_user_from_cookies
   end
 
+  def current_user? user
+    user == current_user
+  end
+
   def logged_in?
     current_user.present?
   end
@@ -66,13 +70,6 @@ module SessionsHelper
     return unless logged_in?
 
     flash[:info] = t("flash.already_logged_in")
-    redirect_to root_url
-  end
-
-  def correct_user
-    return if current_user?(@user)
-
-    flash[:danger] = t("flash.cannot_edit_another_user")
     redirect_to root_url
   end
 

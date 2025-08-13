@@ -16,5 +16,20 @@ class UserCourse < ApplicationRecord
     enrolment_statuses[:completed]
   ].freeze
 
+  COURSE_INCLUDES = {
+    course: [
+      :approved_user_courses,
+      {thumbnail_attachment: :blob}
+    ]
+  }.freeze
+
   scope :approved_statuses, ->{where(enrolment_status: ENROLMENT_STATUSES)}
+
+  scope :with_course, ->{includes(COURSE_INCLUDES)}
+
+  scope :with_status, (lambda do |status|
+    status.present? ? where(enrolment_status: status) : all
+  end)
+
+  scope :recent, ->{order(created_at: :desc)}
 end

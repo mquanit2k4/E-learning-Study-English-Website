@@ -108,6 +108,10 @@ vi:
     formats:
       long: "%d/%m/%Y %H:%M"
 
+  date:
+    formats:
+      default: "%d/%m/%Y"
+
   flash:
     please_log_in: "Vui lòng đăng nhập để tiếp tục."
     not_authorized: "Bạn không có quyền thực hiện hành động này."

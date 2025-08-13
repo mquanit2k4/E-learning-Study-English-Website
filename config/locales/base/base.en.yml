@@ -108,6 +108,10 @@ en:
     formats:
       long: "%m/%d/%Y %H:%M"
 
+  date:
+    formats:
+      default: "%m/%d/%Y"
+
   flash:
     please_log_in: "Please log in to continue."
     not_authorized: "You are not authorized to perform this action."

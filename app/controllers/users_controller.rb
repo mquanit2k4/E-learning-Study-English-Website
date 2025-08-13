@@ -1,10 +1,20 @@
 class UsersController < ApplicationController
   before_action :logged_out_user, only: %i(new create)
-  before_action :logged_in_user, except: %i(new create)
-  before_action :load_user, except: %i(new create)
+  before_action :logged_in_user,
+                :load_user,
+                :ensure_user_role,
+                :correct_user, only: %i(show edit update)
 
   # GET /users/:id
-  def show; end
+  def show
+    @pagy, @user_courses = pagy(
+      @user.user_courses
+          .with_course
+          .with_status(params[:status])
+          .recent,
+      limit: Settings.page_6
+    )
+  end
 
   # GET /signup
   def new
@@ -24,6 +34,19 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/:id/edit
+  def edit; end
+
+  # PATCH/PUT /users/:id
+  def update
+    if @user.update user_params
+      flash[:success] = t(".updated")
+      redirect_to @user
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def load_user
@@ -32,6 +55,13 @@ class UsersController < ApplicationController
 
     flash[:warning] = t(".not_found")
     redirect_to root_path
+  end
+
+  def correct_user
+    return if current_user? @user
+
+    flash[:error] = t(".cannot_edit")
+    redirect_to root_url
   end
 
   def user_params
