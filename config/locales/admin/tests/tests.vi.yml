@@ -3,11 +3,22 @@ vi:
     tests:
       create_success: "Bài kiểm tra đã được tạo thành công!"
       update_success: "Bài kiểm tra đã được cập nhật thành công!"
+      delete_success: "Bài kiểm tra đã được xóa thành công!"
+      create_failed: "Tạo bài kiểm tra không thành công. Vui lòng kiểm tra lại biểu mẫu."
+      update_failed: "Cập nhật bài kiểm tra không thành công. Vui lòng kiểm tra lại biểu mẫu."
+      delete_failed: "Xóa bài kiểm tra không thành công."
+      not_found: "Không tìm thấy bài kiểm tra."
       new:
         create_test: "Tạo Bài Kiểm Tra"
       edit:
         update_test: "Cập Nhật Bài Kiểm Tra"
-        save_change: "Lưu Thay Đổi"
+        save_changes: "Lưu Thay Đổi"
+      update:
+        update_success: "Bài kiểm tra đã được cập nhật thành công!"
+        update_failed: "Cập nhật bài kiểm tra không thành công. Vui lòng kiểm tra lại biểu mẫu."
+      destroy:
+        delete_success: "Bài kiểm tra đã được xóa thành công!"
+        delete_failed: "Xóa bài kiểm tra không thành công."
       create:
         create_success: "Bài kiểm tra đã được tạo thành công!"
         create_failed: "Tạo bài kiểm tra không thành công. Vui lòng kiểm tra lại biểu mẫu."
