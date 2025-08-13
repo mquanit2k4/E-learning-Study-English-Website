@@ -31,6 +31,8 @@ question:
   question_types:
     single_choice: "single_choice"
     multiple_choice: "multiple_choice"
+  
+test_pass_percentage: 80.0
 
 test:
   page_number: 10
