@@ -1,0 +1,69 @@
+vi:
+  admin:
+    tests:
+      create_success: "Bài kiểm tra đã được tạo thành công!"
+      update_success: "Bài kiểm tra đã được cập nhật thành công!"
+      new:
+        create_test: "Tạo Bài Kiểm Tra"
+      edit:
+        update_test: "Cập Nhật Bài Kiểm Tra"
+        save_change: "Lưu Thay Đổi"
+      create:
+        create_success: "Bài kiểm tra đã được tạo thành công!"
+        create_failed: "Tạo bài kiểm tra không thành công. Vui lòng kiểm tra lại biểu mẫu."
+      index:
+        test_list: "Danh Sách Bài Kiểm Tra"
+        create_test: "Tạo Bài Kiểm Tra"
+        search_placeholder: "Tìm kiếm theo tên bài kiểm tra"
+        clear_search: "Xóa Tìm Kiếm"
+        test_name: "Tên Bài Kiểm Tra"
+        description: "Mô Tả"
+        duration_minutes: "Thời Gian (phút)"
+        max_attempts: "Số Lần Tối Đa"
+        created_date: "Ngày Tạo"
+        actions: "Hành Động"
+      test_row:
+        action_view: "Xem"
+        action_edit: "Sửa"
+        action_delete: "Xóa"
+        confirm_delete: "Bạn có chắc chắn muốn xóa bài kiểm tra này không?"
+      form:
+        enter_test_name: "Nhập tên bài kiểm tra"
+        enter_test_description: "Nhập mô tả bài kiểm tra"
+        test_name: "Tên Bài Kiểm Tra"
+        test_description: "Mô Tả"
+        test_duration: "Thời Gian Bài Kiểm Tra"
+        test_max_attempt: "Số Lần Làm Bài Tối Đa"
+      set_test:
+        not_found: "Không tìm thấy bài kiểm tra."
+      show:
+        test_details: "Chi Tiết Bài Kiểm Tra"
+        test_name: "Tên Bài Kiểm Tra"
+        description: "Mô Tả"
+        duration_label: "Thời gian"
+        minutes: "phút"
+        max_attempts_label: "Số lần làm tối đa"
+        created_date: "Ngày Tạo"
+        questions_count: "Số Câu Hỏi"
+        edit_test: "Chỉnh Sửa Bài Test"
+        delete_test: "Xóa Bài Test"
+        back_to_list: "Quay Lại Danh Sách"
+        confirm_delete: "Bạn có chắc chắn muốn xóa bài test này?"
+        questions_title: "Các Câu Hỏi"
+        add_question: "Thêm Câu Hỏi Mới"
+        add_first_question: "Thêm Câu Hỏi Đầu Tiên"
+        question_content: "Nội Dung Câu Hỏi"
+        answers_count: "Câu Trả Lời"
+        actions: "Hành Động"
+        view: "Xem"
+        edit: "Sửa"
+        delete: "Xóa"
+        confirm_delete_question: "Bạn có chắc chắn muốn xóa câu hỏi này?"
+        no_questions: "Chưa có câu hỏi nào trong bài test này."
+      question:
+        edit_question: "Chỉnh sửa"
+        delete_question: "Xóa"
+        delete_question_confirm: "Bạn có chắc chắn muốn xóa câu hỏi này?"
+        no_questions: "Chưa có câu hỏi nào trong bài test này."
+      authenticate_admin:
+        not_authorized: "Bạn không có quyền truy cập vào trang này!"

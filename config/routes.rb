@@ -35,8 +35,6 @@ Rails.application.routes.draw do
       resources :words
       resources :courses
       resources :lessons
-      resources :tests
-
       resources :tests do
         resources :questions, except: %i(show index) do
           resources :answers, only: %i(new create destroy)

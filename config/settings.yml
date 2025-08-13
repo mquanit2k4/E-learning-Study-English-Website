@@ -23,12 +23,16 @@ course:
   min_duration: 1
   max_duration: 365
   date_format: "%d/%m/%Y"
+  page_number: 10
 
 question:
   answer_defaults_number: 4
   question_types:
     single_choice: "single_choice"
     multiple_choice: "multiple_choice"
+
+test:
+  page_number: 10
 
 development:
   <<: *defaults
