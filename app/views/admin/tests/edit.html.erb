@@ -1,0 +1,4 @@
+<% provide :title, t(".update_test") %>
+<% provide :button_text, t(".save_changes") %>
+<h1><%= t(".update_test") %></h1>
+<%= render "form", test: @test, url: admin_test_path(@test) %>

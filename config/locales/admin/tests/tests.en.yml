@@ -3,11 +3,22 @@ en:
     tests:
       create_success: "Test created successfully!"
       update_success: "Test updated successfully!"
+      delete_success: "Test deleted successfully!"
+      create_failed: "Failed to create test. Please check the form."
+      update_failed: "Failed to update test. Please check the form."
+      delete_failed: "Failed to delete test."
+      not_found: "Test not found."
       new:
         create_test: "Create Test"
       edit:
         update_test: "Update Test"
-        save_change: "Save Changes"
+        save_changes: "Save Changes"
+      update:
+        update_success: "Test updated successfully!"
+        update_failed: "Failed to update test. Please check the form."
+      destroy:
+        delete_success: "Test deleted successfully!"
+        delete_failed: "Failed to delete test."
       create:
         create_success: "Test created successfully!"
         create_failed: "Failed to create test. Please check the form."

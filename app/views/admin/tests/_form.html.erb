@@ -1,4 +1,6 @@
 <%= form_with(model: test, url: url, local: true, class: "test-form") do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+
   <div class="form-row form-row-top">
     <div class="form-group form-group-name">
       <%= form.label :name, t(".test_name") %>
