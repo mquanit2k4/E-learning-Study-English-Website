@@ -15,7 +15,6 @@
             <li><%= link_to t("navbar.home"), root_path %></li>
             <li><%= link_to t("navbar.courses"), user_courses_path %></li>
             <li><%= link_to t("navbar.words"), user_words_path %></li>
-            <li><%= link_to t("navbar.profile"), "#" %></li>
           <% end %>
 
           <!-- Account Dropdown (for logged in users) -->
@@ -34,9 +33,7 @@
         <% else %>
           <!-- Guest Navigation -->
           <li><%= link_to t("navbar.home"), root_path %></li>
-          <li><%= link_to t("navbar.help"), "#" %></li>
-          <li><%= link_to t("navbar.contact"), "#" %></li>
-          <li><%= link_to t("navbar.microposts"), "#" %></li>
+          <li><%= link_to t("navbar.courses"), user_courses_path %></li>
           <li><%= link_to t("navbar.sign_up"), signup_path %></li>
           <li><%= link_to t("navbar.log_in"), login_path %></li>
         <% end %>

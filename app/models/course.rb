@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
   IMAGE_DISPLAY_SIZE = [300, 200].freeze
+  DESCRIPTION_PREVIEW_LENGTH = 100
 
   attr_accessor :course_admin_ids
 

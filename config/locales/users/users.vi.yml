@@ -17,6 +17,7 @@ vi:
       edit: "Chỉnh sửa hồ sơ"
       email: "Email"
       birthday: "Ngày sinh"
+      na: "N/A"
       gender: "Giới tính"
       genders:
         male: "Nam"
@@ -38,6 +39,8 @@ vi:
         rejected: "Bị từ chối"
         in_progress: "Đang học"
         completed: "Đã hoàn thành"
+      error:
+          not_authenticated: "Bạn cần đăng nhập bằng tài khoản người dùng."
     edit:
       title: "Chỉnh sửa người dùng"
       save_changes: "Lưu thay đổi"

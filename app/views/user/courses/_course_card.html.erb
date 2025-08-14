@@ -9,7 +9,7 @@
 
   <div class="course-body">
     <h5 class="course-title"><%= course.title %></h5>
-    <p class="course-description"><%= course.description %></p>
+    <p class="course-description"><%= truncate(course.description, length: Course::DESCRIPTION_PREVIEW_LENGTH) %></p>
     <p class="text-muted">
       <%= t("user.courses.index.learner_count", count: course.approved_user_courses.size) %>
     </p>
