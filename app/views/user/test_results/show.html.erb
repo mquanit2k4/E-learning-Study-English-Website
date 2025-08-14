@@ -1,0 +1,59 @@
+<div class="container-fluid test-result-container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="test-result-card">
+        <!-- Header Section -->
+        <div class="test-header">
+          <h2 class="lesson-title"><%= t(".lesson_title", lesson: @lesson.title) %></h2>
+
+          <!-- Status Badge -->
+          <div class="status-section">
+            <span class="status-badge status-<%= @test_result.status %>">
+              <%= t(".status.#{@test_result.status}") %>
+            </span>
+            <div class="result-score">
+              <strong><%= t(".score", score: @test_result.mark, total: @total_questions) %></strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questions and Answers Section -->
+        <div class="questions-section">
+          <% @questions.each_with_index do |question, index| %>
+            <% question_data = @user_answers_data[question.id.to_s] %>
+            <% next unless question_data %>
+            
+            <div class="question-block">
+              <h4 class="question-title">
+                 <%= t(".question_title", index: index + 1) %>: <%= question.content %>
+              </h4>
+              
+              <div class="answers-grid">
+                <% question.answers.each do |answer| %>
+                  <div class="answer-option <%= answer_status_class(question_data, answer) %>">
+                    <!-- Radio/Checkbox based on question type -->
+                    <% if question.single_choice? %>
+                      <span class="radio-indicator <%= radio_checkbox_class(question_data, answer, "single_choice") %>"></span>
+                    <% else %>
+                      <span class="checkbox-indicator <%= radio_checkbox_class(question_data, answer, "multiple_choice") %>"></span>
+                    <% end %>
+                    
+                    <!-- Answer Text -->
+                    <span class="answer-text"><%= answer.content %></span>
+                    
+                    <!-- Result Icons -->
+                    <% if should_show_result_icon?(question_data, answer) %>
+                      <span class="result-icon">
+                        <%= get_result_icon(question_data, answer) %>
+                      </span>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
