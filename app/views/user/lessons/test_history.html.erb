@@ -1,4 +1,15 @@
 <% content_for :title, t(".title", number: @lesson.position, title: @lesson.title) %>
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("user.courses.index.title"), user_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @course.title, user_course_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @lesson.title, user_course_lesson_path(@course, @lesson) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span class="current-page"><%= t(".test", lesson_title: @lesson.title, number: @lesson.position) %></span>
+<% end %>
 <div class="container">
   <!-- Header section -->
   <div class="row test-history-header">
@@ -41,7 +52,7 @@
               <div class="col-md-3">
                 <h4 class="attempt-number"><strong><%= t(".attempt_number", attempt: test_result.attempt_number) %></strong></h4>
               </div>
-              
+
               <!-- Center: Result and Date -->
               <div class="col-md-6 text-center">
                 <h4 class="attempt-result"><strong><%= t(".result", score: test_result.mark, total: @total_questions) %></strong></h4>
@@ -49,7 +60,7 @@
                   <%= t(".date", date: test_result.created_at.strftime(Settings.course.date_format)) %>
                 </p>
               </div>
-              
+
               <!-- Right: See Details button -->
               <div class="col-md-3 text-right">
                 <%= link_to t(".see_details"), "#", class: "btn btn-link btn-lg see-details-btn" %>
@@ -69,7 +80,7 @@
 
   <!-- Back button -->
   <div class="test-history-back-container">
-    <%= link_to t(".back_to_lesson"), user_course_lesson_path(@course, @lesson), 
+    <%= link_to t(".back_to_lesson"), user_course_lesson_path(@course, @lesson),
         class: "btn btn-primary btn-lg" %>
   </div>
 </div>

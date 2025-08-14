@@ -3,8 +3,16 @@
 
 <div class="container-fluid">
   <div class="row">
-    <aside class="col-md-4">
-      <!-- Sidebar content here -->
+    <% content_for :breadcrumbs do %>
+      <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+      <span class="breadcrumb-separator"> > </span>
+      <%= link_to t(".title"), user_courses_path %>
+    <% end %>
+    <aside class="col-md-4 filter-container">
+      <h4 class="filter-header">
+        <i class="fa fa-filter"></i> <%= t(".filter_header") %>
+      </h4>
+      <%= render "user/courses/filter" %>
     </aside>
 
     <div class="col-md-8">
@@ -18,7 +26,7 @@
         <% end %>
       </div>
 
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-12 text-center">
           <%== pagy_bootstrap_nav(@pagy) %>
         </div>

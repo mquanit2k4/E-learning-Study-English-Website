@@ -41,6 +41,25 @@ class Course < ApplicationRecord
     where("title LIKE ?", "%#{title}%")
   }
 
+  scope :search_name, (lambda do |keyword|
+    return all if keyword.blank?
+
+    where("title LIKE ?", "%#{keyword}%")
+  end)
+
+  scope :with_status_for_user, (lambda do |status, user|
+    return all unless user && status.present?
+
+    case status
+    when :not_enrolled
+      where.not(id: UserCourse.select(:course_id).where(user_id: user.id))
+    else
+      joins(:user_courses)
+        .where(user_courses: {user_id: user.id})
+        .merge(UserCourse.with_status(status))
+    end
+  end)
+
   validates :title, presence: true,
 length: {minimum: MINIMUM_TITLE_LENGTH, maximum: MAX_TITLE_LENGTH},
 uniqueness: true

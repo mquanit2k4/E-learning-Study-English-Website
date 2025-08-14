@@ -21,7 +21,7 @@ $danger-border: #ebccd1;
 
 .test-history-nav-link {
   color: white !important;
-  
+
   &:hover,
   &:focus {
     background-color: rgba(255, 255, 255, 0.1) !important;
@@ -37,6 +37,7 @@ $danger-border: #ebccd1;
 // Header section
 .test-history-header {
   margin-bottom: 30px;
+  margin-top: 50px;
 }
 
 .test-history-lesson-title {
@@ -72,12 +73,12 @@ $danger-border: #ebccd1;
 // Attempt cards
 .attempt-card {
   margin-bottom: 15px;
-  
+
   &.attempt-passed {
     background-color: $success-bg;
     border-color: $success-border;
   }
-  
+
   &.attempt-failed {
     background-color: $danger-bg;
     border-color: $danger-border;
@@ -101,7 +102,7 @@ $danger-border: #ebccd1;
   color: #374151 !important;
   font-weight: 600 !important;
   text-decoration: none !important;
-  
+
   &:hover,
   &:focus {
     color: #2563eb !important;
@@ -122,37 +123,37 @@ $danger-border: #ebccd1;
 // Mobile responsive adjustments
 @media (max-width: 767px) {
   .test-status-passed,
-  .test-status-failed, 
+  .test-status-failed,
   .test-status-not-completed {
     font-size: 2em;
   }
-  
+
   .test-history-lesson-title {
     font-size: 2em;
   }
-  
+
   .attempts-list .row {
     text-align: center;
   }
-  
+
   .attempts-list .col-md-3,
   .attempts-list .col-md-6 {
     margin-bottom: 10px;
   }
-  
+
   .attempt-number,
   .attempt-result {
     margin-bottom: 15px;
   }
-  
+
   // Stack navbar items on mobile
   .test-history-navbar {
     .navbar-nav {
       margin: 0;
-      
+
       > li {
         float: none;
-        
+
         > a {
           padding-top: 10px;
           padding-bottom: 10px;

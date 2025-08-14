@@ -1,3 +1,10 @@
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("user.courses.index.title"), user_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to @course.title, user_course_path(@course) %>
+<% end %>
 <div class="container mt-20">
   <!-- Course Summary -->
   <div class="row course-card">

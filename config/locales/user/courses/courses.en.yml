@@ -1,6 +1,19 @@
 en:
   user:
     courses:
+      filter:
+        search_label: "Search Course"
+        search_placeholder: "Enter course to search..."
+        status: "Status"
+        status_all: "All statuses"
+        pending: "Pending"
+        approved: "Approved"
+        in_progress: "In Progress"
+        completed: "Completed"
+        rejected: "Rejected"
+        not_enrolled: "Not Enrolled"
+        apply: "Apply"
+        reset: "Reset"
       index:
         title: "Courses list"
         thumbnail: "Course Thumbnail"
@@ -13,6 +26,7 @@ en:
         rejected: "Rejected"
         learner_count: "%{count} enrolled"
         view_details: "View Details"
+        filter_header: "Filter"
       please_log_in: "Please log in to access this page."
       enroll:
         please_log_in: "Please log in to access this page."
