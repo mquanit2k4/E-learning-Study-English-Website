@@ -14,11 +14,15 @@
             </div>
             <div class="detail-row">
               <span class="detail-label"><%= t("users.show.birthday") %>:</span>
-              <span class="detail-value"><%= l(user.birthday, format: :default) %></span>
+              <span class="detail-value">
+                <%= user.birthday ? l(user.birthday, format: :default) : t("users.show.na") %>
+              </span>
             </div>
             <div class="detail-row">
               <span class="detail-label"><%= t("users.show.gender") %>:</span>
-              <span class="detail-value"><%= t("users.show.genders.#{user.gender}") %></span>
+              <span class="detail-value">
+                <%= user.gender.present? ? t("users.show.genders.#{user.gender}") : t("users.show.na") %>
+              </span>
             </div>
             <div class="detail-row">
               <span class="detail-label"><%= t("users.show.created_at") %>:</span>

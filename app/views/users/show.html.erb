@@ -2,7 +2,9 @@
 
 <%= render "user_info", user: @user %>
 
-<%= render "user_courses",
-           user: @user,
-           user_courses: @user_courses,
-           pagy: @pagy %>
+<% if current_user.user? %>
+  <%= render "user_courses",
+            user: @user,
+            user_courses: @user_courses,
+            pagy: @pagy %>
+<% end %>

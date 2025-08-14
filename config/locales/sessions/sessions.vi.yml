@@ -1,9 +1,11 @@
 vi:
   sessions:
     new:
+      email: "Email"
+      password: "Mật khẩu"
       log_in: "Đăng nhập"
       new_user?: "Người dùng mới?"
-      sign_up_now!: "Đăng ký ngay!"
+      sign_up_now!: " Đăng ký ngay!"
       remember_me: "Ghi nhớ tôi trên máy tính này"
       or: "hoặc"
       continue_with_google: "Tiếp tục với Google"

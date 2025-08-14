@@ -17,6 +17,7 @@ en:
       edit: "Edit profile"
       email: "Email"
       birthday: "Birthday"
+      na: "N/A"
       gender: "Gender"
       genders:
         male: "Male"
@@ -38,6 +39,8 @@ en:
         rejected: "Rejected"
         in_progress: "In Progress"
         completed: "Completed"
+      error:
+          not_authenticated: "You need to log in with user account."
     edit:
       title: "Edit user"
       save_changes: "Save changes"

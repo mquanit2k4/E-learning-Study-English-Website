@@ -1,7 +1,7 @@
 vi:
   layouts:
     application:
-      title: "Ứng dụng mẫu Ruby on Rails"
+      title: "Hệ thống E-learning SJP"
 
     footer:
       brand_name: "SJP E-learning"

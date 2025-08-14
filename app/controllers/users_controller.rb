@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :logged_out_user, only: %i(new create)
   before_action :logged_in_user,
                 :load_user,
-                :ensure_user_role,
                 :correct_user, only: %i(show edit update)
 
   # GET /users/:id
