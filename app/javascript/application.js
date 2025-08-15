@@ -7,11 +7,11 @@ import "custom/modal";
 import "custom/admin_user_courses";
 import { createIcons, icons } from "lucide";
 import "./custom/take_test";
-import "jquery"
-import "@rails/request.js"
+import "jquery";
+import "@rails/request.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   createIcons({ icons });
 });
-import "trix"
-import "@rails/actiontext"
+import "trix";
+import "@rails/actiontext";
