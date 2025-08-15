@@ -69,6 +69,22 @@ hr {
 }
 
 /* header */
+.navbar-container {
+  background-color: #2c3e50;
+}
+
+.navbar-container .navbar-nav > li > a {
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-container .navbar-nav > li > a:hover,
+.navbar-container .navbar-nav > li > a:focus {
+  color: #f8f9fa !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px;
+}
+
 #logo {
   color: #fff;
   float: left;
@@ -215,45 +231,43 @@ input {
 
 .breadcrumb-container {
   align-items: center;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
   border-radius: 4px;
   display: inline-flex;
   left: 30px;
   padding: 1rem;
   position: absolute;
-  top: -10px
+  top: -10px;
 }
 
 .breadcrumb-container a,
 .breadcrumb-container span {
-  color: #6c757d;
-  font-size: 1rem;
+  color: #546e7a;
+  font-size: 1.2rem;
   text-decoration: none;
 }
 
 .breadcrumb-container a .fas.fa-home {
-  color: #343a40;
+  color: #1565c0;
   font-size: 1.2rem;
   margin-right: 0.5rem;
 }
 
 .breadcrumb-separator {
-  color: #adb5bd;
+  color: #90a4ae;
   margin: 0 0.5rem;
 }
 
 .breadcrumb-container span:last-child {
-  color: #e67e22;
+  color: #1976d2;
   font-weight: bold;
 }
 
 .breadcrumb-container a:last-child {
-  color: #e67e22;
+  color: #1976d2;
   font-weight: bold;
 }
 
 .breadcrumb-container a:hover {
-  color: #e67e22;
+  color: #0d47a1;
   text-decoration: underline;
 }
