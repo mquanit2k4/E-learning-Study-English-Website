@@ -3,6 +3,8 @@ import "@hotwired/turbo-rails";
 import "controllers";
 import "custom/menu";
 import "custom/dropdown";
+import "custom/modal";
+import "custom/admin_user_courses";
 import { createIcons, icons } from "lucide";
 document.addEventListener("DOMContentLoaded", () => {
   createIcons({ icons });

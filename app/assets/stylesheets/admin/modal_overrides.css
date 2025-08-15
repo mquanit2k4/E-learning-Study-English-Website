@@ -1,0 +1,18 @@
+#mainModal.modal { z-index: 2000; }
+.modal-backdrop { z-index: 1990; }
+
+#mainModal .modal-dialog {
+  margin: 0 auto;
+}
+@media (min-height: 300px) {
+  #mainModal .modal-dialog {
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+  }
+}
+
+#mainModal .modal-content {
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}

@@ -9,7 +9,7 @@
             <li><%= link_to t("navbar.manage_course"), admin_courses_path %></li>
             <li><%= link_to t("navbar.manage_test"), admin_tests_path %></li>
             <li><%= link_to t("navbar.manage_word"), admin_words_path %></li>
-            <li><%= link_to t("navbar.manage_user"), "#" %></li>
+            <li><%= link_to t("navbar.manage_user"), admin_user_courses_path %></li>
           <% else %>
             <!-- Normal User Navigation -->
             <li><%= link_to t("navbar.home"), root_path %></li>

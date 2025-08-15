@@ -1,0 +1,341 @@
+// Admin User Courses Styles
+.admin-user-courses {
+  .form-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 1400px;
+    padding: 2rem;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      color: #333;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  // Filter Section
+  .filter-section {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    .filter-form {
+      .filter-row {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .filter-group {
+        flex: 1;
+
+        .filter-label {
+          color: #495057;
+          display: block;
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .form-select, .form-control {
+          background-color: white;
+          border: 1px solid #ced4da;
+          border-radius: 0.375rem;
+          font-size: 1.5rem;
+          padding: 0.75rem;
+          width: 100%;
+
+          &:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+            outline: 0;
+          }
+        }
+
+        .form-select {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+          background-position: right 0.75rem center;
+          background-repeat: no-repeat;
+          background-size: 16px 12px;
+          padding-right: 2.5rem;
+        }
+      }
+
+      .filter-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+        margin-top: 1.5rem;
+
+        .btn {
+          border-radius: 0.375rem;
+          font-weight: 500;
+          padding: 0.75rem 2rem;
+        }
+      }
+    }
+  }
+
+  // Table Section
+  .user-courses-table {
+    margin: 2rem 0;
+
+    .table {
+      border: 1px solid #dee2e6;
+      margin-bottom: 0;
+
+      thead {
+        th {
+          background-color: #f8f9fa;
+          border-bottom: 2px solid #dee2e6;
+          color: #495057;
+          font-size: 1.5rem;
+          font-weight: 600;
+          padding: 1rem;
+          text-align: center;
+          vertical-align: middle;
+
+          &.checkbox-column {
+            width: 120px;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          border-right: 1px solid #dee2e6;
+          padding: 1rem;
+          text-align: center;
+          vertical-align: middle;
+
+          &:first-child {
+            width: 120px;
+          }
+
+          &.action-column {
+            white-space: nowrap;
+
+            .action-btn {
+              border: 1px solid transparent;
+              border-radius: 4px;
+              display: inline-block;
+              font-size: 1.25rem;
+              margin: 0 2px;
+              min-width: 70px;
+              padding: 0.375rem 0.75rem;
+              text-align: center;
+              text-decoration: none;
+              vertical-align: middle;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+
+        tr:hover {
+          background-color: #f8f9fa;
+          transition: background-color 0.15s ease;
+        }
+
+        tr:nth-child(even) {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+
+  // Status Badges
+  .badge {
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+
+    &.bg-secondary {
+      background-color: #6c757d !important;
+      color: white !important;
+    }
+
+    &.bg-success {
+      background-color: #28a745 !important;
+      color: white !important;
+    }
+
+    &.bg-danger {
+      background-color: #dc3545 !important;
+      color: white !important;
+    }
+  }
+
+  // Bulk Actions
+  .bulk-actions {
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+
+    .bulk-btn {
+      border-radius: 0.375rem;
+      font-weight: 500;
+      min-width: 120px;
+      padding: 0.75rem 2rem;
+    }
+  }
+
+  // Pagination
+  .pagination-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+
+    .pagination {
+      justify-content: center;
+      margin: 0;
+
+      .page-link {
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        color: #007bff;
+        margin: 0 0.125rem;
+        padding: 0.5rem 0.75rem;
+
+        &:hover {
+          background-color: #e9ecef;
+          border-color: #adb5bd;
+        }
+      }
+
+      .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+    }
+  }
+
+  // Button Styles
+  .btn-primary {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+
+    &:hover {
+      background: #0056b3;
+      border-color: #0056b3;
+      color: white;
+    }
+  }
+
+  .btn-success {
+    background: #28a745;
+    border-color: #28a745;
+    color: white;
+
+    &:hover {
+      background: #1e7e34;
+      border-color: #1e7e34;
+      color: white;
+    }
+  }
+
+  .btn-danger {
+    background: #dc3545;
+    border-color: #dc3545;
+    color: white;
+
+    &:hover {
+      background: #c82333;
+      border-color: #bd2130;
+      color: white;
+    }
+  }
+
+  .btn-secondary {
+    background: #6c757d;
+    border-color: #6c757d;
+    color: white;
+
+    &:hover {
+      background: #545b62;
+      border-color: #4e555b;
+      color: white;
+    }
+  }
+
+  .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+
+    &:hover {
+      background: #6c757d;
+      border-color: #6c757d;
+      color: white;
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1200px) {
+    .form-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+
+    .filter-section .filter-form .filter-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .user-courses-table {
+      .table {
+        font-size: 0.875rem;
+
+        thead th, tbody td {
+          padding: 0.75rem 0.5rem;
+        }
+
+        .action-column .action-btn {
+          font-size: 0.75rem;
+          min-width: 60px;
+          padding: 0.25rem 0.5rem;
+        }
+      }
+    }
+
+    .bulk-actions {
+      flex-direction: column;
+
+      .bulk-btn {
+        width: 100%;
+      }
+    }
+
+    .filter-actions {
+      .btn {
+        flex: 1;
+      }
+    }
+  }
+}

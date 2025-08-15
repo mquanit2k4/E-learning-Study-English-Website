@@ -1,0 +1,25 @@
+<% content_for :title, t(".title") %>
+
+<div class="modal-body p-4">
+  <dl class="row align-items-start mb-0">
+    <dt class="col-4 col-sm-3 fw-semibold"><%= t(".labels.student") %></dt>
+    <dd class="col-8 col-sm-9 mb-5 mb-sm-6"><%= @user_course.user.name %></dd>
+
+    <dt class="col-4 col-sm-3 fw-semibold"><%= t(".labels.course") %></dt>
+    <dd class="col-8 col-sm-9 mb-5 mb-sm-6"><%= @user_course.course.title %></dd>
+
+    <dt class="col-4 col-sm-3 fw-semibold"><%= t(".labels.reason") %></dt>
+    <dd class="col-8 col-sm-9 mb-5 mb-sm-6 text-break">
+      <%= @user_course.reason.presence || t(".no_reason") %>
+    </dd>
+
+    <dt class="col-4 col-sm-3 fw-semibold"><%= t(".labels.rejected_at") %></dt>
+    <dd class="col-8 col-sm-9"><%= @user_course.updated_at.strftime(Settings.user_courses.timestamp_format) %></dd>
+  </dl>
+</div>
+
+<div class="modal-footer border-0 p-3">
+  <button type="button" class="btn btn-secondary rounded-pill px-4" data-dismiss="modal" data-bs-dismiss="modal">
+    <%= t(".close_button") %>
+  </button>
+</div>

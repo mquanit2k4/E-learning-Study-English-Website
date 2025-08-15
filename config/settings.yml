@@ -37,6 +37,10 @@ test_pass_percentage: 80.0
 test:
   page_number: 10
 
+user_courses:
+  timestamp_format: "%d/%m/%Y %H:%M"
+  date_format: "%d/%m/%Y"
+
 development:
   <<: *defaults
 
