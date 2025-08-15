@@ -31,6 +31,9 @@ Rails.application.routes.draw do
         end
       end
       resources :words, only: %i(index)
+      resources :lessons do
+        resources :user_tests, only: %i(create edit update)
+      end
     end
 
     namespace :admin do

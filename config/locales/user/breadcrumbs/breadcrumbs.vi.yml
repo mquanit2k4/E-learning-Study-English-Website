@@ -1,0 +1,8 @@
+vi:
+  user:
+    breadcrumbs:
+      home: "Trang chủ"
+      courses: "Danh sách Khóa học"
+      course: "%{course}"
+      lesson: "%{lesson}"
+      test: "%{lesson} - Bài kiểm tra"
