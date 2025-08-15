@@ -1,3 +1,12 @@
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.tests.index.test_list"), admin_tests_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.tests.show.test_details"), admin_test_path(@test) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span><%= t(".title") %></span>
+<% end %>
 <div class="question-form-container">
   <div class="question-form-header">
     <h1 class="question-form-title"><%= t(".title") %></h1>

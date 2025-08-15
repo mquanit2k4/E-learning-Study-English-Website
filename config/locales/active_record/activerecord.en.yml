@@ -3,7 +3,6 @@ en:
     models:
       product: "Product"
       user: "User"
-
     attributes:
       product:
         name: "Name"

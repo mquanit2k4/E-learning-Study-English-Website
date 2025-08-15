@@ -1,0 +1,63 @@
+vi:
+  admin:
+    lessons:
+      create:
+        success: "Bài học đã được tạo thành công."
+        failure: "Không thể tạo bài học."
+      update:
+        success: "Bài học đã được cập nhật thành công."
+        failure: "Không thể cập nhật bài học."
+      destroy:
+        success: "Bài học đã được xóa thành công."
+        failure: "Không thể xóa bài học."
+      lesson_not_found: "Không tìm thấy bài học."
+      course_not_found: "Không tìm thấy khóa học."
+      show:
+        description: "Mô tả"
+        created_date: "Ngày tạo"
+        word_list: "Danh sách từ vựng"
+        test_list: "Danh sách bài kiểm tra"
+        paragraph_list: "Danh sách đoạn văn"
+        back_to_list: "Quay lại danh sách"
+        edit: "Chỉnh sửa"
+      new:
+        title: "Tạo bài học"
+        form:
+          create_button: "Tạo bài học"
+      edit:
+        title: "Chỉnh sửa bài học"
+        form:
+          update_button: "Cập nhật bài học"
+      form:
+        lesson_name: "Tên bài học"
+        enter_lesson_name: "Nhập tên bài học"
+        description: "Mô tả"
+        enter_description: "Nhập mô tả"
+        word_list: "Danh sách từ vựng"
+        search_word: "Tìm từ vựng"
+        test_list: "Danh sách bài kiểm tra"
+        search_test: "Tìm bài kiểm tra"
+        paragraph_list: "Danh sách đoạn văn"
+        add_paragraph: "Thêm đoạn văn"
+        create_button: "Tạo bài học"
+        update_button: "Cập nhật bài học"
+      index:
+        title: "Danh sách bài học cho %{course_title}"
+        search_lesson: "Tìm kiếm bài học"
+        create_lesson_button: "Tạo bài học +"
+        table_headers:
+          lesson_name: "Tên bài học"
+          short_description: "Mô tả ngắn"
+          created_at: "Ngày tạo"
+          actions: "Hành động"
+        empty_message: "Không tìm thấy bài học nào."
+        filters:
+          all: "Tất cả thời gian"
+          today: "Hôm nay"
+          last_7_days: "7 ngày qua"
+          last_30_days: "30 ngày qua"
+      lesson:
+        view: "Xem"
+        edit: "Sửa"
+        delete: "Xóa"
+        confirm_delete: "Bạn có chắc chắn muốn xóa bài học này không?"

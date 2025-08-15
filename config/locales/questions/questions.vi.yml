@@ -1,6 +1,7 @@
 vi:
   admin:
     questions:
+      at_least_one_correct_answer_required: "Câu hỏi phải có ít nhất một câu trả lời đúng."
       question_not_found: "Không tìm thấy câu hỏi."
       test_not_found: "Không tìm thấy bài kiểm tra."
       create:

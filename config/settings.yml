@@ -48,6 +48,25 @@ commit:
   true_value: "true"
 
 test_expired_threshold: 1 # minutes
+lesson:
+  date_format: "%d/%m/%Y"
+  pagy_items: 10
+
+component_types:
+  word: "word"
+  test: "test"
+  paragraph: "paragraph"
+
+filter_days:
+  last_7_days: "last_7_days"
+  last_30_days: "last_30_days"
+  today: "today"
+
+actions:
+  create: "create"
+  update: "update"
+  destroy: "destroy"
+
 development:
   <<: *defaults
 

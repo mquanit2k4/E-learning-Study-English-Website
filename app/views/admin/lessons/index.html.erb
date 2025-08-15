@@ -1,0 +1,51 @@
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.show.course_details"), admin_course_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span><%= t("admin.courses.show.manage_lesson") %></span>
+<% end %>
+<div class="list-page-container">
+  <header class="page-header">
+    <h1><%= t(".title", course_title: @course.title) %></h1>
+    <div class="header-actions">
+      <%= form_with url: admin_course_lessons_path(@course), method: :get, class: "search-form", data: { turbo_frame: "lessons-table" } do %>
+        <%= text_field_tag :query, params[:query], placeholder: t(".search_lesson"), class: "search-input" %>
+        <%= select_tag :filter_time,
+                         options_for_select(filter_time_options, params[:filter_time]),
+                         onchange: "this.form.requestSubmit()",
+                         class: "search-input" %>
+      <% end %>
+      <%= link_to t(".create_lesson_button"), new_admin_course_lesson_path(@course), class: "button button-primary" %>
+    </div>
+  </header>
+
+  <div class="content-panel">
+    <%= turbo_frame_tag "lessons-table" do %>
+      <table class="data-table">
+        <thead class="data-table-header">
+          <tr>
+            <th><%= t(".table_headers.lesson_name") %></th>
+            <th><%= t(".table_headers.short_description") %></th>
+            <th><%= t(".table_headers.created_at") %></th>
+            <th class="column-actions"><%= t(".table_headers.actions") %></th>
+          </tr>
+        </thead>
+        <tbody class="data-table-body">
+          <% if @lessons.any? %>
+            <%= render partial: "lesson", collection: @lessons, as: :lesson, locals: { course: @course } %>
+          <% else %>
+            <tr>
+              <td colspan="4" class="cell-empty">
+                <%= t(".empty_message") %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%== pagy_bootstrap_nav(@pagy) if @pagy %>
+    <% end %>
+  </div>
+</div>

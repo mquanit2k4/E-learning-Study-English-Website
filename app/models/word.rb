@@ -27,17 +27,17 @@ class Word < ApplicationRecord
     where("content LIKE ?", "%#{query}%")
   end)
 
-  scope :by_time, (lambda do |filter_time|
+  scope :by_time, lambda {|filter_time|
     case filter_time
-    when "today"
+    when Settings.filter_days.today
       where("created_at >= ?", Time.zone.now.beginning_of_day)
-    when "last_7_days", "last_30_days"
+    when Settings.filter_days.last_7_days, Settings.filter_days.last_30_days
       days = Settings.word.filter_days[filter_time].to_i
       where("created_at >= ?", days.days.ago.beginning_of_day)
     else
       all
     end
-  end)
+  }
 
   scope :search, (lambda do |q, field = nil|
     return all if q.blank?
