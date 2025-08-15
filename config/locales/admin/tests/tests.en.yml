@@ -33,6 +33,8 @@ en:
         max_attempts: "Max Attempts"
         created_date: "Created Date"
         actions: "Actions"
+        test_datail: "Test Detail"
+        test_update: "Test Update"
       test_row:
         action_view: "View"
         action_edit: "Edit"
@@ -41,6 +43,8 @@ en:
       form:
         enter_test_name: "Enter test name"
         enter_test_description: "Enter test description"
+        enter_test_duration: "Enter duration in minutes"
+        enter_test_max_attempts: "Enter maximum number of attempts"
         test_name: "Test Name"
         test_description: "Description"
         test_duration: "Test Duration"

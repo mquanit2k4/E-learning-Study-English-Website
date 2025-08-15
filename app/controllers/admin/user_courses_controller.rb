@@ -1,5 +1,5 @@
 class Admin::UserCoursesController < AdminController
-  before_action :set_user_course, only: %i(approve reject reject_detail)
+  before_action :set_user_course, only: %i(approve reject reject_detail profile)
   before_action :ensure_selection_present, :set_selected_user_courses,
                 only: %i(approve_selected reject_selected)
   before_action :set_approvable_and_invalid_courses, only: %i(approve_selected)
@@ -79,6 +79,16 @@ class Admin::UserCoursesController < AdminController
     respond_modal_with @user_course
   end
 
+  # GET /admin/user_courses/:id/profile
+  def profile
+    @user = @user_course.user
+    @course = @user_course.course
+    @lessons = load_lessons
+    @user_lessons = load_user_lessons
+    @test_results = load_test_results
+    @progress_percentage = calculate_progress_percentage
+  end
+
   private
 
   def set_user_course
@@ -135,5 +145,21 @@ class Admin::UserCoursesController < AdminController
               .registered_from(params[:registered_from])
               .expiration_date(params[:expiration_date])
               .order(created_at: :desc)
+  end
+
+  def load_lessons
+    @course.lessons.with_user_lessons_for(@user)
+  end
+
+  def load_user_lessons
+    UserLesson.for_user_and_course(@user, @course)
+  end
+
+  def load_test_results
+    TestResult.for_user_and_course(@user, @course)
+  end
+
+  def calculate_progress_percentage
+    @course.progress_percentage_for_user(@user)
   end
 end

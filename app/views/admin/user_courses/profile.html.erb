@@ -1,0 +1,123 @@
+<% content_for :title, t(".title") %>
+
+<div class="user-profile-container">
+  <div class="profile-header">
+    <h1><%= t(".user_profile") %></h1>
+    <% content_for :breadcrumbs do %>
+      <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+      <span class="breadcrumb-separator"> > </span>
+      <%= link_to t("admin.user_courses.index.title"), admin_user_courses_path %>
+      <span class="breadcrumb-separator"> > </span>
+      <%= link_to t("admin.user_courses.index.user_profile"), profile_admin_user_course_path(@user_course) %>
+    <% end %>
+  </div>
+
+  <div class="profile-main">
+    <div class="profile-left">
+      <div class="user-avatar">
+        <%= gravatar_for @user %>
+      </div>
+    </div>
+
+    <div class="profile-center">
+      <div class="user-details">
+        <p><strong><%= t(".name") %>:</strong> <%= @user.name %></p>
+        <p><strong><%= t(".gender") %>:</strong> <%= @user.gender.present? ? @user.gender.capitalize : t(".not_specified") %></p>
+        <p><strong><%= t(".date_of_birth") %>:</strong> <%= @user.birthday&.strftime(Settings.user_courses.date_format) || t(".not_specified") %></p>
+        <p><strong><%= t(".email") %>:</strong> <%= @user.email %></p>
+      </div>
+
+      <div class="course-info">
+        <p><strong><%= t(".course") %>:</strong> <%= @course.title %></p>
+      </div>
+    </div>
+
+    <div class="profile-right">
+      <div class="progress-section">
+        <div class="progress-circle">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <!-- Nền vòng tròn -->
+            <circle cx="50" cy="50" r="<%= progress_circle_radius %>" class="progress-bg"/>
+
+            <!-- Vòng tiến độ -->
+            <circle cx="50" cy="50" r="<%= progress_circle_radius %>" class="progress-bar"
+                    stroke-dasharray="<%= progress_circle_circumference %>"
+                    stroke-dashoffset="<%= progress_circle_dashoffset(@progress_percentage) %>" />
+
+            <!-- Số phần trăm ở giữa -->
+            <text x="50" y="50" class="progress-text"><%= progress_percentage_value(@progress_percentage) %>%</text>
+          </svg>
+
+          <p class="progress-label">
+            <%= t(".course_progress") %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-history-section">
+    <h3><%= t(".test_history") %></h3>
+    <% if @test_results.any? %>
+      <div class="table-responsive">
+        <table class="profile-table">
+          <thead>
+            <tr>
+              <th><%= t(".test_name") %></th>
+              <th><%= t(".score_percent") %></th>
+              <th><%= t(".submitted_at") %></th>
+              <th><%= t(".status") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @test_results.each do |result| %>
+              <tr>
+                <td><%= result.component.test.name %></td>
+                <td><%= result.mark %></td>
+                <td><%= result.created_at.strftime(Settings.user_courses.timestamp_format) %></td>
+                <td>
+                  <span class="status-badge <%= result.mark >= Settings.user_courses.test_pass_mark ? 'passed' : 'failed' %>">
+                    <%= result.mark >= Settings.user_courses.test_pass_mark ? t(".passed") : t(".failed") %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% else %>
+      <p class="no-data"><%= t(".no_test_history") %></p>
+    <% end %>
+  </div>
+
+  <div class="lessons-section">
+    <h3><%= t(".lessons") %></h3>
+    <% if @lessons.any? %>
+      <div class="table-responsive">
+        <table class="profile-table">
+          <thead>
+            <tr>
+              <th><%= t(".lesson_title") %></th>
+              <th><%= t(".status") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @lessons.each do |lesson| %>
+              <tr>
+                <td><%= lesson.title %></td>
+                <td>
+                  <% user_lesson = @user_lessons.find { |ul| ul.lesson_id == lesson.id } %>
+                  <span class="status-badge <%= user_lesson&.status == 'completed' ? 'completed' : 'incomplete' %>">
+                    <%= user_lesson&.completed? ? t(".completed") : t(".incomplete") %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% else %>
+      <p class="no-data"><%= t(".no_lessons") %></p>
+    <% end %>
+  </div>
+</div>

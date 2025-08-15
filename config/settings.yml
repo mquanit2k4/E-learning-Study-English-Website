@@ -31,7 +31,7 @@ question:
   question_types:
     single_choice: "single_choice"
     multiple_choice: "multiple_choice"
-  
+
 test_pass_percentage: 80.0
 
 max_percentage: 100
@@ -41,6 +41,7 @@ test:
 user_courses:
   timestamp_format: "%d/%m/%Y %H:%M"
   date_format: "%d/%m/%Y"
+  test_pass_mark: 80
 
 commit:
   save_draft: "save_draft"

@@ -3,6 +3,14 @@
   <div class="form-container">
     <div class="page-header">
       <h1><%= t(".course_details") %></h1>
+
+      <% content_for :breadcrumbs do %>
+        <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <span><%= t(".course_details") %></span>
+      <% end %>
     </div>
 
     <div class="course-details-table">

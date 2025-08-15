@@ -70,6 +70,18 @@ numericality: {greater_than: MINIMUM_DURATION}
   accepts_nested_attributes_for :admin_course_managers, :lessons,
                                 allow_destroy: true
 
+  def progress_percentage_for_user user
+    course_lessons = lessons.includes(:user_lessons)
+    total = course_lessons.count
+
+    return 0 if total.zero?
+
+    completed = UserLesson.count_for_user_and_lessons(user,
+                                                      course_lessons.pluck(:id))
+    percentage = completed.to_f / total * 100
+    percentage.round
+  end
+
   private
 
   def assign_admin_managers_from_ids

@@ -3,6 +3,7 @@ vi:
     user_courses:
       index:
         title: "Quản lý đăng ký"
+        user_profile: "Hồ sơ người dùng"
         filters:
           course: "Khóa học"
           status: "Trạng thái"
@@ -70,6 +71,29 @@ vi:
           rejected_at: "Thời gian từ chối:"
         no_reason: "Không có lý do được cung cấp"
         close_button: "Đóng"
+      profile:
+        title: "Hồ sơ người dùng"
+        user_profile: "Hồ sơ người dùng"
+        name: "Tên"
+        gender: "Giới tính"
+        date_of_birth: "Ngày sinh"
+        email: "Email"
+        course: "Khóa học"
+        course_progress: "Tiến độ khóa học"
+        not_specified: "Chưa xác định"
+        test_history: "Lịch sử bài kiểm tra"
+        test_name: "Tên bài kiểm tra"
+        score_percent: "Điểm (%)"
+        submitted_at: "Thời gian nộp"
+        status: "Trạng thái"
+        passed: "Đạt"
+        failed: "Không đạt"
+        no_test_history: "Không có lịch sử bài kiểm tra"
+        lessons: "Bài học"
+        lesson_title: "Tiêu đề bài học"
+        completed: "Đã hoàn thành"
+        incomplete: "Chưa hoàn thành"
+        no_lessons: "Không có bài học nào"
   helpers:
     admin:
       user_courses:

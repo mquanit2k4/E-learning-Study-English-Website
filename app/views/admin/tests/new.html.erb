@@ -1,11 +1,20 @@
 <% provide :title, t(".create_test") %>
 <% provide :button_text, t(".create_test") %>
-<h1><%= t(".create_test") %></h1>
-<% content_for :breadcrumbs do %>
-  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
-  <span class="breadcrumb-separator"> > </span>
-  <%= link_to t("admin.tests.index.test_list"), admin_tests_path %>
-  <span class="breadcrumb-separator"> > </span>
-  <span><%= t(".title") %></span>
-<% end %>
-<%= render "form", test: @test, url: admin_tests_path %>
+
+<div class="admin-test-create">
+  <div class="page-header">
+    <h1><%= t(".create_test") %></h1>
+  </div>
+
+  <% content_for :breadcrumbs do %>
+    <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <%= link_to t("admin.tests.index.test_list"), admin_tests_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <span><%= t(".title") %></span>
+  <% end %>
+
+  <div class="form-container">
+    <%= render "form", test: @test, url: admin_tests_path %>
+  </div>
+</div>

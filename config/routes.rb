@@ -50,6 +50,7 @@ Rails.application.routes.draw do
           patch :approve
           patch :reject
           get :reject_detail
+          get :profile
         end
         collection do
           post :approve_selected
