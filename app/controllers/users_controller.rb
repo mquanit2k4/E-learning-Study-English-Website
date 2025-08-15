@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @pagy, @user_courses = pagy(
       @user.user_courses
           .with_course
-          .with_status(params[:status])
+          .with_status_in(params[:status])
           .recent,
       limit: Settings.page_6
     )

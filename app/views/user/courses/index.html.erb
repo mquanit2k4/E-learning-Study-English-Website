@@ -1,14 +1,13 @@
 <% provide :title, t(".title") %>
-<h1><%= t(".title") %></h1>
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t(".title"), user_courses_path %>
+<% end %>
 
 <div class="container-fluid">
   <div class="row">
-    <% content_for :breadcrumbs do %>
-      <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
-      <span class="breadcrumb-separator"> > </span>
-      <%= link_to t(".title"), user_courses_path %>
-    <% end %>
-    <aside class="col-md-4 filter-container">
+    <aside class="col-md-4 course-filter-container filter-sidebar">
       <h4 class="filter-header">
         <i class="fa fa-filter"></i> <%= t(".filter_header") %>
       </h4>
@@ -17,6 +16,9 @@
 
     <div class="col-md-8">
       <div class="row">
+        <div class="course-page-header">
+          <h2><i class="fas fa-book-open"></i> <%= t(".title") %></h2>
+        </div>
         <% @courses.each do |course| %>
           <div class="col-lg-4 col-md-6 col-sm-12 course-column">
             <div class="course-wrapper">
