@@ -33,6 +33,8 @@ vi:
         max_attempts: "Số Lần Tối Đa"
         created_date: "Ngày Tạo"
         actions: "Hành Động"
+        test_detail: "Chi Tiết Bài Kiểm Tra"
+        test_update: "Cập Nhật Bài Kiểm Tra"
       test_row:
         action_view: "Xem"
         action_edit: "Sửa"
@@ -41,6 +43,8 @@ vi:
       form:
         enter_test_name: "Nhập tên bài kiểm tra"
         enter_test_description: "Nhập mô tả bài kiểm tra"
+        enter_test_duration: "Nhập thời gian làm bài (phút)"
+        enter_test_max_attempts: "Nhập số lần làm bài tối đa"
         test_name: "Tên Bài Kiểm Tra"
         test_description: "Mô Tả"
         test_duration: "Thời Gian Bài Kiểm Tra"

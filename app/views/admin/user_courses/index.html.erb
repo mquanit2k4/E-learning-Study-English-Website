@@ -4,6 +4,11 @@
   <div class="form-container">
     <div class="page-header">
       <h1><%= t(".title") %></h1>
+      <% content_for :breadcrumbs do %>
+        <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <%= link_to t("admin.user_courses.index.title"), admin_user_courses_path %>
+      <% end %>
     </div>
 
     <!-- Filter Section -->
@@ -96,7 +101,7 @@
                         data: { modal: true, turbo: false },
                         class: "btn btn-sm btn-secondary action-btn" %>
                     <% else %>
-                      <%= link_to t(".table.actions.view_profile"), "#",
+                      <%= link_to t(".table.actions.view_profile"), profile_admin_user_course_path(uc),
                                   class: "btn btn-sm btn-primary action-btn" %>
                     <% end %>
                   </td>

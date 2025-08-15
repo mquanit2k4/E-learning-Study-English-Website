@@ -4,6 +4,13 @@
   <div class="form-container">
     <div class="page-header">
       <h1><%= t(".test_details") %></h1>
+      <% content_for :breadcrumbs do %>
+        <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <%= link_to t("admin.tests.index.test_list"), admin_tests_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <%= link_to t("admin.tests.index.test_detail"), admin_test_path(@test) %>
+      <% end %>
       <div class="header-actions">
         <%= link_to t(".edit_test"), edit_admin_test_path(@test), class: "btn btn-outline-secondary" %>
         <%= link_to t(".back_to_list"), admin_tests_path, class: "btn btn-outline-primary" %>

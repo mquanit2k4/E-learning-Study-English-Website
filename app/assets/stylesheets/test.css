@@ -81,7 +81,7 @@
 
 .action-link,
 .action-button-delete {
-  font-size: 0.9rem;
+  font-size: inherit;
   font-weight: 500;
 }
 

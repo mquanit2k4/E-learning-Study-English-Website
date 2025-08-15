@@ -1,24 +1,24 @@
 .admin-courses {
   .form-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 2rem;
   }
 
   .page-header {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
 
     h1 {
+      color: #333;
       font-size: 2rem;
       font-weight: bold;
       margin: 0;
-      color: #333;
     }
   }
 
@@ -28,23 +28,23 @@
 
       thead {
         th {
-          text-align: center;
           background-color: #f8f9fa;
-          font-weight: 600;
           border-bottom: 2px solid #dee2e6;
+          font-weight: 600;
           padding: 1rem 0.75rem;
+          text-align: center;
         }
       }
 
       tbody {
         td {
+          padding: 0.75rem;
           text-align: center;
           vertical-align: middle;
-          padding: 0.75rem;
 
           &.course-name {
-            font-weight: 500;
             color: #2c3e50;
+            font-weight: 500;
           }
 
           &.course-description {
@@ -72,8 +72,8 @@
   }
 
   .pagination-wrapper {
-    text-align: center;
     margin-top: 2rem;
+    text-align: center;
 
     .pagination {
       justify-content: center;
@@ -84,8 +84,8 @@
   .btn-primary {
     background: #007bff;
     border-color: #007bff;
-    padding: 0.5rem 1.5rem;
     font-weight: 500;
+    padding: 0.5rem 1.5rem;
 
     &:hover {
       background: #0056b3;
@@ -94,8 +94,8 @@
   }
 
   .btn-outline-primary {
-    color: #007bff;
     border-color: #007bff;
+    color: #007bff;
 
     &:hover {
       background: #007bff;
@@ -105,8 +105,8 @@
   }
 
   .btn-outline-secondary {
-    color: #6c757d;
     border-color: #6c757d;
+    color: #6c757d;
 
     &:hover {
       background: #6c757d;
@@ -116,50 +116,14 @@
   }
 
   .btn-outline-danger {
-    color: #dc3545;
     border-color: #dc3545;
+    color: #dc3545;
 
     &:hover {
       background: #dc3545;
       border-color: #dc3545;
       color: white;
     }
-  }
-
-  // Admin list styling (moved from inline style)
-  .admin-list {
-    margin-top: 0.5rem;
-  }
-
-  .admin-item {
-    display: inline-block;
-    background: #e3f2fd;
-    color: #1976d2;
-    padding: 0.25rem 0.75rem;
-    margin: 0.125rem;
-    border-radius: 15px;
-    font-size: 0.875rem;
-    border: 1px solid #bbdefb;
-  }
-
-  .lesson-item {
-    display: inline-block;
-    background: #f3e5f5;
-    color: #7b1fa2;
-    padding: 0.25rem 0.75rem;
-    margin: 0.125rem;
-    border-radius: 15px;
-    font-size: 0.875rem;
-    border: 1px solid #e1bee7;
-  }
-
-  .count-badge {
-    background: #4caf50;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.875rem;
-    font-weight: 500;
   }
 
   // Admin list styling (moved from inline style)
@@ -216,9 +180,9 @@
     }
 
     .btn {
-      padding: 0.25rem 0.5rem;
       font-size: 0.8rem;
       min-width: auto !important;
+      padding: 0.25rem 0.5rem;
     }
   }
 }
@@ -226,12 +190,12 @@
 // Course form styles (for create/edit pages)
 .admin-course-form {
   .form-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 2rem;
   }
 
   .form-group {
@@ -239,19 +203,20 @@
   }
 
   .form-label {
+    color: #333;
+    display: block;
+    font-size: 14px; /* Tăng kích cỡ chữ cho label */
     font-weight: bold;
     margin-bottom: 0.5rem;
-    display: block;
-    color: #333;
   }
 
   .form-control {
-    width: 100%;
-    padding: 0.75rem;
+    background: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background: #f8f9fa;
+    padding: 0.75rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
 
     &:focus {
       border-color: #007bff;
@@ -271,18 +236,18 @@
   }
 
   .selected-item {
-    display: inline-block;
     background: #e9ecef;
-    padding: 0.25rem 0.5rem;
-    margin: 0.25rem;
     border-radius: 15px;
+    display: inline-block;
     font-size: 0.875rem;
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
 
     .remove-item {
-      margin-left: 0.5rem;
-      cursor: pointer;
       color: #dc3545;
+      cursor: pointer;
       font-weight: bold;
+      margin-left: 0.5rem;
     }
   }
 
@@ -290,25 +255,25 @@
     position: relative;
 
     .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-      width: 100%;
       background: white;
       border: 1px solid #ddd;
       border-radius: 4px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      left: 0;
       max-height: 200px;
       overflow-y: auto;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 1000;
 
       li {
         list-style: none;
 
         .dropdown-item {
+          color: #333;
           display: block;
           padding: 0.5rem 1rem;
-          color: #333;
           text-decoration: none;
 
           &:hover {
@@ -330,24 +295,24 @@
 // Course show page styles
 .admin-course-show {
   .form-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 2rem;
   }
 
   .page-header {
+    border-bottom: 2px solid #e9ecef;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #e9ecef;
 
     h1 {
+      color: #333;
       font-size: 2rem;
       font-weight: bold;
       margin: 0;
-      color: #333;
     }
   }
 
@@ -358,16 +323,16 @@
       margin-bottom: 0;
 
       td {
-        padding: 1rem;
         border-bottom: 1px solid #e9ecef;
+        padding: 1rem;
         vertical-align: top;
 
         &.detail-label {
           background-color: #f8f9fa;
-          font-weight: 600;
-          color: #495057;
-          width: 200px;
           border-right: 1px solid #e9ecef;
+          color: #495057;
+          font-weight: 600;
+          width: 200px;
         }
 
         &.detail-value {
@@ -383,34 +348,34 @@
           }
 
           .admin-item {
-            display: inline-block;
             background: #e3f2fd;
-            color: #1976d2;
-            padding: 0.25rem 0.75rem;
-            margin: 0.125rem;
-            border-radius: 15px;
-            font-size: 1.2rem;
             border: 1px solid #bbdefb;
+            border-radius: 15px;
+            color: #1976d2;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin: 0.125rem;
+            padding: 0.25rem 0.75rem;
           }
 
           .lesson-item {
-            display: inline-block;
             background: #f3e5f5;
-            color: #7b1fa2;
-            padding: 0.25rem 0.75rem;
-            margin: 0.125rem;
-            border-radius: 15px;
-            font-size: 1.5rem;
             border: 1px solid #e1bee7;
+            border-radius: 15px;
+            color: #7b1fa2;
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 0.125rem;
+            padding: 0.25rem 0.75rem;
           }
 
           .count-badge {
             background: #4caf50;
-            color: white;
-            padding: 0.25rem 0.5rem;
             border-radius: 12px;
+            color: white;
             font-size: 1.5rem;
             font-weight: 500;
+            padding: 0.25rem 0.5rem;
           }
         }
       }
@@ -422,10 +387,10 @@
   }
 
   .action-buttons {
-    text-align: center;
+    border-top: 1px solid #e9ecef;
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #e9ecef;
+    text-align: center;
 
     .btn {
       margin: 0 0.5rem;
@@ -443,14 +408,37 @@
         padding: 0.75rem;
 
         &.detail-label {
-          width: 150px;
           font-size: 0.875rem;
+          width: 150px;
         }
 
         &.detail-value {
           font-size: 0.875rem;
         }
       }
+    }
+  }
+}
+
+.admin-course-create {
+  .page-header {
+    margin-left: 15px;
+  }
+
+  .form-container {
+    margin: 0 15px 0 15px;
+
+    /* Styling cho các labels trong form */
+    label {
+      color: #495057;
+      display: block;
+      font-size: 14px; /* Kích cỡ chữ cho label */
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      font-size: 14px; /* Kích cỡ chữ cho input */
     }
   }
 }

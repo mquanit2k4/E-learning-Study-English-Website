@@ -49,9 +49,8 @@ class Admin::CoursesController < ApplicationController
     else
       @admin_users = User.admin
       @course.course_admin_ids = params.dig(:course, :course_admin_ids)
+      render :edit, status: :unprocessable_entity
     end
-
-    render :edit
   end
 
   # DELETE /admin/courses/:id

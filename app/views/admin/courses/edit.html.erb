@@ -1,4 +1,20 @@
 <% provide :title, t(".update_course") %>
 <% provide :button_text, t(".save_change") %>
-<h1><%= t(".update_course") %></h1>
-<%= render "form", course: @course, admin_users: @admin_users %>
+
+<div class="admin-course-create">
+  <div class="page-header">
+    <h1><%= t(".update_course") %></h1>
+  </div>
+
+  <% content_for :breadcrumbs do %>
+    <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <%= link_to t(".update_course"), edit_admin_course_path(@course) %>
+  <% end %>
+
+  <div class="form-container">
+    <%= render "form", course: @course, admin_users: @admin_users %>
+  </div>
+</div>

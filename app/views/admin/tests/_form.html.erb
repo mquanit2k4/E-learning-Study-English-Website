@@ -4,22 +4,22 @@
   <div class="form-row form-row-top">
     <div class="form-group form-group-name">
       <%= form.label :name, t(".test_name") %>
-      <%= form.text_field :name, class: "form-control" %>
+      <%= form.text_field :name, class: "form-control", placeholder: t(".enter_test_name") %>
     </div>
     <div class="form-group form-group-duration">
       <%= form.label :duration, t(".test_duration") %>
-      <%= form.number_field :duration, class: "form-control" %>
+      <%= form.number_field :duration, class: "form-control", placeholder: t(".enter_test_duration"), min: 1 %>
     </div>
     <div class="form-group form-group-attempts">
       <%= form.label :max_attempts, t(".test_max_attempt") %>
-      <%= form.number_field :max_attempts, class: "form-control" %>
+      <%= form.number_field :max_attempts, class: "form-control", placeholder: t(".enter_test_max_attempts"), min: 1 %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group form-group-description">
       <%= form.label :description, t(".test_description") %>
-      <%= form.text_area :description, class: "form-control form-textarea" %>
+      <%= form.text_area :description, class: "form-control form-textarea", placeholder: t(".enter_test_description"), rows: 4 %>
     </div>
   </div>
 

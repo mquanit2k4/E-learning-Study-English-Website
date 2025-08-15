@@ -5,6 +5,11 @@
     <div class="page-header">
       <h1><%= t(".course_list") %></h1>
       <%= link_to t(".create_course"), new_admin_course_path, class: "btn btn-primary" %>
+      <% content_for :breadcrumbs do %>
+        <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+        <span class="breadcrumb-separator"> > </span>
+        <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+      <% end %>
     </div>
 
     <div class="search-section mb-4">

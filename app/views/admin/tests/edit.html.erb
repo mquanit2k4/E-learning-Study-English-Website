@@ -1,4 +1,20 @@
 <% provide :title, t(".update_test") %>
 <% provide :button_text, t(".save_changes") %>
-<h1><%= t(".update_test") %></h1>
-<%= render "form", test: @test, url: admin_test_path(@test) %>
+
+<div class="admin-test-create">
+  <div class="page-header">
+    <h1><%= t(".update_test") %></h1>
+  </div>
+
+  <% content_for :breadcrumbs do %>
+    <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <%= link_to t("admin.tests.index.test_list"), admin_tests_path %>
+    <span class="breadcrumb-separator"> > </span>
+    <%= link_to t("admin.tests.index.test_update"), edit_admin_test_path(@test) %>
+  <% end %>
+
+  <div class="form-container">
+    <%= render "form", test: @test, url: admin_test_path(@test) %>
+  </div>
+</div>

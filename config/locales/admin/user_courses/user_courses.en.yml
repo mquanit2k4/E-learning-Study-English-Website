@@ -3,6 +3,7 @@ en:
     user_courses:
       index:
         title: "Registration management"
+        user_profile: "User Profile"
         filters:
           course: "Course"
           status: "Status"
@@ -70,6 +71,29 @@ en:
           rejected_at: "Rejected at:"
         no_reason: "No reason provided"
         close_button: "Close"
+      profile:
+        title: "User Profile"
+        user_profile: "User Profile"
+        name: "Name"
+        gender: "Gender"
+        date_of_birth: "Date of Birth"
+        email: "Email"
+        course: "Course"
+        course_progress: "Course Progress"
+        not_specified: "Not specified"
+        test_history: "Test History"
+        test_name: "Test Name"
+        score_percent: "Score (%)"
+        submitted_at: "Submitted At"
+        status: "Status"
+        passed: "Passed"
+        failed: "Failed"
+        no_test_history: "No test history available"
+        lessons: "Lessons"
+        lesson_title: "Lesson Title"
+        completed: "Completed"
+        incomplete: "Incomplete"
+        no_lessons: "No lessons available"
   helpers:
     admin:
       user_courses:
