@@ -62,4 +62,6 @@ class UserCourse < ApplicationRecord
 
   scope :invalid_for_approve, ->{with_status_in(INVALID_APPROVE_STATUSES)}
   scope :invalid_for_reject, ->{with_status_in(INVALID_REJECT_STATUSES)}
+
+  validates :reason, presence: true, if: ->{rejected?}
 end

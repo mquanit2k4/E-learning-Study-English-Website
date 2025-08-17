@@ -1,5 +1,6 @@
 class Admin::UserCoursesController < AdminController
-  before_action :set_user_course, only: %i(approve reject reject_detail profile)
+  before_action :set_user_course,
+                only: %i(approve reject_form reject reject_detail profile)
   before_action :ensure_selection_present, :set_selected_user_courses,
                 only: %i(approve_selected reject_selected)
   before_action :set_approvable_and_invalid_courses, only: %i(approve_selected)
@@ -30,13 +31,18 @@ class Admin::UserCoursesController < AdminController
     redirect_index_with_filters
   end
 
+  # GET /admin/user_courses/:id/reject_form
+  def reject_form
+    respond_modal_with @user_course
+  end
+
   # PATCH /admin/user_courses/:id/reject
   def reject
-    if @user_course.rejected!
-      flash[:success] = t(".reject_success")
-    else
-      flash[:danger] = t(".reject_failed")
-    end
+    @user_course.update!(reason: params[:reason].presence,
+                         enrolment_status: :rejected)
+
+    flash[:success] = t(".reject_success")
+
     redirect_index_with_filters
   rescue StandardError => e
     Rails.logger.error(t(".log_error", error: e.message))

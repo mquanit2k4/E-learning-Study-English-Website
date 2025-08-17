@@ -1,0 +1,21 @@
+<% content_for :title, t(".title") %>
+
+<div class="modal-body p-4">
+  <%= form_with(
+        url: reject_admin_user_course_path(@user_course),
+        method: :patch,
+        local: !request.xhr?,
+        html: { data: { modal: true } }
+      ) do |f| %>
+
+    <div class="form-group">
+      <%= label_tag :reason, t(".labels.reason") %>
+      <%= text_area_tag :reason, @user_course.reason, rows: 4, class: "form-control", placeholder: t(".placeholders.reason") %>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".buttons.cancel") %></button>
+      <button type="submit" class="btn btn-danger"><%= t(".buttons.confirm") %></button>
+    </div>
+  <% end %>
+</div>
