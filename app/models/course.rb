@@ -56,7 +56,7 @@ class Course < ApplicationRecord
     else
       joins(:user_courses)
         .where(user_courses: {user_id: user.id})
-        .merge(UserCourse.with_status(status))
+        .merge(UserCourse.with_status_in(status))
     end
   end)
 
