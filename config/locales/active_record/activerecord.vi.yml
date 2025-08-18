@@ -49,3 +49,9 @@ vi:
               in_future: "không được nằm trong tương lai"
             password:
               password_blank: "không được để trống nếu đã cung cấp xác nhận mật khẩu"
+        word:
+          attributes:
+            word_type:
+              inclusion: "loại từ không hợp lệ"
+      messages:
+        inclusion: "không có trong danh sách"

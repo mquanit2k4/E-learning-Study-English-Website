@@ -49,3 +49,9 @@ en:
               in_future: "cannot be in the future"
             password:
               password_blank: "can't be blank if confirmation is provided"
+        word:
+          attributes:
+            word_type:
+              inclusion: "Word type invalid"
+      messages:
+        inclusion: "Not in the list"

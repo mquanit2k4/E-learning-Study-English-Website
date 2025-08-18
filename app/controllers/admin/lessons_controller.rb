@@ -39,6 +39,7 @@ class Admin::LessonsController < ApplicationController
     redirect_to admin_course_lesson_path(@course, @lesson)
   rescue ActiveRecord::RecordInvalid => e
     @error_object = e.record
+    render_error_for_form(:new, components_params)
   end
 
   # GET /admin/courses/:course_id/lessons/:id/edit
@@ -97,6 +98,17 @@ class Admin::LessonsController < ApplicationController
   end
 
   private
+
+  def render_error_for_form action, components_params,
+    flash_message = t(".failure")
+    @selected_word_ids = (components_params[:word_ids] || []).compact_blank
+                                                             .map(&:to_i)
+    @selected_test_ids = (components_params[:test_ids] || []).compact_blank
+                                                             .map(&:to_i)
+    @selected_paragraphs = components_params[:paragraphs].presence || []
+    flash.now[:danger] = flash_message
+    render action, status: :unprocessable_entity
+  end
 
   def build_new_lesson
     lesson = @course.lessons.build(lesson_params.except(

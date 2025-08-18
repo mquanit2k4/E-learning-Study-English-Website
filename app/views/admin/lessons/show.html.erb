@@ -1,61 +1,75 @@
-<h1><%= @lesson.title %></h1>
+<% content_for :breadcrumbs do %>
+  <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.index.course_list"), admin_courses_path %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.show.course_details"), admin_course_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <%= link_to t("admin.courses.show.course_details"), admin_course_lessons_path(@course) %>
+  <span class="breadcrumb-separator"> > </span>
+  <span><%= @lesson.title %></span>
+<% end %>
 
-<div class="lesson-info-card">
-  <div class="card-body">
-    <div class="form-field-group">
-      <label class="form-label"><%= t(".description") %>:</label>
-      <p class="form-text-plain"><%= @lesson.description %></p>
-    </div>
-    <div class="form-field-group">
-      <label class="form-label"><%= t(".created_date") %>:</label>
-      <p class="form-text-plain"><%= @lesson.created_at.strftime("%d/%m/%Y") %></p>
-    </div>
-  </div>
-</div>
+<div class="lesson-form-container">
+  <h1><%= @lesson.title %></h1>
 
-<div class="lesson-components-row">
-  <div class="lesson-components-col">
-    <div class="word-list-section">
-      <h3><%= t(".word_list") %></h3>
-      <div id="selected-words-list">
-        <% @lesson.components.where(component_type: "word").order(:index_in_lesson).each do |component| %>
-          <div class="word-item component-flex-row">
-            <div class="order-number component-order-margin-right"><%= component.index_in_lesson %></div>
-            <p class="form-text-plain component-flex-grow"><%= component.word.content %></p>
-          </div>
-        <% end %>
+  <div class="lesson-info-card">
+    <div class="card-body">
+      <div class="form-field-group">
+        <label class="form-label"><%= t(".description") %>:</label>
+        <p class="form-text-plain"><%= @lesson.description %></p>
+      </div>
+      <div class="form-field-group">
+        <label class="form-label"><%= t(".created_date") %>:</label>
+        <p class="form-text-plain"><%= @lesson.created_at.strftime("%d/%m/%Y") %></p>
       </div>
     </div>
   </div>
 
-  <div class="lesson-components-col">
-    <div class="test-list-section">
-      <h3><%= t(".test_list") %></h3>
-      <div id="selected-tests-list">
-        <% @lesson.components.where(component_type: "test").order(:index_in_lesson).each do |component| %>
-          <div class="test-item component-flex-row">
-            <div class="order-number component-order-margin-right"><%= component.index_in_lesson %></div>
-            <p class="form-text-plain component-flex-grow"><%= component.test.name %></p>
-          </div>
-        <% end %>
+  <div class="lesson-components-row">
+    <div class="lesson-components-col">
+      <div class="word-list-section">
+        <h3><%= t(".word_list") %></h3>
+        <div id="selected-words-list">
+          <% @lesson.components.word.order(:index_in_lesson).each do |component| %>
+            <div class="word-item component-flex-row">
+              <div class="order-number component-order-margin-right"><%= component.index_in_lesson %></div>
+              <p class="form-text-plain component-flex-grow"><%= component.word.content %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-components-col">
+      <div class="test-list-section">
+        <h3><%= t(".test_list") %></h3>
+        <div id="selected-tests-list">
+          <% @lesson.components.test.order(:index_in_lesson).each do |component| %>
+            <div class="test-item component-flex-row">
+              <div class="order-number component-order-margin-right"><%= component.index_in_lesson %></div>
+              <p class="form-text-plain component-flex-grow"><%= component.test.name %></p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="paragraph-list-section component-top-margin-4">
-  <h3><%= t(".paragraph_list") %></h3>
-  <div id="selected-paragraphs-list">
-    <% @lesson.components.where(component_type: "paragraph").order(:index_in_lesson).each do |component| %>
-      <div class="paragraph-item">
-        <div class="order-number"><%= component.index_in_lesson %></div>
-        <div class="form-text-plain"><%= simple_format(component.content) %></div>
-      </div>
-    <% end %>
+  <div class="paragraph-list-section component-top-margin-4">
+    <h3><%= t(".paragraph_list") %></h3>
+    <div id="selected-paragraphs-list">
+      <% @lesson.components.paragraph.order(:index_in_lesson).each do |component| %>
+        <div class="paragraph-item">
+          <div class="order-number"><%= component.index_in_lesson %></div>
+          <div class="form-text-plain"><%= simple_format(component.content) %></div>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="component-top-margin-4">
-  <%= link_to t(".edit"), edit_admin_course_lesson_path(@course, @lesson), class: "custom-button custom-button-primary" %>
-  <%= link_to t(".back_to_list"), admin_course_lessons_path(@course), class: "custom-button custom-button-secondary" %>
+  <div class="component-top-margin-4">
+    <%= link_to t(".edit"), edit_admin_course_lesson_path(@course, @lesson), class: "custom-button custom-button-primary" %>
+    <%= link_to t(".back_to_list"), admin_course_lessons_path(@course), class: "custom-button custom-button-secondary" %>
+  </div>
 </div>

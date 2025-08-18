@@ -83,7 +83,7 @@ vi:
         not_specified: "Chưa xác định"
         test_history: "Lịch sử bài kiểm tra"
         test_name: "Tên bài kiểm tra"
-        score_percent: "Điểm (%)"
+        score_percent: "Điểm"
         submitted_at: "Thời gian nộp"
         status: "Trạng thái"
         passed: "Đạt"

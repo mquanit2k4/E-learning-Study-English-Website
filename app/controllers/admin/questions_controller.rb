@@ -45,7 +45,7 @@ class Admin::QuestionsController < AdminController
     if @question.destroy
       flash[:success] = t(".success")
     else
-      flash[:error] = t(".failure")
+      flash[:danger] = t(".failure")
     end
     redirect_to admin_test_path(@test)
   end
@@ -58,10 +58,7 @@ class Admin::QuestionsController < AdminController
   end
 
   def handle_failure action
-    flash.now[:error] = t(".failure")
-    if @question.errors.any?
-      flash.now[:error] += " #{@question.errors.full_messages.join('. ')}"
-    end
+    flash.now[:danger] = t(".failure")
     render action, status: :unprocessable_entity
   end
 
@@ -69,7 +66,7 @@ class Admin::QuestionsController < AdminController
     @test = Test.find_by(id: params[:test_id])
     return if @test
 
-    flash[:error] = t(".test_not_found")
+    flash[:danger] = t(".test_not_found")
     redirect_to admin_tests_path
   end
 
@@ -77,7 +74,7 @@ class Admin::QuestionsController < AdminController
     @question = @test.questions.find_by(id: params[:id])
     return if @question
 
-    flash[:error] = t(".question_not_found")
+    flash[:danger] = t(".question_not_found")
     redirect_to admin_test_path(@test)
   end
 
