@@ -10,15 +10,17 @@
   <span><%= t(".title") %></span>
 <% end %>
 <%= render "shared/error_messages", object: @error_object %>
-<h1><%= t(".title") %></h1>
+<div class="lesson-form-container">
+  <h1><%= t(".title") %></h1>
 
-<%= render "form",
-    lesson: @lesson,
-    method: :post,
-    submit_text: t(".form.create_button"),
-    selected_word_ids: @selected_word_ids,
-    selected_test_ids: @selected_test_ids,
-    selected_paragraphs: @selected_paragraphs,
-    word_components: @selected_word_ids.map { |id| Component.new(word_id: id) },
-    test_components: @selected_test_ids.map { |id| Component.new(test_id: id) },
-    paragraph_components: @selected_paragraphs.map { |content| Component.new(content: content) } %>
+  <%= render "form",
+      lesson: @lesson,
+      method: :post,
+      submit_text: t(".form.create_button"),
+      selected_word_ids: @selected_word_ids,
+      selected_test_ids: @selected_test_ids,
+      selected_paragraphs: @selected_paragraphs,
+      word_components: @selected_word_ids.map { |id| Component.new(word_id: id) },
+      test_components: @selected_test_ids.map { |id| Component.new(test_id: id) },
+      paragraph_components: @selected_paragraphs.map { |content| Component.new(content: content) } %>
+</div>

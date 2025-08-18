@@ -64,3 +64,4 @@ en:
           show: "View"
           edit: "Edit"
           delete: "Delete"
+          confirm: "Are you sure to delete this word?"

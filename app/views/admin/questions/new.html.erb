@@ -7,6 +7,7 @@
   <span class="breadcrumb-separator"> > </span>
   <span><%= t(".title") %></span>
 <% end %>
+<%= render "shared/error_messages", object: @question %>
 <div class="question-form-container">
   <div class="question-form-header">
     <h1 class="question-form-title"><%= t(".title") %></h1>

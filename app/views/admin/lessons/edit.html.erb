@@ -11,15 +11,17 @@
 <% end %>
 <%= render "shared/error_messages", object: @error_object %>
 
-<h1><%= t(".title") %></h1>
+<div class="lesson-form-container">
+  <h1><%= t(".title") %></h1>
 
-<%= render "form",
-    lesson: @lesson,
-    method: :patch,
-    submit_text: t(".form.update_button"),
-    selected_word_ids: @lesson.components.where(component_type: "word").pluck(:word_id),
-    selected_test_ids: @lesson.components.where(component_type: "test").pluck(:test_id),
-    selected_paragraphs: @lesson.components.where(component_type: "paragraph").pluck(:content),
-    word_components: @lesson.components.where(component_type: "word").order(:index_in_lesson),
-    test_components: @lesson.components.where(component_type: "test").order(:index_in_lesson),
-    paragraph_components: @lesson.components.where(component_type: "paragraph").order(:index_in_lesson) %>
+  <%= render "form",
+      lesson: @lesson,
+      method: :patch,
+      submit_text: t(".form.update_button"),
+      selected_word_ids: @lesson.components.word.pluck(:word_id),
+      selected_test_ids: @lesson.components.test.pluck(:test_id),
+      selected_paragraphs: @lesson.components.paragraph.pluck(:content),
+      word_components: @lesson.components.word.order(:index_in_lesson),
+      test_components: @lesson.components.test.order(:index_in_lesson),
+      paragraph_components: @lesson.components.paragraph.order(:index_in_lesson) %>
+</div>

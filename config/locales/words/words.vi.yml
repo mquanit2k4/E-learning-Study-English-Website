@@ -64,3 +64,4 @@ vi:
           show: "Xem"
           edit: "Sửa"
           delete: "Xóa"
+          confirm: "Bạn có chắc chắn muốn xóa từ vựng này không?"

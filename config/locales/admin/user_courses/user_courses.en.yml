@@ -92,7 +92,7 @@ en:
         not_specified: "Not specified"
         test_history: "Test History"
         test_name: "Test Name"
-        score_percent: "Score (%)"
+        score_percent: "Score"
         submitted_at: "Submitted At"
         status: "Status"
         passed: "Passed"

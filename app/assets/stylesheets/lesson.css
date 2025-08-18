@@ -1,4 +1,8 @@
 /* app/assets/stylesheets/lessons.scss */
+.lesson-form-container{
+  margin: 50px 20px;
+}
+
 .word-list-section, .test-list-section, .paragraph-list-section {
   margin-top: 20px;
 }
