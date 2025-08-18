@@ -80,5 +80,6 @@ vi:
         delete_question: "Xóa"
         delete_question_confirm: "Bạn có chắc chắn muốn xóa câu hỏi này?"
         no_questions: "Chưa có câu hỏi nào trong bài test này."
+        question_type_label: "Loại Câu hỏi:"
       authenticate_admin:
         not_authorized: "Bạn không có quyền truy cập vào trang này!"

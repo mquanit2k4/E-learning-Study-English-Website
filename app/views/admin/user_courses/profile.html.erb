@@ -76,8 +76,8 @@
                 <td><%= result.mark %></td>
                 <td><%= result.created_at.strftime(Settings.user_courses.timestamp_format) %></td>
                 <td>
-                  <span class="status-badge <%= result.mark >= Settings.user_courses.test_pass_mark ? 'passed' : 'failed' %>">
-                    <%= result.mark >= Settings.user_courses.test_pass_mark ? t(".passed") : t(".failed") %>
+                  <span class="status-badge <%= result.passed? ? "passed" : "failed" %>">
+                    <%= result.passed? ? t(".passed") : t(".failed") %>
                   </span>
                 </td>
               </tr>

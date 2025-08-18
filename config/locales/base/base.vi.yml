@@ -117,3 +117,7 @@ vi:
     not_authorized: "Bạn không có quyền thực hiện hành động này."
     already_logged_in: "Bạn đã đăng nhập rồi."
     cannot_edit_another_user: "Bạn không thể chỉnh sửa hồ sơ của người dùng khác."
+
+  words:
+    error:
+      title: "Lỗi"

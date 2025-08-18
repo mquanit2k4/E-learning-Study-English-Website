@@ -117,3 +117,7 @@ en:
     not_authorized: "You are not authorized to perform this action."
     already_logged_in: "You are already logged in."
     cannot_edit_another_user: "You cannot edit another user's profile."
+
+  words:
+    error:
+      title: "Error"
