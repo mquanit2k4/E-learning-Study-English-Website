@@ -88,13 +88,10 @@
                                     turbo_confirm: t(".table.confirmations.approve"),
                                     turbo_method: :patch
                                   } %>
-                      <%= link_to t(".table.actions.reject"), reject_admin_user_course_path(uc),
-                                  method: :patch,
+                      <%= link_to t(".table.actions.reject"),
+                                  reject_form_admin_user_course_path(uc),
                                   class: "btn btn-sm btn-danger action-btn",
-                                  data: {
-                                    turbo_confirm: t(".table.confirmations.reject"),
-                                    turbo_method: :patch
-                                  } %>
+                                  data: { modal: true, turbo: false } %>
                     <% elsif uc.rejected? %>
                       <%= link_to t(".table.actions.view_reason"),
                         reject_detail_admin_user_course_path(uc),

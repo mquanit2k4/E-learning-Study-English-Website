@@ -71,6 +71,15 @@ vi:
           rejected_at: "Thời gian từ chối:"
         no_reason: "Không có lý do được cung cấp"
         close_button: "Đóng"
+      reject_form:
+        title: "Từ chối khóa học"
+        labels:
+          reason: "Lý do từ chối"
+        placeholders:
+          reason: "Nhập lý do từ chối đăng ký khóa học..."
+        buttons:
+          cancel: "Đóng"
+          confirm: "Xác nhận từ chối"
       profile:
         title: "Hồ sơ người dùng"
         user_profile: "Hồ sơ người dùng"

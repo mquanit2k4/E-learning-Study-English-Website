@@ -6,7 +6,15 @@
 
     // Fallback cho Bootstrap
     var $bs = $(holder).find('.modal');
-    if ($bs.length) { $bs.modal('show'); }
+    if ($bs.length) { $bs.modal('show');
+      $bs.off('click.remoteModal').on('click.remoteModal', '.modal-dialog, .modal-content', function(e){
+        var $t = $(e.target);
+        if ($t.closest('[data-dismiss], [data-bs-dismiss], .close, .btn-close').length) {
+          return;
+        }
+        e.stopPropagation();
+      });
+    }
   }
 
   function initRemoteModals() {
@@ -34,6 +42,15 @@
       } else {
         $(holder).html(data);
         showInjectedModal(holder);
+      }
+    });
+
+    // prevent clicks inside injected modal-body from closing it (turbo/bs issue)
+    $(document).off('click.modalContent').on('click.modalContent', '#modal-holder .modal', function(e) {
+      var $t = $(e.target);
+      // If click is inside modal content and not on a dismiss control, stop propagation
+      if ($t.closest('.modal-dialog, .modal-content').length && !$t.closest('[data-dismiss], [data-bs-dismiss], .close, .btn-close').length) {
+        e.stopPropagation();
       }
     });
   }

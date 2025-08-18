@@ -53,6 +53,7 @@ Rails.application.routes.draw do
           patch :approve
           patch :reject
           get :reject_detail
+          get :reject_form
           get :profile
         end
         collection do

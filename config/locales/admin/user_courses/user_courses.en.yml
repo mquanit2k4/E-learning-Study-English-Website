@@ -71,6 +71,15 @@ en:
           rejected_at: "Rejected at:"
         no_reason: "No reason provided"
         close_button: "Close"
+      reject_form:
+        title: "Reject Course"
+        labels:
+          reason: "Rejection reason"
+        placeholders:
+          reason: "Enter reason for rejecting this course registration..."
+        buttons:
+          cancel: "Close"
+          confirm: "Confirm Rejection"
       profile:
         title: "User Profile"
         user_profile: "User Profile"
