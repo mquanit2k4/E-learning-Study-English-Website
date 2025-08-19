@@ -55,3 +55,4 @@ vi:
               inclusion: "loại từ không hợp lệ"
       messages:
         inclusion: "không có trong danh sách"
+        record_invalid: "Dữ liệu không hợp lệ"
