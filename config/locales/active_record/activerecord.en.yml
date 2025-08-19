@@ -55,3 +55,4 @@ en:
               inclusion: "Word type invalid"
       messages:
         inclusion: "Not in the list"
+        record_invalid: "Invalid data"
