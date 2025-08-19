@@ -1,16 +1,23 @@
 FactoryBot.define do
   factory :component do
-    sequence(:title) { |n| "Component #{n}" }
-    component_type { :lesson }
+    component_type { :test }
     association :lesson
+    association :test
+    index_in_lesson { 1 }
 
-    trait :test do
+    trait :test_type do
       component_type { :test }
       association :test
     end
 
-    trait :lesson do
-      component_type { :lesson }
+    trait :word_type do
+      component_type { :word }
+      association :word
+    end
+
+    trait :paragraph_type do
+      component_type { :paragraph }
+      content { "Sample paragraph content" }
     end
   end
 end
