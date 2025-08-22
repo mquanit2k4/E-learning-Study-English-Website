@@ -1,6 +1,7 @@
 vi:
   users:
     not_found: "Không tìm thấy người dùng"
+    access_denied: "Bạn không có quyền truy cập vào thông tin người dùng này."
     please_log_in: "Vui lòng đăng nhập để truy cập trang này."
     cannot_edit: "Bạn không thể chỉnh sửa hồ sơ người dùng này."
     create:

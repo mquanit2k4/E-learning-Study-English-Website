@@ -1,6 +1,7 @@
 en:
   users:
     not_found: "User not found"
+    access_denied: "You don't have permission to access this user's information."
     please_log_in: "Please log in to access this page."
     cannot_edit: "You cannot edit this user profile."
     create:
