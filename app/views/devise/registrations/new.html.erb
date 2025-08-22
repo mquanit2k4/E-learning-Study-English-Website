@@ -2,7 +2,7 @@
 <% content_for :breadcrumbs do %>
   <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
   <span class="breadcrumb-separator"> > </span>
-  <%= link_to t(".title"), signup_path %>
+  <%= link_to t(".title"), new_user_registration_path %>
 <% end %>
 <% provide :button_text, t(".create_my_account") %>
 <h1><%= t(".title") %></h1>
