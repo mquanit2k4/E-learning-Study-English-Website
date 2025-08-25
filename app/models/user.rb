@@ -24,7 +24,8 @@ foreign_key: "created_by_id", dependent: :nullify
   enum role: {user: 0, admin: 1}
 
   devise :database_authenticatable, :registerable,
-         :validatable, :rememberable
+         :validatable, :rememberable,
+         :omniauthable, omniauth_providers: %i(google_oauth2)
 
   validates :name,
             presence: true,
@@ -40,20 +41,13 @@ foreign_key: "created_by_id", dependent: :nullify
 
   validate :birthday_within_100_years
 
-  def self.find_or_create_from_auth_hash auth
-    user = find_by(email: auth.info.email)
-
-    if user
-      user.update(provider: auth.provider, uid: auth.uid) unless user.provider
-      user
-    else
-      create(
-        name: auth.info.name,
-        email: auth.info.email,
-        provider: auth.provider,
-        uid: auth.uid,
-        password: SecureRandom.hex(10)
-      )
+  def self.from_omniauth auth
+    find_or_create_by(email: auth.info.email) do |u|
+      u.name = auth.info.name
+      u.password = Devise.friendly_token[0, 20]
+      u.confirmed_at = Time.zone.now
+      u.provider = auth.provider
+      u.uid = auth.uid
     end
   end
 
