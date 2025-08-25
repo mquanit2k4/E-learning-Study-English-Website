@@ -24,7 +24,7 @@ foreign_key: "created_by_id", dependent: :nullify
   enum role: {user: 0, admin: 1}
 
   devise :database_authenticatable, :registerable,
-         :validatable
+         :validatable, :rememberable
 
   validates :name,
             presence: true,

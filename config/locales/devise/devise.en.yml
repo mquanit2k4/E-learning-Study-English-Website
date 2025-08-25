@@ -50,6 +50,16 @@ en:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        log_in: "Log in"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+        new_user?: "New user? "
+        sign_up_now!: "Sign up now!"
+        or: "or"
+        google_logo_alt: "Google Logo"
+        continue_with_google: "Continue with Google"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
@@ -77,3 +87,5 @@ en:
           male: "Male"
           female: "Female"
           other: "Other"
+  admin:
+    access_denied: "You don't have permission to access the admin area."
