@@ -28,6 +28,9 @@ vi:
     omniauth_callbacks:
       failure: "Không thể xác thực bạn từ %{kind} vì \"%{reason}\"."
       success: "Đã xác thực thành công từ tài khoản %{kind}."
+      google_oauth2:
+        success: "Đăng nhập Google thành công!"
+        failure: "Đăng nhập Google thất bại!"
     passwords:
       no_token: "Bạn không thể truy cập trang này mà không đến từ email đặt lại mật khẩu. Nếu bạn đến từ email đặt lại mật khẩu, vui lòng đảm bảo bạn đã sử dụng URL đầy đủ được cung cấp."
       send_instructions: "Bạn sẽ nhận được email hướng dẫn cách đặt lại mật khẩu trong vài phút."

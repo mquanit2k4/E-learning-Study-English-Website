@@ -2,7 +2,7 @@
 <% content_for :breadcrumbs do %>
   <%= link_to content_tag(:i, "", class: "fas fa-home"), root_path %>
   <span class="breadcrumb-separator"> > </span>
-  <%= link_to t(".log_in"), login_path %>
+  <%= link_to t(".log_in"), new_user_session_path %>
 <% end %>
 <h1><%= t(".log_in") %></h1>
 <div class="row">
@@ -22,11 +22,9 @@
     <div class="text-center my-4">
       <span class="text-muted">— <%= t(".or") %> —</span>
     </div>
-    <%= form_tag("/auth/google_oauth2", method: "post", data: { turbo: false }) do %>
-      <button type="submit" class="google-btn">
-        <img src="<%= Settings.google_logo_url %>" alt="<%= t(".google_logo_alt") %>">
-        <span><%= t(".continue_with_google") %></span>
-      </button>
+    <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "google-btn" do %>
+      <img src="<%= Settings.google_logo_url %>" alt="<%= t("sessions.new.google_logo_alt") %>">
+      <span><%= t("sessions.new.continue_with_google") %></span>
     <% end %>
   </div>
 </div>
