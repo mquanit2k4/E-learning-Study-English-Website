@@ -24,7 +24,7 @@ foreign_key: "created_by_id", dependent: :nullify
   enum role: {user: 0, admin: 1}
 
   devise :database_authenticatable, :registerable,
-         :validatable, :rememberable,
+         :validatable, :rememberable, :confirmable,
          :omniauthable, omniauth_providers: %i(google_oauth2)
 
   validates :name,

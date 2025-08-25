@@ -17,6 +17,9 @@ vi:
     mailer:
       confirmation_instructions:
         subject: "Hướng dẫn xác nhận"
+        greeting: "Chào bạn %{recipient}!"
+        message: "Bạn có thể xác nhận địa chỉ email tài khoản của mình thông qua liên kết bên dưới:"
+        action: "Xác nhận tài khoản của tôi"
       reset_password_instructions:
         subject: "Hướng dẫn đặt lại mật khẩu"
       unlock_instructions:
