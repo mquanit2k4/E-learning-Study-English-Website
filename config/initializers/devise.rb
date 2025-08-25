@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Devise.setup do |config|
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = ENV["GMAIL_USERNAME"]
 
   require 'devise/orm/active_record'
 
@@ -24,4 +24,5 @@ Devise.setup do |config|
 
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
+  config.allow_unconfirmed_access_for = 0.days
 end
