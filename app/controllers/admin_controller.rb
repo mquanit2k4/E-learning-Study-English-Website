@@ -7,7 +7,7 @@ class AdminController < ApplicationController
   def authenticate_admin
     return if current_user&.admin?
 
-    flash[:danger] = t("devise.admin.access_denied")
+    flash[:danger] = t("errors.access_denied")
     redirect_to(root_path)
   end
 end

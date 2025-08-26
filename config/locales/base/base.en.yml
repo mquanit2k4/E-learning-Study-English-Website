@@ -103,6 +103,7 @@ en:
       header:
         one: "The form contains 1 error."
         other: "The form contains %{count} errors."
+    access_denied: "You don't have permission to access this function."
 
   time:
     formats:

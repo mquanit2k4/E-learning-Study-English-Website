@@ -103,6 +103,7 @@ vi:
       header:
         one: "Biểu mẫu chứa 1 lỗi"
         other: "Biểu mẫu chứa %{count} lỗi"
+    access_denied: "Bạn không có quyền truy cập chức năng này."
 
   time:
     formats:

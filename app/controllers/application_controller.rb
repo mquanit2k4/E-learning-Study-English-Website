@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:danger] = t("errors.access_denied")
+    redirect_to root_path
+  end
+
   def set_locale
     allowed = I18n.available_locales.map(&:to_s)
 
@@ -28,10 +33,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def ensure_user_role
-    return if current_user&.user?
-
-    flash[:danger] = t(".error.not_authenticated")
-    redirect_to root_path
+  def current_ability
+    @current_ability ||= Ability.new(current_user)
   end
 end

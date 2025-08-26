@@ -1,10 +1,8 @@
-class User::UserTestsController < ApplicationController
-  before_action :set_lesson, :set_test_component,
-                :handle_ongoing_test, :handle_expired_test,
-                :check_attempts_limit,
-                only: %i(create)
-  before_action :set_test_result, :check_authorization, only: %i(edit update)
-  before_action :check_test_expired, only: %i(update)
+class User::UserTestsController < User::ApplicationController
+  load_and_authorize_resource :lesson, shallow: true
+  before_action :set_test_result, only: %i(edit update)
+  before_action :set_test_component, :handle_ongoing_test,
+                :handle_expired_test, :check_attempts_limit, only: %i(create)
 
   # POST /user/lessons/:lesson_id/user_tests
   def create
@@ -116,14 +114,6 @@ class User::UserTestsController < ApplicationController
     handle_record_invalid(e)
   end
 
-  def set_lesson
-    @lesson = Lesson.find_by(id: params[:lesson_id])
-    return if @lesson
-
-    flash[:danger] = t(".error.lesson_not_found")
-    redirect_to user_courses_path
-  end
-
   def set_test_component
     @course = @lesson.course
     @test_component = @lesson.components
@@ -134,6 +124,14 @@ class User::UserTestsController < ApplicationController
 
     flash[:danger] = t(".error.test_not_found")
     redirect_to user_course_lesson_path(@course, @lesson)
+  end
+
+  def set_test_result
+    @test_result = TestResult.find_by(id: params[:id])
+    return if @test_result
+
+    flash[:danger] = t(".error.test_result_not_found")
+    redirect_to user_course_lesson_path(@lesson.course, @lesson)
   end
 
   def check_attempts_limit
@@ -147,14 +145,6 @@ class User::UserTestsController < ApplicationController
     flash[:danger] = t(".error.max_attempts_reached",
                        max_attempts: @test.max_attempts)
     redirect_to user_course_lesson_path(@course, @lesson)
-  end
-
-  def set_test_result
-    @test_result = TestResult.find_by(id: params[:id])
-    return if @test_result
-
-    flash[:danger] = t(".error.test_result_not_found")
-    redirect_to user_course_lesson_path(@lesson.course, @lesson)
   end
 
   def check_authorization
