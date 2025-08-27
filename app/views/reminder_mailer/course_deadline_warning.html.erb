@@ -1,0 +1,11 @@
+<h2><%= t("reminder_mailer.course_deadline_warning.greeting", user_name: @user.name) %></h2>
+
+<p><%= t("reminder_mailer.course_deadline_warning.course_ending_info",
+        course_title: @course.title,
+        end_date: @user_course.end_date.strftime(Settings.course.date_format)) %></p>
+
+<p><%= t("reminder_mailer.course_deadline_warning.progress_warning", progress: @progress) %></p>
+
+<p><%= t("reminder_mailer.course_deadline_warning.call_to_action") %></p>
+
+<p><%= t("reminder_mailer.course_deadline_warning.closing").html_safe %></p>

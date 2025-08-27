@@ -1,0 +1,9 @@
+vi:
+  reminder_mailer:
+    course_deadline_warning:
+      subject: "Nhắc nhở: Khóa học '%{course_title}' sắp kết thúc!"
+      greeting: "Xin chào %{user_name},"
+      course_ending_info: "Khóa học %{course_title} của bạn sẽ kết thúc vào ngày %{end_date}."
+      progress_warning: "Tiến độ hiện tại của bạn chỉ mới %{progress}%%. Hãy cố gắng hoàn thành ít nhất 50%% trước khi kết thúc khóa học!"
+      call_to_action: "Hãy đăng nhập ngay để tiếp tục học."
+      closing: "Trân trọng,<br/>Đội ngũ E-learning"
