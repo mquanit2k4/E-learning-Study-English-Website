@@ -67,6 +67,8 @@ actions:
   update: "update"
   destroy: "destroy"
 
+default_mail_from: "noreply@sjp-elearning.com"
+
 development:
   <<: *defaults
 

@@ -1,0 +1,9 @@
+en:
+  reminder_mailer:
+    course_deadline_warning:
+      subject: "Reminder: Course '%{course_title}' is ending soon!"
+      greeting: "Hello %{user_name},"
+      course_ending_info: "Your course %{course_title} will end on %{end_date}."
+      progress_warning: "Your current progress is only %{progress}%%. Please try to complete at least 50%% before the course ends!"
+      call_to_action: "Please log in now to continue learning."
+      closing: "Best regards,<br/>E-learning Team"
