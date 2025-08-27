@@ -5,12 +5,9 @@ class Admin::CoursesController < AdminController
 
   # GET /admin/courses
   def index
-    @pagy, @courses = pagy(
-      Course.includes(Course::COURSE_PRELOAD)
-            .recent
-            .by_title(params[:search]),
-      limit: Settings.course.page_number
-    )
+    @q = Course.includes(Course::COURSE_PRELOAD).ransack(params[:q])
+    @courses = @q.result(distinct: true).recent
+    @pagy, @courses = pagy(@courses, limit: Settings.course.page_number)
   end
 
   # GET /admin/courses/:id
