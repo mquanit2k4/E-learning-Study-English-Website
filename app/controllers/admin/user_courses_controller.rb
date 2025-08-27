@@ -11,7 +11,8 @@ class Admin::UserCoursesController < AdminController
 
   # GET /admin/user_courses
   def index
-    @user_courses = filter_user_courses
+    @q = UserCourse.includes(:user, :course).ransack(params[:q])
+    @user_courses = @q.result(distinct: true)
     @pagy, @user_courses = pagy(@user_courses)
     @courses = Course.all
   end

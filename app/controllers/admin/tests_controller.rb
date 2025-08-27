@@ -1,13 +1,13 @@
 class Admin::TestsController < AdminController
   include Pagy::Backend
+
   load_and_authorize_resource
 
   # GET /admin/tests
   def index
-    @pagy, @tests = pagy(
-      Test.by_name(params[:search]).recent,
-      items: Settings.test.page_number
-    )
+    @q = Test.ransack(params[:q])
+    @tests = @q.result(distinct: true).recent
+    @pagy, @tests = pagy(@tests, items: Settings.test.page_number)
   end
 
   # GET /admin/tests/:id
