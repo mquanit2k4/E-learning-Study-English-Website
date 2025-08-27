@@ -1,0 +1,27 @@
+vi:
+  admin:
+    lessons:
+      index:
+        course_not_found: "Không tìm thấy khóa học"
+      new:
+        course_not_found: "Không tìm thấy khóa học"
+      create:
+        success: "Tạo bài học thành công"
+        failure: "Tạo bài học thất bại"
+        course_not_found: "Không tìm thấy khóa học"
+      edit:
+        lesson_not_found: "Không tìm thấy bài học"
+        course_not_found: "Không tìm thấy khóa học"
+      update:
+        success: "Cập nhật bài học thành công"
+        failure: "Cập nhật bài học thất bại"
+        lesson_not_found: "Không tìm thấy bài học"
+        course_not_found: "Không tìm thấy khóa học"
+      show:
+        lesson_not_found: "Không tìm thấy bài học"
+        course_not_found: "Không tìm thấy khóa học"
+      destroy:
+        success: "Xóa bài học thành công"
+        failure: "Xóa bài học thất bại"
+        lesson_not_found: "Không tìm thấy bài học"
+        course_not_found: "Không tìm thấy khóa học"

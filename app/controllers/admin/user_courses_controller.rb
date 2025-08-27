@@ -57,9 +57,10 @@ class Admin::UserCoursesController < AdminController
     elsif @approvable_courses.empty?
       flash[:danger] = t(".no_approvable_courses")
     else
+      count = @approvable_courses.count
       @approvable_courses.update_all(enrolment_status: :approved)
       flash[:success] =
-        t(".approve_selected_success", count: @approvable_courses.count)
+        t(".approve_selected_success", count:)
     end
 
     redirect_index_with_filters
@@ -72,9 +73,10 @@ class Admin::UserCoursesController < AdminController
     elsif @rejectable_courses.empty?
       flash[:warning] = t(".no_rejectable_courses")
     else
+      count = @rejectable_courses.count
       @rejectable_courses.update_all(enrolment_status: :rejected)
       flash[:success] =
-        t(".reject_selected_success", count: @rejectable_courses.count)
+        t(".reject_selected_success", count:)
     end
 
     redirect_index_with_filters

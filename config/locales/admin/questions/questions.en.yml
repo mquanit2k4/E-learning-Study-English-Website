@@ -1,0 +1,22 @@
+en:
+  admin:
+    questions:
+      new:
+        test_not_found: "Test not found."
+      create:
+        success: "Question was successfully created."
+        failure: "Failed to create question."
+        test_not_found: "Test not found."
+      edit:
+        question_not_found: "Question not found."
+        test_not_found: "Test not found."
+      update:
+        success: "Question was successfully updated."
+        failure: "Failed to update question."
+        question_not_found: "Question not found."
+        test_not_found: "Test not found."
+      destroy:
+        success: "Question was successfully deleted."
+        failure: "Failed to delete question."
+        question_not_found: "Question not found."
+        test_not_found: "Test not found."

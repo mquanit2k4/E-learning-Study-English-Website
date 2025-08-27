@@ -48,10 +48,12 @@ en:
         approve_success: "Registration approved successfully!"
         approve_failed: "Failed to approve registration."
         log_error: "Failed to approve user_course: %{error}"
+        user_course_not_found: "Registration not found."
       reject:
         reject_success: "Registration rejected successfully!"
         reject_failed: "Failed to reject registration."
         log_error: "Reject failed: %{error}"
+        user_course_not_found: "Registration not found."
       approve_selected:
         approve_selected_success: "Successfully approved %{count} registration(s)!"
         no_selection: "Please select at least one registration to approve."
@@ -103,6 +105,7 @@ en:
         completed: "Completed"
         incomplete: "Incomplete"
         no_lessons: "No lessons available"
+        user_course_not_found: "Registration not found."
   helpers:
     admin:
       user_courses:

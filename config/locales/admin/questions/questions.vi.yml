@@ -1,0 +1,22 @@
+vi:
+  admin:
+    questions:
+      new:
+        test_not_found: "Không tìm thấy bài kiểm tra."
+      create:
+        success: "Tạo câu hỏi thành công."
+        failure: "Tạo câu hỏi thất bại."
+        test_not_found: "Không tìm thấy bài kiểm tra."
+      edit:
+        question_not_found: "Không tìm thấy câu hỏi."
+        test_not_found: "Không tìm thấy bài kiểm tra."
+      update:
+        success: "Cập nhật câu hỏi thành công."
+        failure: "Cập nhật câu hỏi thất bại."
+        question_not_found: "Không tìm thấy câu hỏi."
+        test_not_found: "Không tìm thấy bài kiểm tra."
+      destroy:
+        success: "Xóa câu hỏi thành công."
+        failure: "Xóa câu hỏi thất bại."
+        question_not_found: "Không tìm thấy câu hỏi."
+        test_not_found: "Không tìm thấy bài kiểm tra."

@@ -36,6 +36,7 @@ en:
       edit:
         update_course: "Update Course"
         save_change: "Save Changes"
+        course_not_found: "Course not found. Please check the ID and try again."
       show:
         manage_lesson: "Manage Lessons"
         edit_course: "Edit Course"
@@ -61,12 +62,19 @@ en:
         lessons:
           one: "%{count} lesson"
           other: "%{count} lessons"
+        course_not_found: "Course not found. Please check the ID and try again."
       destroy:
         delete_success: "Course deleted successfully!"
         delete_failed: "Failed to delete course. Please try again."
+        course_not_found: "Course not found. Please check the ID and try again."
       authenticate_admin:
         not_authorized: "You are not authorized to access this page!"
       set_course:
         course_not_found: "Course not found. Please check the ID and try again."
       assign_admin_managers:
         assign_admin_failed: "Failed to assign admin with ID %{admin_id} to course %{course_id}."
+      update:
+        course_not_found: "Course not found. Please check the ID and try again."
+      create:
+        course_not_found: "Course not found. Please check the ID and try again."
+      index_action_placeholder: ""

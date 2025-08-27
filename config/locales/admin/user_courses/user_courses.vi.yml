@@ -48,10 +48,12 @@ vi:
         approve_success: "Phê duyệt đăng ký thành công!"
         approve_failed: "Phê duyệt đăng ký không thành công."
         log_error: "Phê duyệt user_course thất bại: %{error}"
+        user_course_not_found: "Không tìm thấy đăng ký khóa học."
       reject:
         reject_success: "Từ chối đăng ký thành công!"
         reject_failed: "Từ chối đăng ký không thành công."
         log_error: "Từ chối thất bại: %{error}"
+        user_course_not_found: "Không tìm thấy đăng ký khóa học."
       approve_selected:
         approve_selected_success: "Đã phê duyệt thành công %{count} đăng ký!"
         no_selection: "Vui lòng chọn ít nhất một đăng ký để phê duyệt."
@@ -103,6 +105,7 @@ vi:
         completed: "Đã hoàn thành"
         incomplete: "Chưa hoàn thành"
         no_lessons: "Không có bài học nào"
+        user_course_not_found: "Không tìm thấy đăng ký khóa học."
   helpers:
     admin:
       user_courses:

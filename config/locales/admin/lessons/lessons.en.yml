@@ -1,0 +1,27 @@
+en:
+  admin:
+    lessons:
+      index:
+        course_not_found: "Course not found"
+      new:
+        course_not_found: "Course not found"
+      create:
+        success: "Lesson created successfully"
+        failure: "Failed to create lesson"
+        course_not_found: "Course not found"
+      edit:
+        lesson_not_found: "Lesson not found"
+        course_not_found: "Course not found"
+      update:
+        success: "Lesson updated successfully"
+        failure: "Failed to update lesson"
+        lesson_not_found: "Lesson not found"
+        course_not_found: "Course not found"
+      show:
+        lesson_not_found: "Lesson not found"
+        course_not_found: "Course not found"
+      destroy:
+        success: "Lesson deleted successfully"
+        failure: "Failed to delete lesson"
+        lesson_not_found: "Lesson not found"
+        course_not_found: "Course not found"
