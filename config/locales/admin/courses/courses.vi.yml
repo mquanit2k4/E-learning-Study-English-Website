@@ -36,6 +36,7 @@ vi:
       edit:
         update_course: "Cập Nhật Khóa Học"
         save_change: "Lưu Thay Đổi"
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
       show:
         manage_lesson: "Quản Lý Bài Học"
         edit_course: "Sửa Khóa Học"
@@ -61,12 +62,19 @@ vi:
         lessons:
           one: "%{count} bài học"
           other: "%{count} bài học"
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
       destroy:
         delete_success: "Khóa học đã được xóa thành công!"
         delete_failed: "Xóa khóa học không thành công!"
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
       authenticate_admin:
         not_authorized: "Bạn không có quyền truy cập vào trang này!"
       set_course:
         course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
       assign_admin_managers:
         assign_admin_failed: "Không thể gán quản trị viên với ID %{admin_id} cho khóa học %{course_id}."
+      update:
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
+      create:
+        course_not_found: "Không tìm thấy khóa học. Vui lòng kiểm tra ID và thử lại."
+      index_action_placeholder: ""

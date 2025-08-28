@@ -1,0 +1,19 @@
+vi:
+  admin:
+    answers:
+      new:
+        test_not_found: "Không tìm thấy bài kiểm tra"
+        question_not_found: "Không tìm thấy câu hỏi"
+      create:
+        test_not_found: "Không tìm thấy bài kiểm tra"
+        question_not_found: "Không tìm thấy câu hỏi"
+        create:
+          success: "Tạo đáp án thành công"
+          failure: "Tạo đáp án thất bại"
+      destroy:
+        test_not_found: "Không tìm thấy bài kiểm tra"
+        question_not_found: "Không tìm thấy câu hỏi"
+        answer_not_found: "Không tìm thấy đáp án"
+        destroy:
+          success: "Xóa đáp án thành công"
+          failure: "Xóa đáp án thất bại"
