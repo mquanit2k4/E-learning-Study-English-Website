@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       registrations: "user/registrations",
       sessions: "user/sessions"
     }
-    
+
     resources :users, only: %i(show edit update)
 
     namespace :user do
@@ -48,6 +48,7 @@ Rails.application.routes.draw do
           resources :answers, only: %i(new create destroy)
         end
       end
+      
       resources :user_courses, only: [:index] do
         member do
           patch :approve

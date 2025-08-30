@@ -1,5 +1,5 @@
 class User::TestResultsController < User::ApplicationController
-  load_and_authorize_resource :course, class: "Course.name"
+  load_and_authorize_resource :course, class: Course.name
   load_and_authorize_resource :lesson, through: :course, shallow: true
   load_and_authorize_resource :test_result, through: :lesson, shallow: true
 

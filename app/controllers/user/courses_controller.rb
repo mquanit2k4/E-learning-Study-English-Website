@@ -1,5 +1,5 @@
 class User::CoursesController < User::ApplicationController
-  load_and_authorize_resource :course, class: "Course.name",
+  load_and_authorize_resource :course, class: Course.name,
                             only: %i(show enroll start)
   skip_before_action :authenticate_user!, only: %i(index)
   before_action :redirect_guest_status_param, only: %i(index)

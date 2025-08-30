@@ -1,8 +1,8 @@
 class User::LessonsController < User::ApplicationController
-  load_and_authorize_resource :course, class: "Course.name", only: %i(show)
+  load_and_authorize_resource :course, class: Course.name, only: %i(show)
   load_and_authorize_resource :lesson, through: :course, shallow: true,
 only: %i(show)
-  load_and_authorize_resource :lesson, class: "Lesson.name",
+  load_and_authorize_resource :lesson, class: Lesson.name,
 only: %i(study test_history)
   before_action :set_course_for_shallow_routes, only: %i(study test_history)
   before_action :set_user_lesson, only: %i(test_history)
